@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   def new
   end
 
-  def crete
+  def create
   end
 
   def index
