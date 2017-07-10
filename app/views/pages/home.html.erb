@@ -8,33 +8,19 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-        <div class="card-category">Popular</div>
-        <div class="card-description">
-            <h2>Some stuff</h2>
-            <p>Very cool stuff, useful and smart</p>
+    <% @records.each do |record| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card text-center">
+            <div class="card-header" style="background-image: url(<%= cl_image_path(record.photo) %>); height: 200px;">
+            </div>
+          <div class="card-body">
+            <%= link_to record.name, record_path(cocktail) %>
+            <%= link_to record.artist, record_path(cocktail) %>
+          </div>
         </div>
-        <img class="card-user avatar" src="user.jpg">
-        <a class="card-link" href="#" ></a>
       </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
-    </div>
+    <% end %>
   </div>
 </div>
-
-<footer class="footer-basic-centered">
-  <p class="footer-company-motto">REKITT</p>
-  <p class="footer-links">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-  </p>
-</footer>
 
 

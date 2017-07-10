@@ -6,6 +6,7 @@ class RecordsController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -14,12 +15,12 @@ class RecordsController < ApplicationController
 
   def create
     @record = Record.new(record_params)
-    @record.save
+    @record.user = current_user
+    if @record.save
       redirect_to record_path(@record)
     # else
     #   render :new
-    # end
-
+    end
   end
 
   def edit
@@ -36,7 +37,7 @@ class RecordsController < ApplicationController
   private
 
   def record_params
-    params.require(:record).permit(:name, :artist, :price, :user_id)
+    params.require(:record).permit(:name, :artist, :price, :photo, :user_id)
   end
 
   def set_record
