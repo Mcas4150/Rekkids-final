@@ -1,25 +1,32 @@
 Rails.application.routes.draw do
-  get 'orders/new'
+  resources :orders
+  resources :records
 
-  get 'orders/crete'
 
-  get 'orders/index'
+  namespace :admin do |variable|
+    resources :orders, only: [:index]
+    resources :records, only: [:index]
+  end
 
-  get 'orders/show'
+  # get 'orders/crete'
 
-  get 'orders/delete'
+  # get 'orders/index'
 
-  get 'records/index'
+  # get 'orders/show'
 
-  get 'records/show'
+  # get 'orders/delete'
 
-  get 'records/new'
+  # get 'records/index'
 
-  get 'records/create'
+  # get 'records/show'
 
-  get 'records/edit'
+  # get 'records/new'
 
-  get 'records/update'
+  # get 'records/create'
+
+  # get 'records/edit'
+
+  # get 'records/update'
 
   devise_for :users
   root to: 'pages#home'
