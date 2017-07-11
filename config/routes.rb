@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :records, only: [:index]
   end
 
+
   # get 'orders/crete'
 
   # get 'orders/index'
