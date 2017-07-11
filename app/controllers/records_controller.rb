@@ -1,10 +1,6 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update]
 
-  def top
-    @records = Record.all
-  end
-
   def index
     @records = Record.all
   end
@@ -36,6 +32,12 @@ class RecordsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @record = Record.find(params[:id])
+    @record.destroy
+    redirect_to records_path
   end
 
   private
