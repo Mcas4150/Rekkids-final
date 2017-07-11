@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Attachinary::Engine => "/attachinary"
   resources :orders
   resources :records
   devise_for :users,
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:index]
     resources :records, only: [:index]
   end
+
 
 
   # get 'orders/crete'
