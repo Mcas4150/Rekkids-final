@@ -1,6 +1,10 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update]
 
+  def top
+    @records = Record.all
+  end
+
   def index
     @records = Record.all
   end
