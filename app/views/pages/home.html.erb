@@ -14,8 +14,8 @@
             <div class="card-header" style="background-image: url(<%= cl_image_path(record.photo) %>); height: 200px;">
             </div>
           <div class="card-body">
-            <%= link_to record.name, record_path(cocktail) %>
-            <%= link_to record.artist, record_path(cocktail) %>
+            <%= link_to record.name, record_path(record) %>
+            <%= link_to record.artist, record_path(record) %>
           </div>
         </div>
       </div>
