@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
   resources :orders
   resources :records
+  devise_for :users,
+  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
 
   namespace :admin do |variable|
@@ -31,7 +33,6 @@ Rails.application.routes.draw do
 
   # get 'records/update'
 
-  devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
