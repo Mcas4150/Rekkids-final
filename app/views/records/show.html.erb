@@ -1,11 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= cl_image_tag @record.photo, height: 300, width: 400, crop: :fill %>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+      <%= cl_image_tag @record.photo.path, height: 300, width: 400, crop: :fill %>
       <h1><%= @record.name %></h1>
-      <ul>
-        <%= @record.artist %>
-        <%= @record.price %>
+       <p><%= @record.artist %></p>
+        <p>$<%= @record.price %></p>
       </ul>
       <%= link_to 'Buy Record', new_order_path(@record) %>|
       <%= link_to 'Edit', edit_record_path(@record) %>|
