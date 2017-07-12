@@ -27,10 +27,10 @@ class OrdersController < ApplicationController
   def show
   end
 
-  def delete
+  def destroy
      @order = Order.find(params[:id])
     @order.destroy
-    redirect_to Record_path(@record)
+    redirect_to orders_path(@order)
   end
 
 

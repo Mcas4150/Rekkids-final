@@ -3,14 +3,15 @@
     <% @orders.each do |order| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card text-center">
-            <div class="card-header" style="background-image: url(<%= cl_image_path(order.record.photo) %>); height: 200px;">
+            <div class="card-header" style="background-image: url(<%= cl_image_path(order.record.photo.path) %>); height: 300px; width : 300px; padding: 10px;">
             </div>
-          <div class="card-body">
+          <div class="card-body poopy">
             <h1><%= order.record.name %></h1>
             <p>Artist: <%= order.record.artist %></p>
             <p>Price: $<%= order.record.price %></p>
-            <p>Buyer: <%= current_user %></p>
+            <p>Buyer: <%= current_user.first_name %></p>
             <p>Ordered: <%= order.created_at %></p>
+            <%= link_to 'Delete', orders_path , method: :delete  %>
           </div>
         </div>
       </div>
