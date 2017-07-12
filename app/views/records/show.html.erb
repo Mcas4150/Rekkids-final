@@ -6,7 +6,7 @@
        <p><%= @record.artist %></p>
         <p>$<%= @record.price %></p>
       </ul>
-      <%= link_to 'Buy Record', new_order_path(@record) %>|
+      <%= link_to 'Buy Record', new_record_order_path(@record) %>|
       <%= link_to 'Edit', edit_record_path(@record) %>|
       <%= link_to 'Back', records_path %>
     </div>
