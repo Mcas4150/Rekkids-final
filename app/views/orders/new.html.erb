@@ -1,9 +1,9 @@
 
 <%= simple_form_for [@record, @order] do |f| %>
-  <%= @record.id %>
-  <%= cl_image_tag @record.photo.path, height: 300, width: 400, crop: :fill %>
-  <%= @record.name %>
-  <%= @record.artist %>
-  <%= @record.price %>
+  <%= cl_image_tag @record.photo.path, height: 150, width: 150, crop: :fill %>
+  <h2>id:<%= @record.id %></h2>
+  <h2>Title: <%= @record.name %></h2>
+  <h2>Artist: <%= @record.artist %></h2>
+  <h2>Price: $<%= @record.price %></h2>
   <%= f.submit "place order", class: "btn btn-primary" %>
 <% end %>
