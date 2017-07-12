@@ -11,6 +11,8 @@ gem 'puma'
 gem 'rails', '5.0.4'
 gem 'redis'
 
+gem "letter_opener", group: :development
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
