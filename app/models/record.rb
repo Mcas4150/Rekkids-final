@@ -6,4 +6,5 @@ class Record < ApplicationRecord
   validates :price, presence: true
   has_attachment :photo
   validates :photo, presence: true
+  validates :description, presence: true
 end
