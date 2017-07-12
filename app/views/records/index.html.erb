@@ -2,7 +2,7 @@
   <div class="banner-content">
     <h1>Vinyl</h1>
     <p>Buy/Sell</p>
-    <a class="btn btn-primary btn-lg">GET IT</a>
+   <%= image_tag "recordman.jpg", width: "100", class: "jump"%>
   </div>
 </div>
 <h1 class="text-center">Records for sale</h1>
@@ -22,9 +22,11 @@
             </div>
           <% end %>
           <div class="card-body text-center" style="font-size:30px;">
+            <ul>
             <%= link_to record.name, record_path(record) %>
             <%= link_to record.artist, record_path(record) %>
             $<%= link_to record.price, record_path(record) %>
+            </ul>
           </div>
 
       </div>

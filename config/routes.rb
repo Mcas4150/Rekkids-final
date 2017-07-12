@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
   resources :records do
-    resources :orders, only: [:new, :create]
+    resources :orders, only: [:new, :create, :delete]
   end
 
   resources :orders
