@@ -15,10 +15,10 @@
       <div class="col-sm-4">
 
           <% if record.photo? %>
-            <div class="card text-center" style="background-image: url(<%= cl_image_path(record.photo.path) %>); height: 400px; width: 400px; padding: 10px;">
+            <div class="card text-center" style="background-image: url(<%= cl_image_path(record.photo.path) %>); height: 250px; width: 100%; padding: 10px;">
             </div>
           <% else %>
-            <div class="card-header" style="background-image: url(); height: 200px;">
+            <div class="card-header" style="background-image: url(http://design-ec.com/d/e_others_50/l_e_others_500.png); height: 200px;">
             </div>
           <% end %>
           <div class="card-body text-center" style="font-size:30px;">

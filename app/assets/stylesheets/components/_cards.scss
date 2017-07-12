@@ -1,9 +1,9 @@
 .card {
-  height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
-  position: relative;
+  position: absolute;
+  padding: 80px;
 }
 .card-user {
   position: absolute;
