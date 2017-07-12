@@ -7,9 +7,7 @@
 </div>
 <h1 class="text-center">Records for sale</h1>
 
-<div class="text-center padded">
-  <%= link_to "Add a Record", new_record_path, class: "btn btn-primary" %>
-</div>
+
 
 <div class="container">
   <div class="row">
@@ -26,7 +24,7 @@
           <div class="card-body text-center" style="font-size:30px;">
             <%= link_to record.name, record_path(record) %>
             <%= link_to record.artist, record_path(record) %>
-            <%= link_to record.price, record_path(record) %>
+            $<%= link_to record.price, record_path(record) %>
           </div>
 
       </div>
@@ -34,6 +32,8 @@
   </div>
 </div>
 
-
+<div class="text-center padded">
+  <%= link_to "Add a Record", new_record_path, class: "btn btn-primary" %>
+</div>
 
 

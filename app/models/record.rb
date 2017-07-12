@@ -5,4 +5,5 @@ class Record < ApplicationRecord
   validates :artist, uniqueness: true, presence: true
   validates :price, presence: true
   has_attachment :photo
+  validates :photo, presence: true
 end
