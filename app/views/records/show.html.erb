@@ -2,15 +2,16 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
       <% if @record.photo? %>
-            <div class="card text-center" style="background-image: url(<%= cl_image_path(@record.photo.path) %>); height: 400px; width: 400px; padding: 10px;">
+            <div class="card" style="background-image: url(<%= cl_image_path(@record.photo.path) %>); height: 400px; width: 400px; padding: 10px;">
             </div>
           <% else %>
             <div class="card-header" style="background-image: url(); height: 200px;">
             </div>
           <% end %>
       <h1><%= @record.name %></h1>
-       <p><%= @record.artist %></p>
-        <p>$<%= @record.price %></p>
+       <p>Artist: <%= @record.artist %></p>
+       <p>Price: $<%= @record.price %></p>
+       <p>Description: <%= @record.description %></p>
       </ul>
       <%= link_to 'Buy Record', new_record_order_path(@record) %>|
       <%= link_to 'Edit', edit_record_path(@record) %>|
