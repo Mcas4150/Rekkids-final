@@ -1,9 +1,12 @@
 
-<%= simple_form_for [@record, @order] do |f| %>
+<%= simple_form_for [@order] do |f| %>
+  <%= f.hidden_field :record_id, value: @record.id %>
   <%= cl_image_tag @record.photo.path, height: 150, width: 150, crop: :fill %>
-  <h2>id:<%= @record.id %></h2>
   <h2>Title: <%= @record.name %></h2>
-  <h2>Artist: <%= @record.artist %></h2>
-  <h2>Price: $<%= @record.price %></h2>
-  <%= f.submit "place order", class: "btn btn-primary" %>
+  <p>by: <%= @record.artist %></p>
+  <p>$<%= @record.price %></p>
+  <%= f.submit "Place Order", class: "btn btn-primary" %>
+  <%= link_to 'Back', records_path %>
 <% end %>
+
+<%#current_user.email %>

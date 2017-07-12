@@ -1,22 +1,16 @@
-<div class="banner" style="background-image: linear-gradient( 50deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 0%), url('RecordsBackground.jpeg');">
-  <div class="banner-content">
-    <h1>Vinyl</h1>
-    <p>Buy/Sell</p>
-    <a class="btn btn-primary btn-lg">GET IT</a>
-  </div>
-</div>
-
 <div class="container">
   <div class="row">
-    <% @records.each do |record| %>
+    <% @orders.each do |order| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card text-center">
-            <div class="card-header" style="background-image: url(<%= cl_image_path(record.photo) %>); height: 200px;">
+            <div class="card-header" style="background-image: url(<%= cl_image_path(order.record.photo) %>); height: 200px;">
             </div>
           <div class="card-body">
-            <%= link_to record.name, record_path(record) %>
-            <%= link_to record.artist, record_path(record) %>
-            <%= link_to record.price, record_path(record) %>
+            <h1><%= order.record.name %></h1>
+            <p>Artist: <%= order.record.artist %></p>
+            <p>Price: $<%= order.record.price %></p>
+            <p>Buyer: <%= current_user %></p>
+            <p>Ordered: <%= order.created_at %></p>
           </div>
         </div>
       </div>
