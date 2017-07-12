@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
 
     if @order.save
-      redirect_to records_path
+      redirect_to orders_path
     else
       render "records/show"
     end
