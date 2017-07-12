@@ -1,5 +1,9 @@
 class OrdersController < ApplicationController
-  before_action :set_record
+  before_action :set_record, only: [:new, :show]
+
+    def new
+      @order = Order.new
+    end
 
 
    def create
