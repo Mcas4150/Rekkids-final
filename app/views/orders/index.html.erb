@@ -11,7 +11,7 @@
             <p>Price: $<%= order.record.price %></p>
             <p>Buyer: <%= current_user.first_name %></p>
             <p>Ordered: <%= order.created_at %></p>
-            <%= link_to 'Delete', orders_path , method: :delete  %>
+            <%= link_to 'Delete', order_path(order) , method: :delete  %>
           </div>
         </div>
       </div>
