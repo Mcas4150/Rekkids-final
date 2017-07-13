@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170712153231) do
+ActiveRecord::Schema.define(version: 20170713163505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20170712153231) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent", using: :btree
+  end
+
+  create_table "flats", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -48,6 +55,9 @@ ActiveRecord::Schema.define(version: 20170712153231) do
     t.string   "artist"
     t.string   "photo"
     t.string   "description"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address"
     t.index ["user_id"], name: "index_records_on_user_id", using: :btree
   end
 
