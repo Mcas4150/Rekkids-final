@@ -7,8 +7,7 @@ class RecordsController < ApplicationController
 
   def show
     @record = Record.find(params[:id])
-    @record_coordinates = { lat: @record.latitude, lng: @record.longitude }
-    @records = Record.where.not(latitude: nil, longitude: nil)
+    @records = Record.where(latitude: @record.latitude, longitude: @record.longitude)
     @hash = Gmaps4rails.build_markers(@records) do |flat, marker|
       marker.lat flat.latitude
       marker.lng flat.longitude
