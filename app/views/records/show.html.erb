@@ -12,8 +12,11 @@
        <p>Artist: <%= @record.artist %></p>
        <p>$<%= @record.price %></p>
        <p><%= @record.description %></p>
-      </ul>
-      <%= link_to 'Buy Record', new_record_order_path(@record) %>|
+       <div>
+         <input type="text" class='datepicker' >
+       </div>
+
+      <%= link_to 'Rent Record', new_record_order_path(@record) %>|
       <%= link_to 'Edit', edit_record_path(@record) %>|
       <%= link_to 'Back', records_path %>
     </div>
