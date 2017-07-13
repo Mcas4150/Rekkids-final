@@ -2,10 +2,10 @@
 <%= simple_form_for [@order] do |f| %>
   <%= f.hidden_field :record_id, value: @record.id %>
   <%= cl_image_tag @record.photo.path, height: 150, width: 150, crop: :fill %>
-  <h2>Title: <%= @record.name %></h2>
+  <h2><%= @record.name %></h2>
   <p>by: <%= @record.artist %></p>
   <p>$<%= @record.price %></p>
-  <%= f.submit "Place Order", class: "btn btn-primary" %>
+  <%= f.submit "Confirm Order", class: "btn btn-primary" %>
   <%= link_to 'Back', records_path %>
 <% end %>
 

@@ -10,7 +10,7 @@
           <% end %>
       <h1><%= @record.name %></h1>
        <p>Artist: <%= @record.artist %></p>
-       <p>Price: $<%= @record.price %></p>
+       <p>$<%= @record.price %></p>
        <p><%= @record.description %></p>
       </ul>
       <%= link_to 'Buy Record', new_record_order_path(@record) %>|
