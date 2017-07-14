@@ -10,8 +10,9 @@
             <p>Artist: <%= order.record.artist %></p>
             <p>Price: $<%= order.record.price %></p>
             <p>Buyer: <%= current_user.first_name %></p>
-            <p>Ordered: <%= order.created_at %></p>
-            <%= link_to 'Delete', order_path(order) , method: :delete  %>
+            <p>Ordered for: <%= order.from.to_s %></p>
+            <p>Return on: <%= order.to.to_s %></p>
+            <%= link_to 'Delete', order_path(order), method: :delete  %>
           </div>
         </div>
       </div>
