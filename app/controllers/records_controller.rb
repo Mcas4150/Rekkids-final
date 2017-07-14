@@ -1,5 +1,6 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @records = Record.all
