@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create, :delete]
   end
 
-  resources :orders
+  resources :orders, only: [:show, :index]
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 

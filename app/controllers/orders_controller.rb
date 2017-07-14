@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_record, only: [:new, :show]
+  before_action :set_record, only: [:new, :show, :create]
   # before_action :set_user, only: [:new, :show]
 
     def new
@@ -8,8 +8,12 @@ class OrdersController < ApplicationController
 
 
    def create
-
-    @order = Order.new(order_params)
+    @order = Order.new
+    from = params[:order][:from]
+    to = params[:order][:to]
+    @order.from = Date.strptime(from, "%m/%d/%Y")
+    @order.to = Date.strptime(to, "%m/%d/%Y")
+    @order.record = @record
     @order.user = current_user
 
     if @order.save
@@ -44,7 +48,7 @@ class OrdersController < ApplicationController
   # end
 
   def order_params
-    params.require(:order).permit(:record_id)
+    params.require(:order).permit(:to, :from)
   end
 
 

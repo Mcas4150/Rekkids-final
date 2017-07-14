@@ -18,7 +18,9 @@
           <%= link_to 'Back', records_path %>
         </div>
         <div>
-        <input type="text" class='datepicker' placeholder="Choose date" >
+        <%# simple_form_for(@record) do |f| %>
+        <%# f.text_field :rental_date, as: :string, class: "datepicker", value: Date.today.strftime('%d/%m/%Y') %>
+        <%# end %>
       </div>
      </div>
   </div>
