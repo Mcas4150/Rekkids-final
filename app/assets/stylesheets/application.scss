@@ -25,6 +25,25 @@
   animation: jump .5s linear alternate infinite;
 }
 
+
+.btn-cool {
+  color: #646464;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+.btn-cool:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #646464;
+}
+
+.sweet {
+
+}
+
 .records-display {
   padding: 2em;
     display: flex;
