@@ -5,7 +5,7 @@
   <h2><%= @record.name %></h2>
   <p>by: <%= @record.artist %></p>
   <p>$<%= @record.price %></p>
-  <%= f.text_field :from, order: [:day, :month, :year],class: "datepicker" %>
+  <%= f.text_field :from, order: [:day, :month, :year],class: "datepicker"%>
   <%= f.text_field :to, order: [:day, :month, :year],class: "datepicker" %>
   <%= f.submit "Confirm Order", class: "btn btn-primary" %>
   <%= link_to 'Back', records_path %>
