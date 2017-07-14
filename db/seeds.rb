@@ -12,16 +12,8 @@
         name: 'Buy or Die!',
         artist: 'Matteo Torcinovich',
         price: 18.00,
-        description:"Goodfellas present Buy Or Die! Ralph Records Artworks 1972-2015, the first ever book of its kind on the history of the artwork of The Residents and their label Ralph Records. The life of Ralph Records and The Residents has always been cloaked in obscure mysteries, woven by the anonymous Cryptic Corporation, around which many luminaries have revolved; painters, graphic artists, cartoonists, musicians, film-makers, and writers. All have been channeled together by a powerful creative synergy that helped champion a new, mercurial and thoroughly multi-faceted artifact. Buy Or Die!, for the very first time, brings together a collection of images that represented the sounds of Ralph from 1972 to the present. A historical journey that traces the path of one of the most innovative record labels of the last fifty years. A collection of original, rare, and remarkable images drawn from record covers, fan catalogs, posters, and a wide variety of promotional material, demonstrating the technological and stylistic adaptations undergone through the arc of half a century. 400-page color book in English and Italian"
-         photo_url: "http://www.forcedexposure.com/App_Themes/Default/Images/product_images/close_up/g/GF77006BK_CU.jpg"
-      },
-      {
-        name: "Private Life",
-        artist: "Garrett",
-        price: 15.00 ,
-        description: "Dâm Funk does it with serious finesse in his debut Garrett outing for Music For Memory, who’ve managed to coax out a sublime insight to his Private Life from LA’s most fêted funkateer. Best believe this is the slickest thing you’ll encounter all year - like glyding on rainbow in silk underwear.
-        For Damon G Riddick’s legion fans it doesn’t come much better, especially seeing as he’s been shy on the release front since 2016’s DJ-Kicks and the odd short format serving in recent years. Anyway this makes up for that gap in spades, swooping in with the gilded dawn of Apocalyptic Sunrise and taking it there with track, from the pointillist drum patter and arcing chords of Right Now thru the loose and sprawling vibes of Slow Motion, to chrome-squirting G-funk on It’s Time, with 12 minutes to cool out in the serene waters of Angel Reflections, before taking it Home on the downstroke to the sun-warped bliss of The End Theme.",
-        photo_url: "https://assets.boomkat.com/spree/products/433644/large/unnamed_%281%29.jpg"
+        description:"Goodfellas present Buy Or Die! Ralph Records Artworks 1972-2015, the first ever book of its kind on the history of the artwork of The Residents and their label Ralph Records. The life of Ralph Records and The Residents has always been cloaked in obscure mysteries, woven by the anonymous Cryptic Corporation, around which many luminaries have revolved; painters, graphic artists, cartoonists, musicians, film-makers, and writers. All have been channeled together by a powerful creative synergy that helped champion a new, mercurial and thoroughly multi-faceted artifact. Buy Or Die!, for the very first time, brings together a collection of images that represented the sounds of Ralph from 1972 to the present. A historical journey that traces the path of one of the most innovative record labels of the last fifty years. A collection of original, rare, and remarkable images drawn from record covers, fan catalogs, posters, and a wide variety of promotional material, demonstrating the technological and stylistic adaptations undergone through the arc of half a century. 400-page color book in English and Italian",
+        photo_url: "http://www.forcedexposure.com/App_Themes/Default/Images/product_images/close_up/g/GF77006BK_CU.jpg"
       },
       {
         name: "The McDonald's Prayer",
@@ -54,15 +46,12 @@ Fast food. Slow music. Very satisfying ",
         photo_url: "https://assets.boomkat.com/spree/products/420212/large/dauwd-theoryofcolour.jpg"
       },
       {
-        name: "Glowing in the Dark"
-        artist: "Experimental Products"
+        name: "Glowing in the Dark",
+        artist: "Experimental Products",
         price: 10.00,
         description: "Arguably one of the greatest synth-pop 12”s of the ‘80s - and we don’t use that lightly - Glowing In The Dark is a tried and tested ‘floor-filler which has been out of circulation on a quality pressing for waaay too long - hence the fact 2nd hand copies are now going for triple figures.
-
 The glorious title cut of lustrous NRG arpeggios, soaring synth and ice cold vocal is charged to the A-side, coiling nine minutes of pure dancefloor class whilst the other side holds the more mellow élan of Love Changes and another fully fledged winner in The Mannequin.
-
 Kinda unmissable, really.
-
 ",
         photo_url: "https://assets.boomkat.com/spree/products/324633/large/VOD_DJ1.jpg"
       },
@@ -149,5 +138,5 @@ Kinda unmissable, really.
         price: 26.00 ,
         description: "Von Spar’s wistful avant-dance-pop in full swing here, from chufty chamber prog efforts like ‘Metaxourgío’ to pointillist tribal patter on ‘Garzweiler III’ and triplet anchored dub house-come-trip hop with Burial-esque flourishes on ‘Omónia’",
         photo_url: "https://assets.boomkat.com/spree/products/432888/large/880918226156.jpg"
-      },
+      }
     ])
