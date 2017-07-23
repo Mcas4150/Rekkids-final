@@ -1,4 +1,5 @@
 <div class="container">
+<h1><%= pluralize @orders.size, "item" %></h1>
   <div class="row">
     <% @orders.each do |order| %>
       <div class="col-xs-12 col-sm-4">
