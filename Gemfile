@@ -44,9 +44,13 @@ gem 'coffee-rails'
 gem "geocoder"
 gem "gmaps4rails"
 gem "discogs-wrapper"
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
+
+
 
 

@@ -11,8 +11,6 @@ class OrdersController < ApplicationController
     @order = Order.new
     from = params[:order][:from]
     to = params[:order][:to]
-    @order.from = Date.strptime(from, "%m/%d/%Y")
-    @order.to = Date.strptime(to, "%m/%d/%Y")
     @order.record = @record
     @order.user = current_user
 
@@ -48,7 +46,7 @@ class OrdersController < ApplicationController
   # end
 
   def order_params
-    params.require(:order).permit(:to, :from)
+    params.require(:order).permit(:quantity)
   end
 
 
