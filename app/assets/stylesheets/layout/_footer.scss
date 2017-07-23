@@ -1,5 +1,18 @@
 // Your footer style
 
+.sociallogo {
+
+  display: flex
+}
+
+footer .fa {
+  color: #666666;
+  font-size: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
 .footer-basic-centered{
   background-color: #292c2f;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
