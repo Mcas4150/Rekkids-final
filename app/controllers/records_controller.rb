@@ -1,9 +1,9 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update]
   skip_before_action :authenticate_user!, only: [:index, :show]
-  # before_filter do
-  #   @discogs = Discogs::Wrapper.new("REKKIDS", session[:access_token])
-  # end
+  before_filter do
+    @discogs = Discogs::Wrapper.new("REKKIDS", session[:access_token])
+  end
 
 
   def authenticate
@@ -38,6 +38,9 @@ end
 
 
 
+  def whoami
+    @user = @discogs.get_identity
+  end
 
 
 

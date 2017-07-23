@@ -43,6 +43,7 @@ gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem "geocoder"
 gem "gmaps4rails"
+gem "discogs-wrapper"
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
