@@ -13,7 +13,7 @@
         <p>$<%= @record.price %></p>
         <p><%= @record.description %></p>
         <div style="font-size:30px; padding:15px;">
-          <%= link_to 'Rent Record', new_record_order_path(@record) %>|
+          <%= link_to 'Add to Cart', new_record_order_path(@record) %>|
           <%= link_to 'Edit', edit_record_path(@record) %>|
           <%= link_to 'Back', records_path %>
      </div>
