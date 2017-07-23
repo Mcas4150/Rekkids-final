@@ -6,6 +6,17 @@ GIT
       cloudinary (~> 1.1.0)
       rails (>= 3.2)
 
+GIT
+  remote: git://github.com/rails/activerecord-session_store.git
+  revision: e97fa9f0d20fd932ecee6124b0b46d244d6f7ce6
+  specs:
+    activerecord-session_store (1.1.0)
+      actionpack (>= 4.0, < 5.2)
+      activerecord (>= 4.0, < 5.2)
+      multi_json (~> 1.11, >= 1.11.2)
+      rack (>= 1.5.2, < 3)
+      railties (>= 4.0, < 5.2)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -265,6 +276,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-session_store!
   attachinary!
   autoprefixer-rails
   better_errors

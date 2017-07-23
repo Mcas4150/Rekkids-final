@@ -56,6 +56,7 @@
     min-height: 300px;
     min-width: 300px;
     background-size: cover;
+    background-image: "https://static.pexels.com/photos/242236/pexels-photo-242236.jpeg";
   }
   a, a p, a h2 {
     &:hover {
@@ -77,6 +78,10 @@
 }
 
 
+body {
+
+  background-image: "Whiteconcrete.jpeg";
+}
 
 #main-wrapper {
       min-height: 700px;
