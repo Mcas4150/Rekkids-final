@@ -40,8 +40,19 @@
   color: #646464;
 }
 
-.sweet {
+.funky {
+  text-align: right;
+}
 
+.sweety {
+    box-shadow: 1px 1px;
+}
+
+.swanky {
+
+
+  height: 175px;
+  width: 175px;
 }
 
 .records-display {
@@ -51,6 +62,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
   .card {
+
     margin: 0px;
     padding: 0px;
     min-height: 250px;
