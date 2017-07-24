@@ -17,14 +17,24 @@
 
 @keyframes jump {
   0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}
-  40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);}
-  100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}
+  1%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);}
+  5% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}
 }
 .jump {
-  transform-origin: 50% 50%;
-  animation: jump .5s linear alternate infinite;
+  transform-origin: 10% 10%;
+  animation: jump 1s linear alternate infinite;
 }
 
+
+.spin{
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+          transition:         transform .8s ease-in-out;
+}
+.spin:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
 
 .btn-cool {
   color: #646464;
@@ -51,8 +61,8 @@
 .swanky {
 
 
-  height: 175px;
-  width: 175px;
+  height: 200px;
+  width: 200px;
 }
 
 .records-display {
