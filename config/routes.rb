@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   mount Attachinary::Engine => "/attachinary"
 
+
+
   resources :records do
     resources :orders, only: [:new, :create]
   end
@@ -28,7 +30,7 @@ Rails.application.routes.draw do
     resources :records, only: [:index]
   end
 
-
+  get 'pages/aboutus'
 
   # get 'orders/crete'
 
