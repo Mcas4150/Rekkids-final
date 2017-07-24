@@ -7,13 +7,15 @@
 
     <% @orders.each do |order| %>
       <tr>
-       <td class="photo" style style="background-image: url(<%= cl_image_path(order.record.photo.path) %>); ">
+
+       <td class="photo" style="background-image: url(<%= cl_image_path(order.record.photo.path) %>); ">
         </td>
         <td class="details">
           <%= order.record.name %> by <%= order.record.artist %>
         </td>
         <td class="quantity">
-          quantity: <%= order.quantity %>
+          <!-- quantity: <%= order.quantity %> -->
+          <input type="text" size="4" value="1"
         </td>
         <td class="total">
          $<%= order.record.price %>

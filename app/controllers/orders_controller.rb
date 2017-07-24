@@ -9,8 +9,7 @@ class OrdersController < ApplicationController
 
    def create
     @order = Order.new
-    from = params[:order][:from]
-    to = params[:order][:to]
+    quantity = params[:order][:quantity]
     @order.record = @record
     @order.user = current_user
 
