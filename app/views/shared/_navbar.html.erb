@@ -5,6 +5,12 @@
   <% end %>
 
   <!-- Right Navigation -->
+  <div class= "text-center">
+  <h2>New Releases |
+  <a href="https://www.facebook.com/pg/laramarecords/events/?ref=page_internal" >Events</a> |
+  Sale</h2>
+  </div>
+
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Search form -->
@@ -12,7 +18,10 @@
     <!-- Different navigation if login or not >
     <% if user_signed_in? %>
 
+
+
       <!- Notification -->
+
       <%= link_to orders_path, class: "navbar-wagon-item navbar-wagon-link" do %>
         <div class="badge-container">
           <i class="fa fa-shopping-cart"></i>
