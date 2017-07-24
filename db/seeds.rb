@@ -9,28 +9,29 @@
 
     records = Record.create([
       {
-        name: 'Buy or Die!',
-        artist: 'Matteo Torcinovich',
-        price: 18.00,
-        description:"Goodfellas present Buy Or Die! Ralph Records Artworks 1972-2015, the first ever book of its kind on the history of the artwork of The Residents and their label Ralph Records. The life of Ralph Records and The Residents has always been cloaked in obscure mysteries, woven by the anonymous Cryptic Corporation, around which many luminaries have revolved; painters, graphic artists, cartoonists, musicians, film-makers, and writers. All have been channeled together by a powerful creative synergy that helped champion a new, mercurial and thoroughly multi-faceted artifact. Buy Or Die!, for the very first time, brings together a collection of images that represented the sounds of Ralph from 1972 to the present. A historical journey that traces the path of one of the most innovative record labels of the last fifty years. A collection of original, rare, and remarkable images drawn from record covers, fan catalogs, posters, and a wide variety of promotional material, demonstrating the technological and stylistic adaptations undergone through the arc of half a century. 400-page color book in English and Italian",
-        photo_url: "http://www.forcedexposure.com/App_Themes/Default/Images/product_images/close_up/g/GF77006BK_CU.jpg"
-      },
+        name: 'Azioni/Reazioni 1967-1969',
+        artist: 'GRUPPO DI IMPROVVISAZIONE NUOVA CONSONANZA',
+        label: Die Schachtel
+        price: 118.00,
+        description:"Standard LP version. Includes five LPs, DVD, and book; Edition of 500. The year 2007 saw one of the most remarkable findings in the long treasure-hunting history of Die Schachtel: the complete set of recordings of the early manifestation (1967-1969) of one of the most legendary improv group of all time, the Gruppo di Improvvisazione Nuova Consonanza. Rescued by the private archives of Walter Branchi, one of the original founding members -- alongside Franco Evangelisti, Ennio Morricone, Ivan Vandor, Roland Kayn, Egisto Macchi, Mario Bertoncini, and John Heineman -- the tapes were then restored in their entirety. Only a part of them were published in a CD-only boxset in an edition of 500, titled Azioni 1967-1969, which also featured a DVD with the original film Nuova Consonanza shot by Theo Gallher during the rehearsal and concert that the group held on March 19th and 20th, 1967, at the Galleria d'arte Moderna in Rome. Spanning from free-jazz to total abstract noise to wild electronic sounds, their music was -- and remains -- one of the most dynamic, original, and uncompromising expression of a period defined by intense experimentation and musical bravery, anticipating experiments to come in years following. Or, to put it simple, 'They were utterly unique,'' as per the words that John Zorn, who expressively wrote for this edition. To mark the ten-year anniversary of its original release, Die Schachtel present Azioni/Reazioni 1967-1969, the complete cycle of improvisations -- which includes thirteen additional, never before published pieces -- taken from the original tapes. Remastered by Giuseppe Ielasi.",
+        photo_url: "http://forcedexposure.com/App_Themes/Default/Images/product_images/product_page/D/DS033BOX_PROD.jpg"
+        },
       {
-        name: "The McDonald's Prayer",
-        artist: "Asda",
+        name: "Whatness",
+        artist: "Anton Kubibov",
+        label: Kompakt
         price: 15.00 ,
-        description: "Sacreligious iconoclasts, Chester Giles and Seb Gainsborough (Vessel) aka ASDA genuflect at the greasy altar of Ronald and co with the succinct McDonald’s Prayer backed with a downcast Regrind by erstwhile Japan Blues resetting Giles’ ‘prayer’ to a coolly pendulous boom clap and church organ, before the EP ends in the puddled dub of Ossia’s queasy Milkshake Mix.
-
-Fast food. Slow music. Very satisfying ",
-        photo_url: "https://assets.boomkat.com/spree/products/434022/large/asda.jpg"
+        description: "LP version. While the last Kompakt offering from legendary Russian synthesists SCSI-9 dates back to 2008, when the duo released their album Easy As Down (KOMP 068CD), co-founder and techno/house virtuoso Anton Kubikov kept himself busy cultivating his own label Pro-Tez Records and establishing a career as solo artist with a clear penchant for dub-infused soundscapes and ambient music. Whatness is Kubikov's first solo full-length under his proper name. Weaving airy and iridescent sonic tapestry, Whatness takes up where his excellent contributions to Kompakt's Pop Ambient compilations left off. Anton Kubikov's special ear for ambience and tonal spaces was always an integral part of SCSI-9's musical DNA, alternating between tight dance workouts and vast melodic range. But it's as a solo artist that he truly started to explore these spaces, following mysterious sonic trails into foggy, reverb-heavy territory. Kubikov's contributions to the several installments of Kompakt's Pop Ambient compilation series announced the arrival of a promising new project, a promise more than satisfied with the immersive sound bath of first solo outing Whatness. Going from the richly layered electronic drones of 'Liquid Mirror' or 'Entrance' to the lush ambient dub of 'Other The Sea' and 'Kurt's Forest', or the minimalist, evocative piano of 'Oktober' and 'Pia', the album covers a lot of stylistic ground, but remains committed to its overall aesthetic of misty mountains and serene valleys. With the endearing 'April', a true Pop Ambient classic from the 2016 compilation (KOMP 128CD/KOM 345LP) makes a welcome return, priming the canvas for the subtle bass throb of 'North' and its charming synth bell orchestra. Masterfully refining and extending his sonic pallet on Whatness, Anton Kubikov can claim his spot among the very best of todays ambient composers.",
+        photo_url: "http://forcedexposure.com/App_Themes/Default/Images/product_images/close_up/k/KOM372LP_CU.jpg"
       },
       {
-        name: "The Kid",
-        artist: "Kaitlyn Aurelia Smith",
-        price: 18.00 ,
-        description: "In 2017, the musical term “electronic” is nearly obsolete given the ubiquity of computerized processes in producing music. Even so, the prevailing assumption is that musicians working under this broad umbrella must be inspired by concepts equally as electrified as their equipment. Kaitlyn Aurelia Smith has demonstrated in her still-blooming discography that this notion couldn’t be further from the truth, and that more often than not, rich worlds of synthesized naturalist David Attenborough as a contemporary muse) has embodied such an appreciation on The Kid in as direct and sincere a way as possible by sonically charting the phases of life itself. ",
-        photo_url: "https://assets.boomkat.com/spree/products/433838/large/656605359960_T34453976570054.jpg"
-      },
+        name: "Crystal",
+        artist: "Maggi Payne",
+        label: Aguirre Records
+        price: 26.00 ,
+        description: 'Aguirre Records present a reissue of Maggi Payne"s challenging electronic album Crystal, originally released in 1986. Maggi Payne is an American composer, flutist, video artist, and co-director of the Center for Contemporary Music, Mills College where she teaches recording engineering, composition, and electronic music. Her work involves electroacoustic, instrumental, and vocal works along with works involving visuals, including dancers outfitted with electroluminescent wire and videos she creates using images ranging from nature to the abstract. She has composed music for dance, theatre, and video. Crystal was first released in 1986 on the Lovely Music label. Home to experimental musicians such as Robert Ashley, David Behrman, Pauline Oliveros, and Alvin Lucier. On Crystal, flute, spoken voice, sonifications, and synthesizers are processed to create dense and massive structures. Maggi Payne"s musical imagination is vivid: she is interested in the surreal, the inward, the micro, and the accumulation of physical and psychological tension. Periods of silence gently evolve into flowing drones of complex resonances. Oozing drones evolve into dense and powerful peaks of short duration. The compositions and sounds on Crystal have incredible depth, a profound logic and, though not "pretty", an irresistible beauty. 180 gram vinyl; Remastered and cut at 45rpm by Rashad Becker; Gatefold sleeve with liner notes by the artist; Artwork by Atelier Brenda.',
+        photo_url: "http://forcedexposure.com/App_Themes/Default/Images/product_images/close_up/z/ZORN046LP_CU.jpg"
+        },
       {
         name: "The Never End",
         artist: "HANNA",
