@@ -27,9 +27,9 @@
            <%= link_to 'Add to Wantlist', edit_record_path(@record) %> |
            <%= link_to 'Edit', edit_record_path(@record) %> |
            <%= link_to 'Back', records_path %>
-          <%= form_tag orders_path do %>
+         <span> <%= form_tag orders_path do %>
               <%= hidden_field_tag 'record_id', @record.id %>
-            <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+            <%= submit_tag 'Purchase', class: 'btn btn-cool' %>
           <% end %>
      </div>
   </div>
@@ -51,7 +51,7 @@
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: '<%= @record.youtubeid %>',
+          videoId: '5Kirh7EleRQ',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
