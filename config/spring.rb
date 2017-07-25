@@ -4,3 +4,5 @@
   tmp/restart.txt
   tmp/caching-dev.txt
   config/application.yml\n).each { |path| Spring.watch(path) }
+
+ Spring.application_root

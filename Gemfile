@@ -6,6 +6,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'omniauth-facebook'
 
+
 gem 'pg'
 gem 'puma'
 gem 'rails', '5.0.4'
@@ -20,11 +21,12 @@ gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
-
+gem 'coffee-script'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'carrierwave'
+
 
 group :development, :test do
   gem 'better_errors'
@@ -45,7 +47,8 @@ gem "geocoder"
 gem "gmaps4rails"
 gem "discogs-wrapper"
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
-
+gem 'money-rails', '~>1'
+gem 'stripe'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
