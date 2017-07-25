@@ -17,9 +17,13 @@ Rails.application.routes.draw do
 
   resources :records do
     resources :orders, only: [:new, :create]
+    resources :tests, only: [:authenticate, :callback]
   end
 
-  resources :orders, only: [:show, :index, :destroy]
+
+  resources :orders, only: [:show, :index, :create, :destroy] do
+  resources :payments, only: [:new, :create]
+end
 
   devise_for :users,
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

@@ -8,13 +8,13 @@ class OrdersController < ApplicationController
 
 
    def create
-    @order = Order.new
-    quantity = params[:order][:quantity]
+    @order = Order.find(params[:record_id])
+    order = Order.create!(amount: @record.price, state:'pending')
     @order.record = @record
     @order.user = current_user
 
     if @order.save
-      redirect_to orders_path
+      redirect_to new_order_payment_path(order)
     else
       render "records/show"
     end
@@ -26,6 +26,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+     @order = Order.where(state: 'paid').find(params[:id])
   end
 
   def destroy
@@ -45,7 +46,7 @@ class OrdersController < ApplicationController
   # end
 
   def order_params
-    params.require(:order).permit(:quantity)
+    params.require(:order).permit(:quantity, :amount)
   end
 
 

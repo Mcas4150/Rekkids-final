@@ -159,6 +159,15 @@ GEM
     mimemagic (0.3.2)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
+    monetize (1.7.0)
+      money (~> 6.9)
+    money (6.9.0)
+      i18n (>= 0.6.4, < 0.9)
+    money-rails (1.9.0)
+      activesupport (>= 3.0)
+      monetize (~> 1.7.0)
+      money (~> 6.9.0)
+      railties (>= 3.0)
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
@@ -256,6 +265,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (3.0.1)
+      faraday (~> 0.9)
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
@@ -286,6 +297,7 @@ DEPENDENCIES
   carrierwave
   cloudinary (= 1.1.7)
   coffee-rails
+  coffee-script
   devise
   discogs-wrapper
   figaro
@@ -297,6 +309,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   listen (~> 3.0.5)
+  money-rails (~> 1)
   omniauth-facebook
   pg
   pry-byebug
@@ -309,6 +322,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe
   uglifier
 
 RUBY VERSION
