@@ -9,15 +9,14 @@ Rails.application.routes.draw do
       get :callback
       get :whoami
       end
+     resources :orders, only: [:new, :create, :show, :index]
+
     end
 
   mount Attachinary::Engine => "/attachinary"
 
 
 
-  resources :records do
-    resources :orders, only: [:new, :create]
-  end
 
 
   resources :orders, only: [:show, :index, :create, :destroy] do

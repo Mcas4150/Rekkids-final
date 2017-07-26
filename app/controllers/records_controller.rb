@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
   before_filter do
-    @discogs = Discogs::Wrapper.new("REKKIDS", session[:access_token])
+    @discogs = Discogs::Wrapper.new("La Rama", session[:access_token])
   end
 before_action :set_record, only: [:show, :edit, :update]
 skip_before_action :authenticate_user!, only: [:index, :show]
@@ -8,7 +8,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   def authenticate
     app_key = ENV["FBKQYVnAGfObiPrBFrhe"]
     app_secret = ENV["OdekVDfPyPPgarzrpUpDqXCFjShBWjdk"]
-  @discogs     = Discogs::Wrapper.new("REKKIDS")
+  @discogs     = Discogs::Wrapper.new("La Rama")
   request_data = @discogs.get_request_token(app_key, app_secret, "http://localhost:3000/records/callback")
 
   session[:request_token] = request_data[:request_token]
@@ -18,7 +18,7 @@ end
 
 # And an action that Discogs will redirect back to.
 def callback
-  @discogs      = Discogs::Wrapper.new("REKKIDS")
+  @discogs      = Discogs::Wrapper.new("La Rama")
   request_token = session[:request_token]
   verifier      = params[:oauth_verifier]
   access_token  = @discogs.authenticate(request_token, verifier)
