@@ -1,24 +1,22 @@
 Rails.application.routes.draw do
 
 
-  get 'tests/:id' => 'tests#show', :constraints  => {:id => /.+\.\w{3,4}/}
+  # get 'rec/:id' => 'tests#show', :constraints  => {:id => /.+\.\w{3,4}/}
 
-  resources :tests do
+  resources :records do
     collection do
       get :authenticate
       get :callback
       get :whoami
       end
+     resources :orders, only: [:new, :create, :show, :index]
+
     end
 
   mount Attachinary::Engine => "/attachinary"
 
 
 
-  resources :records do
-    resources :orders, only: [:new, :create]
-    resources :tests, only: [:authenticate, :callback]
-  end
 
 
   resources :orders, only: [:show, :index, :create, :destroy] do

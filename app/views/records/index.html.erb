@@ -3,9 +3,9 @@
     <h1 style="font-size: 90px">La Rama</h1>
 
        <% if @discogs.authenticated? %>
-        <p><a href="/tests/whoami">User information</a><p>
+        <p><a href="/records/whoami">User information</a><p>
       <% else %>
-        <a href="/tests/authenticate">Authenticate Discogs.com account</a>
+        <a href="/users/auth/discogs">Authenticate Discogs.com account</a>
       <% end %>
 
 

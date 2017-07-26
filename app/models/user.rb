@@ -5,22 +5,21 @@ class User < ApplicationRecord
   has_many :records
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  devise :omniauthable, omniauth_providers: [:facebook]
+  devise :omniauthable, omniauth_providers: [:discogs]
 
   # after_create :send_welcome_email
 
-  private
+
 
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
   end
 
-    def self.find_for_facebook_oauth(auth)
+    def self.find_for_discogs_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
-    user_params[:facebook_picture_url] = auth.info.image
     user_params[:token] = auth.credentials.token
-    user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
+    # user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
     user_params = user_params.to_h
 
     user = User.find_by(provider: auth.provider, uid: auth.uid)
@@ -35,4 +34,20 @@ class User < ApplicationRecord
 
     return user
   end
+
+
+
+  def self.from_omniauth(auth)
+  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    user.email = auth.info.email
+    user.password = Devise.friendly_token[0,20]
+   # assuming the user model has a name
+     # assuming the user model has an image
+    # If you are using confirmable and the provider(s) you use validate emails,
+    # uncomment the line below to skip the confirmation emails.
+    # user.skip_confirmation!
+  end
+end
+
+
 end

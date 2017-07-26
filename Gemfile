@@ -4,8 +4,9 @@ ruby '2.3.3'
 gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
-gem 'omniauth-facebook'
 
+gem 'omniauth-oauth'
+gem 'omniauth-discogs'
 
 gem 'pg'
 gem 'puma'
