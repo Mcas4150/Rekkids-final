@@ -1,16 +1,15 @@
 class RecordsController < ApplicationController
-  before_action :set_record, only: [:show, :edit, :update]
-  skip_before_action :authenticate_user!, only: [:index, :show]
   before_filter do
     @discogs = Discogs::Wrapper.new("REKKIDS", session[:access_token])
   end
-
+before_action :set_record, only: [:show, :edit, :update]
+skip_before_action :authenticate_user!, only: [:index, :show]
 
   def authenticate
     app_key = ENV["FBKQYVnAGfObiPrBFrhe"]
     app_secret = ENV["OdekVDfPyPPgarzrpUpDqXCFjShBWjdk"]
   @discogs     = Discogs::Wrapper.new("REKKIDS")
-  request_data = @discogs.get_request_token(app_key, app_secret, "http://127.0.0.1:3000/callback")
+  request_data = @discogs.get_request_token(app_key, app_secret, "http://localhost:3000/records/callback")
 
   session[:request_token] = request_data[:request_token]
 
