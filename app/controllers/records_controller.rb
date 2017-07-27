@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
   before_filter do
-    @discogs = Discogs::Wrapper.new("La Rama", user_token: "zgpweUEfSayvzOBigpVrOJrAHLOiOGJRywCuGyIX")
+    @discogs = Discogs::Wrapper.new("La Rama", user_token: "emwVPSaiMzcjhTyDAjMrRGcfTFNZLvAPSxwozkDh")
   end
 before_action :set_record, only: [:show, :edit, :update]
 
@@ -52,7 +52,11 @@ before_action :set_record, only: [:show, :edit, :update]
 
   end
 
-
+  def marketplace
+    @user = @discogs.get_identity
+    @response = @discogs.get_user_inventory(@user.username, per_page: 100)
+    @listings = @response.listings
+  end
 
   def index
      @user = @discogs.get_identity
@@ -64,13 +68,10 @@ before_action :set_record, only: [:show, :edit, :update]
   end
 
   def show
-    release_id = 113069
-    @release = @discogs.get_release(release_id)
+    @release_id =
+    @release = @discogs.get_release(@release_id)
   end
 
-  def new
-    @record = Record.new
-  end
 
   def create
     @record = Record.new(record_params)
@@ -110,7 +111,6 @@ before_action :set_record, only: [:show, :edit, :update]
 
 
    # @record = Record.find(params[:release_id])
-
   end
 
 end

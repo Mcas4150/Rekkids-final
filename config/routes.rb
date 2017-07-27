@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get :whoami
       get :inventory
       get :show
+      get :marketplace
       end
      resources :orders, only: [:new, :create, :show, :index]
 
