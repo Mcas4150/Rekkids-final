@@ -2,7 +2,10 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
     config.omniauth :discogs, ENV["DISCOGS_API_KEY"], ENV["DISCOGS_API_SECRET"]
+     # fields: ['']
+
    # 50x50, guaranteed ratio
+
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing

@@ -6,8 +6,7 @@
 
 
 #   def authenticate
-#      app_key = ENV["FBKQYVnAGfObiPrBFrhe"]
-#     app_secret = ENV["OdekVDfPyPPgarzrpUpDqXCFjShBWjdk"]
+#      app_key =
 #   @discogs     = Discogs::Wrapper.new("La Rama")
 #   request_data = @discogs.get_request_token(app_key, app_secret, "http://localhost:3000/tests/callback")
 

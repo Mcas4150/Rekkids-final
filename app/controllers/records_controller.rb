@@ -1,35 +1,36 @@
 class RecordsController < ApplicationController
   before_filter do
-    @discogs = Discogs::Wrapper.new("La Rama", session[:access_token])
+    @discogs = Discogs::Wrapper.new("La Rama", user_token: "zgpweUEfSayvzOBigpVrOJrAHLOiOGJRywCuGyIX")
   end
 before_action :set_record, only: [:show, :edit, :update]
-skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def authenticate
-    app_key = ENV["FBKQYVnAGfObiPrBFrhe"]
-    app_secret = ENV["OdekVDfPyPPgarzrpUpDqXCFjShBWjdk"]
-  @discogs     = Discogs::Wrapper.new("La Rama")
-  request_data = @discogs.get_request_token(app_key, app_secret, "http://localhost:3000/records/callback")
 
-  session[:request_token] = request_data[:request_token]
+#   def authenticate
+#     app_key = ENV["DISCOGS_API_KEY"]
+#     app_secret = ENV["DISCOGS_API_SECRET"]
+#   @discogs     = Discogs::Wrapper.new("La Rama")
+#   request_data = @discogs.get_request_token(app_key, app_secret, "localhost:3000/records/callback")
 
-  redirect_to request_data[:authorize_url]
-end
+#   session[:request_token] = request_data[:request_token]
 
-# And an action that Discogs will redirect back to.
-def callback
-  @discogs      = Discogs::Wrapper.new("La Rama")
-  request_token = session[:request_token]
-  verifier      = params[:oauth_verifier]
-  access_token  = @discogs.authenticate(request_token, verifier)
+#   redirect_to request_data[:authorize_url]
+#   raise
+# end
 
-  session[:request_token] = nil
-  session[:access_token]  = access_token
+# # And an action that Discogs will redirect back to.
+# def callback
+#   @discogs      = Discogs::Wrapper.new("La Rama")
+#   request_token = session[:request_token]
+#   verifier      = params[:oauth_verifier]
+#   access_token  = @discogs.authenticate(request_token, verifier)
 
-  @discogs.access_token = access_token
+#   session[:request_token] = nil
+#   session[:access_token]  = access_token
 
-  # You can now perform authenticated requests.
-end
+#   @discogs.access_token = access_token
+#    redirect_to :action => "records/index"
+#   # You can now perform authenticated requests.
+# end
 
 
 
@@ -42,11 +43,20 @@ end
   end
 
 
+  def inventory
+    @user = @discogs.get_identity
+
+    @response = @discogs.get_user_collection(@user.username, pagination = {})
+     @releases = @response.releases
+
+
+  end
 
 
 
   def index
     @records = Record.all
+
   end
 
   def show

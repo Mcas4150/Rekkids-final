@@ -4,7 +4,7 @@ ruby '2.3.3'
 gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
-
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 gem 'omniauth-oauth'
 gem 'omniauth-discogs'
 
@@ -49,7 +49,7 @@ gem 'coffee-rails'
 gem "geocoder"
 gem "gmaps4rails"
 gem "discogs-wrapper"
-gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+
 gem 'money-rails', '~>1'
 gem 'stripe'
 
