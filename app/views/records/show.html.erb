@@ -8,7 +8,7 @@
         <h1><%= @release["title"] %></h1>
         <p>Artist: <%= @release["artists"][0]['name'] %></p>
         <p>Label: <%= @release["labels"][0]['name'] %></p>
-        <p><%= @release["videos"][0]["uri"] %></p>
+        <%@uri = @release["videos"][0]["uri"] %>
 
 
         <div style="font-size:30px; padding:15px;">
@@ -33,7 +33,7 @@
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: '5Kirh7EleRQ',
+          videoId: '<%= @uri.partition('=').last %>',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
