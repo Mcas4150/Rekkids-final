@@ -1,18 +1,18 @@
 <div class="container">
   <div class="two_columns">
 
-      <div class="card" style="background-image: url(<%= cl_image_path(@record.photo.path) %>); height: 350px; width: 350px; ">
+      <div class="card"><img  src= '<%= @release["images"][0]['uri'] %>' style= "height: 350px; width: 350px;" >
         </div>
 
       <div class="card-contents" style = "top:50px; width:50vw">
         <h1><%= @release["title"] %></h1>
-        <p>Artist: <%= @release["artist"] %></p>
-        <p>Label: <%= @release["label"] %></p>
+        <p>Artist: <%= @release["artists"][0]['name'] %></p>
+        <p>Label: <%= @release["labels"][0]['name'] %></p>
+        <p><%= @release["videos"][0]["uri"] %></p>
+
 
         <div style="font-size:30px; padding:15px;">
-          <%= link_to 'Add to Cart', new_record_order_path(@release) %> |
-           <%= link_to 'Add to Wantlist', edit_record_path(@release) %> |
-           <%= link_to 'Edit', edit_record_path(@release) %> |
+
            <%= link_to 'Back', records_path %>
      </div>
   </div>

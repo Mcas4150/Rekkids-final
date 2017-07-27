@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726133114) do
+ActiveRecord::Schema.define(version: 20170727062847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,8 @@ ActiveRecord::Schema.define(version: 20170726133114) do
     t.string   "label"
     t.integer  "price_cents", default: 0, null: false
     t.string   "youtubeid"
+    t.integer  "release_id"
+    t.string   "catno"
     t.index ["user_id"], name: "index_records_on_user_id", using: :btree
   end
 

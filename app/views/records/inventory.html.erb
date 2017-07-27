@@ -5,7 +5,8 @@
 
 <% @releases.each do |t| %>
   <div>
- <a href='/records/<%=t.basic_information["id"]%>'>
+    <% @release_id = t.basic_information["id"] %>
+ <a href='/records/<%=@release_id%>'>
   <div>
 
   <img src = '<%= t.basic_information["cover_image"] %>'  style= "height: 250px; width: 250px;">

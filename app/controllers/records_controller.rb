@@ -64,10 +64,8 @@ before_action :set_record, only: [:show, :edit, :update]
   end
 
   def show
-    release_id = id
+    release_id = 113069
     @release = @discogs.get_release(release_id)
-
-
   end
 
   def new
@@ -105,11 +103,14 @@ before_action :set_record, only: [:show, :edit, :update]
   private
 
   def record_params
-    params.require(:record).permit(:name, :artist, :price, :photo, :user_id, :description, :address)
+    params.require(:record).permit(:name, :artist, :price, :photo, :user_id, :release_id, :catno)
   end
 
   def set_record
-    @record = Record.find(params[:id])
+
+
+   # @record = Record.find(params[:release_id])
+
   end
 
 end
