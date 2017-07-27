@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get :authenticate
       get :callback
       get :whoami
+      get :inventory
       end
      resources :orders, only: [:new, :create, :show, :index]
 
