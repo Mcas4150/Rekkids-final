@@ -1,41 +1,23 @@
-<div class="container", style="">
+<div class="container">
   <div class="two_columns">
-    <% if @record.photo? %>
+
       <div class="card" style="background-image: url(<%= cl_image_path(@record.photo.path) %>); height: 350px; width: 350px; ">
         </div>
-      <% else %>
-        <div class="card-header" style="background-image: url(); height: 200px;">
-        </div>
-        <div style="font-size:30px; padding:15px;">
-          <%= link_to 'Add to Cart', new_record_order_path(@record) %>|
-          <%= link_to 'Edit', edit_record_path(@record) %>|
-          <%= link_to 'Back', records_path %>
-          <%= form_tag orders_path do %>
-              <%= hidden_field_tag 'record_id', @record.id %>
-            <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-          <% end %>
-     </div>
-      <% end %>
+
       <div class="card-contents" style = "top:50px; width:50vw">
-        <h1><%= @record.name %></h1>
-        <p>Artist: <%= @record.artist %></p>
-        <p>Label: <%= @record.label %></p>
-        <p><%= @record.description %></p>
-        <h2><%= humanized_money_with_symbol(@record.price) %></h2>
+        <h1><%= @release["title"] %></h1>
+        <p>Artist: <%= @release["artist"] %></p>
+        <p>Label: <%= @release["label"] %></p>
+
         <div style="font-size:30px; padding:15px;">
-          <%= link_to 'Add to Cart', new_record_order_path(@record) %> |
-           <%= link_to 'Add to Wantlist', edit_record_path(@record) %> |
-           <%= link_to 'Edit', edit_record_path(@record) %> |
+          <%= link_to 'Add to Cart', new_record_order_path(@release) %> |
+           <%= link_to 'Add to Wantlist', edit_record_path(@release) %> |
+           <%= link_to 'Edit', edit_record_path(@release) %> |
            <%= link_to 'Back', records_path %>
-         <span> <%= form_tag orders_path do %>
-              <%= hidden_field_tag 'record_id', @record.id %>
-            <%= submit_tag 'Purchase', class: 'btn btn-cool' %>
-          <% end %>
      </div>
   </div>
 </div>
 <div id="player"></div>
-
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');

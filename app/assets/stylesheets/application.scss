@@ -136,6 +136,15 @@ tr {
 
 }
 
+
+.banner {
+  border-radius: 10px;
+  margin: 2em;
+  border-style: solid;
+  border-width: 2px;
+  border-color: mintcream;
+}
+
 .cart-list {
   .photo {
 
@@ -152,7 +161,11 @@ tr {
 
 }
 
+img {
 
+
+  border-radius: 3px;
+}
 table {
   text-size: 12px;
   width: 80%;

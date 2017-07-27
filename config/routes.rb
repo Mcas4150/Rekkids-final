@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get :callback
       get :whoami
       get :inventory
+      get :show
       end
      resources :orders, only: [:new, :create, :show, :index]
 

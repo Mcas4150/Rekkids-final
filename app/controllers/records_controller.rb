@@ -46,7 +46,7 @@ before_action :set_record, only: [:show, :edit, :update]
   def inventory
     @user = @discogs.get_identity
 
-    @response = @discogs.get_user_collection(@user.username, pagination = {})
+    @response = @discogs.get_user_collection(@user.username)
      @releases = @response.releases
 
 
@@ -55,18 +55,18 @@ before_action :set_record, only: [:show, :edit, :update]
 
 
   def index
-    @records = Record.all
+     @user = @discogs.get_identity
+
+    @response = @discogs.get_user_collection(@user.username, page: 8, per_page: 30)
+     @releases = @response.releases
+
 
   end
 
   def show
-    @record = Record.find(params[:id])
-    @records = Record.where(latitude: @record.latitude, longitude: @record.longitude)
-    @hash = Gmaps4rails.build_markers(@records) do |flat, marker|
-      marker.lat flat.latitude
-      marker.lng flat.longitude
-      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-    end
+    release_id = id
+    @release = @discogs.get_release(release_id)
+
 
   end
 

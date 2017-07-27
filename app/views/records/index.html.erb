@@ -2,38 +2,43 @@
   <div class="banner-content sweet" style="color:black ">
     <h1 style="font-size: 90px">La Rama</h1>
 
-       <% if @discogs.authenticated? %>
+       <form action="" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form> <% if @discogs.authenticated? %>
         <p><a href="/records/whoami">User information</a><p>
       <% else %>
         <a href="/users/auth/discogs">Authenticate Discogs.com account</a>
       <% end %>
-
   </div>
+</div>
+
+<strong>Releases</strong><%= @releases.count %>
+
+
+<div class="records-display">
+
+<% @releases.each do |t| %>
+  <div>
+ <a href='/records/<%=t.basic_information["id"]%>'>
+  <div>
+
+  <img src = '<%= t.basic_information["cover_image"] %>'  style= "height: 250px; width: 250px;">
+   </div>
+  <div class="card-body" style="font-size:30px;">
+    <p><%= t.basic_information["artists"][0]["name"] %></p>
+    <h2><%= t.basic_information["title"] %></h2>
+    <h2><%= t.basic_information["id"] %></h2>
+  </div>
+  </a>
+  </div>
+<% end %>
 </div>
 
 
 
-
-  <div class="records-display">
-    <% @records.each do |record| %>
-      <div>
-        <%= link_to record_path(record) do %>
-          <% if record.photo? %>
-            <div class="card" style="background-image: url(<%= cl_image_path(record.photo.path) %>);">
-            </div>
-          <% else %>
-            <div class="card-header" style="background-image: url(http://design-ec.com/d/e_others_50/l_e_others_500.png); height: 200px;">
-            </div>
-          <% end %>
-          <div class="card-body" style="font-size:30px;">
-            <p><%= record.artist %></p>
-            <h2><%= record.name %></h2>
-            <p><%= humanized_money_with_symbol(record.price) %></p>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
 
 
 <div class="text-center padded">
