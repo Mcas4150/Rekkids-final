@@ -5,6 +5,8 @@
   position: absolute;
   padding: 80px;
   border-radius: 3%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card-user {
   position: absolute;
@@ -38,6 +40,8 @@
   z-index: 2;
   background: black;
   opacity: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card-link:hover {
   opacity: 0.5;

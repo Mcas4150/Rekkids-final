@@ -34,6 +34,7 @@ before_action :set_record, only: [:show, :edit, :update]
   end
 
 
+
   def marketplace
     @user = @discogs.get_identity
     @response = @discogs.get_user_inventory(@user.username, per_page: 100)
