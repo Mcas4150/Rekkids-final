@@ -1,40 +1,37 @@
 <div class="banner" style="background-image: linear-gradient(135deg, rgba(249,252,247,1) 0%,rgba(249,252,247,0.99) 1%,rgba(249,252,247,0.86) 25%,rgba(245,249,241,0.5) 93%,rgba(245,249,240,0.5) 100%), url('https://scontent-yyz1-1.xx.fbcdn.net/v/t31.0-8/18192505_224232428062435_4755197103422591302_o.jpg?oh=12606a3319e84caef2da05303027e6eb&oe=5A011FB8');">
   <div class="banner-content sweet" style="color:black ">
     <h1 style="font-size: 90px">La Rama</h1>
-
-       <% if @discogs.authenticated? %>
-        <p><a href="/tests/whoami">User information</a><p>
-      <% else %>
-        <a href="/tests/authenticate">Authenticate Discogs.com account</a>
-      <% end %>
+        <p><a href="/records/whoami">User information</a><p>
 
 
   </div>
 </div>
 
 
+<strong>Releases</strong><%= @releases.count %>
 
 
-  <div class="records-display">
-    <% @records.each do |record| %>
-      <div>
-        <%= link_to record_path(record) do %>
-          <% if record.photo? %>
-            <div class="card" style="background-image: url(<%= cl_image_path(record.photo.path) %>);">
-            </div>
-          <% else %>
-            <div class="card-header" style="background-image: url(http://design-ec.com/d/e_others_50/l_e_others_500.png); height: 200px;">
-            </div>
-          <% end %>
-          <div class="card-body" style="font-size:30px;">
-            <p><%= record.artist %></p>
-            <h2><%= record.name %></h2>
-            <p><%= humanized_money_with_symbol(record.price) %></p>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+<div class="records-display">
+
+<% @releases.each do |t| %>
+  <div>
+ <a href='/records/<%=t.basic_information["id"]%>'>
+  <div>
+
+  <img src = '<%= t.basic_information["cover_image"] %>'  style= "height: 250px; width: 250px;">
+   </div>
+  <div class="card-body" style="font-size:30px;">
+    <p><%= t.basic_information["artists"][0]["name"] %></p>
+    <h2><%= t.basic_information["title"] %></h2>
+    <h2><%= t.basic_information["id"] %></h2>
   </div>
+  </a>
+  </div>
+<% end %>
+</div>
+
+
+
 
 <div class="text-center padded">
   <img src='https://www.deathofvinyl.com/wp-content/themes/deathofvinyl/images/logo.png?7c1580' class= "swanky spin">
