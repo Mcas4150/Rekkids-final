@@ -76,9 +76,11 @@
     margin: 0px;
     padding: 0px;
     min-height: 250px;
-    min-width: 250px;
+    max-width: 250px;
     background-size: cover;
     background-image: "https://static.pexels.com/photos/242236/pexels-photo-242236.jpeg";
+      overflow: hidden;
+  text-overflow: ellipsis;
   }
   a, a p, a h2 {
     &:hover {
