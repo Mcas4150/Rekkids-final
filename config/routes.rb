@@ -6,12 +6,12 @@ Rails.application.routes.draw do
 
   resources :records do
     collection do
-      get :authenticate
-      get :callback
       get :whoami
       get :inventory
-      get :show
+
       get :marketplace
+      get :show
+
       end
      resources :orders, only: [:new, :create, :show, :index]
 
@@ -21,6 +21,11 @@ Rails.application.routes.draw do
 
 
 
+
+  resources :records do
+    resources :orders, only: [:new, :create]
+
+  end
 
 
   resources :orders, only: [:show, :index, :create, :destroy] do
