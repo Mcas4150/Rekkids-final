@@ -5,7 +5,6 @@ class CreateRecords < ActiveRecord::Migration[5.0]
       t.integer :price
       t.primary_key :release_id
       t.references :user, foreign_key: true
-
       t.timestamps
     end
   end

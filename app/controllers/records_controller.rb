@@ -29,7 +29,7 @@ before_action :set_record, only: [:show, :edit, :update]
 
 
   def show
-    @release_id
+    @release_id = 5646969
     @release = @discogs.get_release(@release_id)
   end
 
