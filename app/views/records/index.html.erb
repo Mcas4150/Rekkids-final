@@ -1,12 +1,20 @@
 <div class="banner" style="background-image: linear-gradient(135deg, rgba(249,252,247,1) 0%,rgba(249,252,247,0.99) 1%,rgba(249,252,247,0.86) 25%,rgba(245,249,241,0.5) 93%,rgba(245,249,240,0.5) 100%), url('https://scontent-yyz1-1.xx.fbcdn.net/v/t31.0-8/18192505_224232428062435_4755197103422591302_o.jpg?oh=12606a3319e84caef2da05303027e6eb&oe=5A011FB8');">
   <div class="banner-content sweet" style="color:black ">
     <h1 style="font-size: 90px">La Rama</h1>
+
+
+       <form action="" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form> <% if @discogs.authenticated? %>
         <p><a href="/records/whoami">User information</a><p>
-
-
+      <% else %>
+        <a href="/users/auth/discogs">Authenticate Discogs.com account</a>
+      <% end %>
   </div>
 </div>
-
 
 <strong>Releases</strong><%= @releases.count %>
 
@@ -30,6 +38,8 @@
 <% end %>
 </div>
 
+
+<strong>Releases</strong><%= @releases.count %>
 
 
 
