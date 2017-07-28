@@ -4,8 +4,9 @@ ruby '2.3.3'
 gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
-gem 'omniauth-facebook'
-
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+gem 'omniauth-oauth'
+gem 'omniauth-discogs'
 
 gem 'pg'
 gem 'puma'
@@ -26,6 +27,8 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'carrierwave'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 
 group :development, :test do
@@ -46,7 +49,7 @@ gem 'coffee-rails'
 gem "geocoder"
 gem "gmaps4rails"
 gem "discogs-wrapper"
-gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
+
 gem 'money-rails', '~>1'
 gem 'stripe'
 
