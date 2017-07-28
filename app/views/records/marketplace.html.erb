@@ -1,0 +1,25 @@
+<strong>Listings</strong><%= @listings.count %>
+
+
+
+
+<div class="records-display">
+
+<% @listings.each do |t| %>
+  <div>
+    <% @release_id = t.release["id"] %>
+ <a href='/records/<%=@release_id%>'>
+  <div>
+
+  <img src = '<%= t.release["thumbnail"] %>'  style= "height: 250px; width: 250px;">
+   </div>
+  <div class="card-body" style="font-size:30px;">
+    <p><%= t.release["description"] %></p>
+
+
+  </div>
+  </a>
+  </div>
+
+<% end %>
+</div>

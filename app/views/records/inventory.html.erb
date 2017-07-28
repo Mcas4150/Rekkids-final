@@ -1,0 +1,26 @@
+<strong>Releases</strong><%= @releases.count %>
+
+
+<div class="records-display">
+
+<% @releases.each do |t| %>
+  <div>
+    <% @release_id = t.basic_information["id"] %>
+ <a href='/records/<%=@release_id%>'>
+  <div>
+
+  <img src = '<%= t.basic_information["cover_image"] %>'  style= "height: 250px; width: 250px;">
+   </div>
+  <div class="card-body" style="font-size:30px;">
+    <p><%= t.basic_information["artists"][0]["name"] %></p>
+    <h2><%= t.basic_information["title"] %></h2>
+    <h2><%= t.basic_information["id"] %></h2>
+  </div>
+  </a>
+  </div>
+
+<% end %>
+</div>
+
+
+
