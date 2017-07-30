@@ -23,8 +23,17 @@
      </div>
   </div>
 </div>
+
+<% @video_uris = [] %>
+<% @release["videos"].each do |vid| %>
+  <% @video_uris << vid["uri"].split('=')[-1] %>
+<% end %>
+
+
+
+
 <div id="player"></div>
-<!--     <script>
+    <script>
       // 2. This code loads the IFrame Player API code asynchronously.
       var tag = document.createElement('script');
       tag.src = "https://www.youtube.com/iframe_api";
@@ -32,16 +41,24 @@
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
       // 3. This function creates an <iframe> (and YouTube player)
       //    after the API code downloads.
+      var videoIDs = [];
 
-      var videoIDs = [ '<%= @alluris %>' ]
+      <% @video_uris.each do |uri| %>
+
+
+        videoIDs.push("<%= uri %>");
+        <% p uri %>
+      <% end %>
+
 
 
       var player, currentVideoId = 0;
+
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-
+          videoId: videoIDs[currentVideoId],
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -63,6 +80,6 @@
             }
         }
     }
-    </script> -->
+    </script>
 
 </div>
