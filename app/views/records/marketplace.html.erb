@@ -9,13 +9,19 @@
   <div>
     <% @release_id = t.release["id"] %>
  <a href='/records/<%=@release_id%>'>
-  <div>
+   <div class='seletak'>
 
-  <img src = '<%= t.release["thumbnail"] %>'  style= "height: 250px; width: 250px;">
+  <img src = '<%= t.release["thumbnail"] %>' class=imag style= "height: 250px; width: 250px;">
+    <div class="overlay">
+      <div class='text' > YO </div>
+    </div>
    </div>
-  <div class="card-body" style="font-size:30px;">
-    <p><%= t.release["description"] %></p>
+  <div class="card-body munch" style="font-size:30px;">
+  <p style="width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;"><%= t.release["description"] %></p>
   <h2><%= humanized_money_with_symbol(t.original_price['value']) %></h2>
+
 
   </div>
   </a>

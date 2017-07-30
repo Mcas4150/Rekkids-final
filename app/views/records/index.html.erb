@@ -16,14 +16,16 @@
 <% @releases.each do |t| %>
   <div>
  <a href='/records/<%=t.basic_information["id"]%>'>
-  <div>
+  <div class='seletak'>
 
-  <img src = '<%= t.basic_information["cover_image"] %>'  style= "height: 250px; width: 250px;">
+  <img src = '<%= t.basic_information["cover_image"] %>' class=imag style= "height: 250px; width: 250px;">
+    <div class="overlay">
+      <img src="http://i.imgur.com/7execdy.png" class='text' style="height: 100px; width: 100px;">
+    </div>
    </div>
   <div class="card-body" style="font-size:30px;">
     <p><%= t.basic_information["artists"][0]["name"] %></p>
     <h2><%= t.basic_information["title"] %></h2>
-    <h2><%= t.basic_information["id"] %></h2>
   </div>
   </a>
   </div>

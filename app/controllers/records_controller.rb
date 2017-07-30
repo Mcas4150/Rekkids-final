@@ -23,6 +23,7 @@ before_action :set_record, only: [:show, :edit, :update]
     @user = @discogs.get_identity
     @response = @discogs.get_user_inventory(@user.username, per_page: 100)
     @listings = @response.listings
+
   end
 
   def index
@@ -36,7 +37,7 @@ before_action :set_record, only: [:show, :edit, :update]
 
   def show
     @release_id = 5646969
-    @release = @discogs.get_release(@release_id)
+  @release = @discogs.get_release(@release_id)
   end
 
 
@@ -49,7 +50,7 @@ before_action :set_record, only: [:show, :edit, :update]
   def set_record
 
 
-   # @record = Record.find(params[:release_id])
+   @record = Record.find_by(release_id: params[:id])
   end
 
 end
