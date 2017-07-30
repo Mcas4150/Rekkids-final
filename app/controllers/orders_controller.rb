@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
 
    def create
-    @order = Order.find(params[:record_id])
+    @order = Order.new
     order = Order.create!(amount: @record.price, state:'pending')
     @order.record = @record
     @order.user = current_user
@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
   # end
 
   def order_params
-    params.require(:order).permit(:quantity, :amount)
+    params.require(:order).permit(:quantity, :amount, :state, :photo)
   end
 
 

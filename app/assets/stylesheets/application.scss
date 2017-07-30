@@ -143,7 +143,6 @@ tr {
 }
 
 
-
 .banner {
   border-radius: 10px;
   margin: 2em;
@@ -167,6 +166,7 @@ tr {
 
 
 }
+
 
 .imag {
   display: block;
@@ -206,6 +206,9 @@ tr {
   -ms-transform: translate(-50%, -50%);
 }
 
+
+  border-radius: 3px;
+}
 table {
   text-size: 12px;
   width: 80%;
@@ -227,4 +230,11 @@ td {
     vertical-align: inherit;
 }
 
+
+.container {
+
+padding-left: 10px;
+padding-right: 10px;
+
+}
 
