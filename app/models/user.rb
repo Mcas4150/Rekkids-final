@@ -4,10 +4,10 @@ class User < ApplicationRecord
   has_many :orders
   has_many :records
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-  devise :omniauthable, omniauth_providers: [:facebook]
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:discogs]
 
   # after_create :send_welcome_email
+
 
   private
 
@@ -35,4 +35,5 @@ class User < ApplicationRecord
 
   #   return user
   # end
+
 end

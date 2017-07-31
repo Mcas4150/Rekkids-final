@@ -1,18 +1,24 @@
 Rails.application.routes.draw do
 
 
-  get 'tests/:id' => 'tests#show', :constraints  => {:id => /.+\.\w{3,4}/}
+  ActiveAdmin.routes(self)
+  # get 'rec/:id' => 'tests#show', :constraints  => {:id => /.+\.\w{3,4}/}
 
   resources :records do
     collection do
       get :whoami
       get :inventory
+
       get :marketplace
       get :show
+
       end
+     resources :orders, only: [:new, :create, :show, :index]
+
     end
 
   mount Attachinary::Engine => "/attachinary"
+
 
 
 
