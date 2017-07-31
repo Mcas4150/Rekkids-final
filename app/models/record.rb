@@ -1,19 +1,9 @@
 class Record < ApplicationRecord
-
   has_many :order
-
-  validates :price, presence: true
-  has_attachment :photo
-
   monetize :price_cents
-
-
-   @discogs = Discogs::Wrapper.new("La Rama", user_token: "emwVPSaiMzcjhTyDAjMrRGcfTFNZLvAPSxwozkDh")
-   @user = @discogs.get_identity
-
- #   def inventory
- #   @inventory = @discogs.get_user_inventory(@user.username, per_page: 100)
- # end
+  @discogs = Discogs::Wrapper.new("La Rama", user_token: "emwVPSaiMzcjhTyDAjMrRGcfTFNZLvAPSxwozkDh")
+  @user = @discogs.get_identity
+  @inventory = @discogs.get_user_inventory(@user.username, per_page: 100)
 
  #   def listings @listings = @inventory.listings end
  #   @listings.each do |listing|
@@ -28,11 +18,15 @@ class Record < ApplicationRecord
  # @label = @release["labels"][0]['name']
  # @genre = @release["styles"].pop
  # @country = @release["country"]
- # @tracklist = @release["tracklist"].each do |track|
+
+
+
+
+ #    @tracklist = @release["tracklist"].each do |track|
  #    @position =  track['position']
  #    @tracktitle = track["title"]
  #    @duration = track["duration"]
- #    end
+ # end
 
   # def self.all
 

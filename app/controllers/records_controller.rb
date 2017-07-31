@@ -24,6 +24,7 @@ before_action :set_record, only: [:show, :edit, :update]
     @response = @discogs.get_user_inventory(@user.username, per_page: 100)
     @listings = @response.listings
 
+
   end
 
   def index
