@@ -8,15 +8,11 @@ before_action :set_record, only: [:show, :edit, :update]
     @user = @discogs.get_identity
   end
 
-
-
   def inventory
     @user = @discogs.get_identity
 
     @response = @discogs.get_user_collection(@user.username)
      @releases = @response.releases
-
-
   end
 
 
@@ -28,7 +24,6 @@ before_action :set_record, only: [:show, :edit, :update]
 
   end
 
-
   def index
      @user = @discogs.get_identity
 
@@ -37,28 +32,23 @@ before_action :set_record, only: [:show, :edit, :update]
 
   end
 
-
   def show
-    @release_id = 5646969
-  @release = @discogs.get_release(@release_id)
+  @release = @discogs.get_release(params[:id])
 
   end
-
-
-
 
   private
 
   def record_params
 
-    params.require(:record).permit(:name, :artist, :price, :record_id, :catno)
+    params.require(:record).permit(:name, :artist, :price, :release_id, :catno)
 
   end
 
   def set_record
 
 
-   @record = Record.find_by(release_id: params[:id])
+
   end
 
 end

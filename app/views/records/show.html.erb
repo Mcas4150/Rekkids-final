@@ -1,6 +1,5 @@
 <div class="container">
   <div class="two_columns">
-
       <div class="card"><img  src= '<%= @release["images"][0]['uri'] %>' style= "height: 350px; width: 350px;" >
         </div>
 
@@ -8,19 +7,18 @@
         <h1><%= @release["title"] %></h1>
         <p>Artist: <%= @release["artists"][0]['name'] %></p>
         <p>Label: <%= @release["labels"][0]['name'] %></p>
+        <p>Catno: <%= @release["labels"][0]['catno'] %></p>
         <p>Genre: <%= @release["styles"].pop %></p>
         <p>Country: <%= @release["country"] %></p>
-        <p>Genre: <% @release["tracklist"].each do |track|%>
-          <li> <%= track['position'] %> | <%=track["title"] %> | <%= track["duration"] %> </li>
+        <p><% @release["tracklist"].each do |track|%>
+          <li> <%= track['position'] %> | <%=track["title"] %>  <%= track["duration"] %> </li>
         <% end %>
         </p>
-
-fuckss
 
         <div style="font-size:30px; padding:15px;">
           <%= link_to 'Add to Cart', records_path %> |
 
-           <%= link_to 'Back', records_path %>
+           <%= link_to 'Back', inventory_records_path %>
      </div>
   </div>
 </div>

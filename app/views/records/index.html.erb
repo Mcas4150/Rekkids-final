@@ -23,6 +23,7 @@
 
 <% @releases.each do |t| %>
   <div>
+  <% @release_id = t.basic_information['id'] %>
  <a href='/records/<%=t.basic_information["id"]%>'>
   <div class='seletak'>
 
