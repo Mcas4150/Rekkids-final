@@ -28,12 +28,12 @@
 
 .spin{
   border-radius: 50%;
-  -webkit-transition: -webkit-transform .8s ease-in-out;
-          transition:         transform .8s ease-in-out;
+  -webkit-transition: -webkit-transform .7s ease-in-out;
+          transition:         transform .7s ease-in-out;
 }
 .spin:hover {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+  -webkit-transform: rotate(720deg);
+          transform: rotate(720deg);
 }
 
 .btn-cool {
@@ -60,7 +60,7 @@
 
 .swanky {
 
-
+  float: center;
   height: 200px;
   width: 200px;
 }
@@ -207,8 +207,7 @@ tr {
 }
 
 
-  border-radius: 3px;
-}
+
 table {
   text-size: 12px;
   width: 80%;
