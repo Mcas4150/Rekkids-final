@@ -31,7 +31,8 @@ my_listings.each do |listing|
       year: record["year"],
       catno: record['label'][0]['catno'],
       country: record['country'],
-      genre: record['styles'].pop
+      genre: record['styles'].pop,
+      youtubeid: record['videos'][0]['uri']
   )
 
   count += 1
