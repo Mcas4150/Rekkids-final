@@ -1,20 +1,23 @@
+Track.destroy_all
+Record.destroy_all
+
 my_listings = []
 
 discogs = Discogs::Wrapper.new("La Rama", user_token: "emwVPSaiMzcjhTyDAjMrRGcfTFNZLvAPSxwozkDh")
 
 user = discogs.get_identity
-inventory = discogs.get_user_inventory(user.username)
+inventory = discogs.get_user_inventory(user.username, per_page: 100)
 listings = inventory.listings
 listings.each do |listing|
-  if listing.status == 'Draft'
+  if listing['status'] == 'For Sale'
     temp = {}
     temp[:release_id] = listing.release['id']
-    temp[:price] = listing.original_price['value']
+    temp[:price_cents] = listing.original_price['value']
     my_listings << temp
   end
 end
 
-count = 0
+total = 0
 
 my_listings.each do |listing|
   record = discogs.get_release(listing[:release_id])
@@ -23,20 +26,24 @@ my_listings.each do |listing|
   record['tracklist']
 
  mynewrecord = Record.new(
-      photo: record["images"][0]['uri'],
       name: record['title'],
-      artist: record['artists'][0]['name'],
-      label: record['label'][0]['name'],
-      price: listing[:price],
-      year: record["year"],
-      catno: record['label'][0]['catno'],
-      country: record['country'],
-      genre: record['styles'].pop,
-      youtubeid: record['videos'][0]['uri']
-  )
 
-  count += 1
-  puts "#{count} out of #{my_listings.length} complete..."
+
+      price_cents: listing[:price_cents],
+      year: record["year"],
+
+      country: record['country'],
+      genre: record['styles'].pop
+
+  )
+  mynewrecord.photo = record["images"][0]['uri'] rescue nil
+  mynewrecord.label = record["label"][0]['name'] rescue nil
+  mynewrecord.catno = record['label'][0]['catno'] rescue nil
+  mynewrecord.youtubeid = record['videos'][0]['uri'] rescue nil
+  mynewrecord.artist = record['artists'][0]['name'] rescue nil
+
+  total += 1
+  puts "#{total} out of #{my_listings.length} complete..."
   sleep(1)
 
   if mynewrecord.save == false

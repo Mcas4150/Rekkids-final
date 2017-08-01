@@ -1,7 +1,7 @@
 class Record < ApplicationRecord
   has_many :orders
   has_many :tracks
-  monetize :price
+  monetize :price_cents
   @discogs = Discogs::Wrapper.new("La Rama", user_token: "emwVPSaiMzcjhTyDAjMrRGcfTFNZLvAPSxwozkDh")
 
 
