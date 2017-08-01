@@ -23,7 +23,7 @@
         <p>Catno: <%= @release["labels"][0]['catno'] %></p>
         <p>Country: <%= @release["country"] %></p>
         <p>Year: <%= @release["year"] %></p>
-        <p>Genre: <%= @release["styles"].pop %></p>
+        <p>Genre: <%= @release["styles"].pop  %></p>
         <p><% @release["tracklist"].each do |track|%>
           <li> <%= track['position'] %> | <%=track["title"] %>  <%= track["duration"] %> </li>
         <% end %>

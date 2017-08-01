@@ -1,21 +1,24 @@
 class Record < ApplicationRecord
-  has_many :order
-  monetize :price_cents
+  has_many :orders
+  has_many :tracks
+  monetize :price
   @discogs = Discogs::Wrapper.new("La Rama", user_token: "emwVPSaiMzcjhTyDAjMrRGcfTFNZLvAPSxwozkDh")
-  # @user = @discogs.get_identity
-  #
+
+
 
   # def listings
   #
-  # end
-  def self.release_id
-    @inventory = @discogs.get_user_inventory(@user.username, per_page: 100)
-    @listings = @inventory.listings
-    @listings.each do |listing|
-    @release_id= listing.release['id']
-#     @price = humanized_money_with_symbol(listing.original_price['value'])
-    end
-  end
+#   # end
+#   def self.release_id
+
+#     @user = @discogs.get_identity
+#     @inventory = @discogs.get_user_inventory(@user.username)
+#     @listings = @inventory.listings
+#     @listings.each do |listing|
+#     @release_id= listing.release['id']
+# #     @price = humanized_money_with_symbol(listing.original_price['value'])
+#     end
+#   end
 
 
 
