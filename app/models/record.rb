@@ -31,7 +31,7 @@ class Record < ApplicationRecord
 
 
 
-  # :name = @title
+ #  # :name = @title
   # :price = @price
   # :genre = @genre
   # :label = label
