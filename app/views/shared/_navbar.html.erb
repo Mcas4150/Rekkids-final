@@ -14,8 +14,16 @@
 
   </div>
 
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+
+
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <%= link_to orders_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <div class="badge-container">
+          <i class="fa fa-shopping-cart"></i>
+          <div class="badge badge-blue"></div>
+        </div>
+      <% end %>
     <!-- Search form -->
 
     <!-- Different navigation if login or not >
@@ -24,12 +32,7 @@
 
 
       <!- Notification -->
-      <%= link_to orders_path, class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-shopping-cart"></i>
-          <div class="badge badge-blue"></div>
-        </div>
-      <% end %>
+
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">

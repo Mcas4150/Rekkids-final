@@ -9,11 +9,7 @@
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
-    </form> <% if @discogs.authenticated? %>
-        <p><a href="/records/whoami">User information</a><p>
-      <% else %>
-        <a href="/users/auth/discogs">Authenticate Discogs.com account</a>
-      <% end %>
+    </form>
   </div>
 </div>
 
@@ -42,7 +38,6 @@
 </div>
 
 
-<strong>Releases</strong><%= @releases.count %>
 
 
 

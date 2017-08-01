@@ -1,18 +1,20 @@
 <div class="container">
   <div class="two_columns">
-      <div class="card"><img  id="myImg" src= '<%= @release["images"][0]['uri'] %>' style= "height: 350px; width: 350px;" >
+      <div class="card" style="max-width: 250px; "><img  id="myImg" src= '<%= @release["images"][0]['uri'] %>' style= "height: 350px; width: 350px; margin-bottom: 10px;" >
+
           <div id="myModal" class="modal">
 
   <!-- The Close Button -->
   <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
 
   <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01">
+  <img class="modal-content" id="img01" style="border-radius: 10px;">
 
   <!-- Modal Caption (Image Text) -->
   <div id="caption"></div>
 </div>
-        </div>
+     <div style="font-size: 30px;"><%= link_to 'Back', inventory_records_path %></div>
+    </div>
 
       <div class="card-contents" style = "top:50px; width:50vw">
         <h1><%= @release["title"] %></h1>
@@ -20,21 +22,22 @@
         <p>Label: <%= @release["labels"][0]['name'] %></p>
         <p>Catno: <%= @release["labels"][0]['catno'] %></p>
         <p>Country: <%= @release["country"] %></p>
+        <p>Year: <%= @release["year"] %></p>
         <p>Genre: <%= @release["styles"].pop %></p>
         <p><% @release["tracklist"].each do |track|%>
           <li> <%= track['position'] %> | <%=track["title"] %>  <%= track["duration"] %> </li>
         <% end %>
         </p>
         <div style="font-size:30px; padding:15px;">
-          <%= link_to 'Add to Cart', records_path %> |
+          <%= form_tag orders_path do %>
+          <%= hidden_field_tag 'record_id', @release.id %>
+          <%= submit_tag 'Add to Cart', class: 'btn btn-cool' %>
+        <% end %>
 
-           <%= link_to 'Back', inventory_records_path %>
      </div>
-  </div>
-</div>
 
 
-<% @video_uris = [] %>
+    <% @video_uris = [] %>
 <% @release["videos"].each do |vid| %>
   <% @video_uris << vid["uri"].split('=')[-1] %>
 <% end %>
@@ -94,5 +97,15 @@
         }
     }
     </script>
+
+
+
+  </div>
+
+
+</div>
+
+
+
 
 </div>

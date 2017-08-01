@@ -6,6 +6,7 @@
 <div class="records-display">
 
 <% @listings.each do |t| %>
+
   <div>
     <% @release_id = t.release["id"] %>
  <a href='/records/<%=@release_id%>'>
@@ -26,6 +27,7 @@
   </div>
   </a>
   </div>
+  <% end %>
 
-<% end %>
+
 </div>

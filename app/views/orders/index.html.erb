@@ -1,24 +1,24 @@
 <div class="container">
 <h1>Your Cart: <%= pluralize @orders.size, "item" %></h1>
   <div class="row">
-  <p>Buyer: <%= current_user.first_name %></p>
+
   <table class="cart-list">
     <tbody>
 
     <% @orders.each do |order| %>
       <tr>
 
-       <td class="photo" style="background-image: url(<%= cl_image_path(order.record.photo.path) %>); ">
+       <td class="photo" style="background-image: url(<%= @release["images"][0]['uri'] %>); ">
         </td>
         <td class="details">
-          <%= order.record.name %> by <%= order.record.artist %>
+          <%= @release['title'] %> by <%= @release['artist'] %>
         </td>
         <td class="quantity">
           <!-- quantity: <%= order.quantity %> -->
           <input type="text" size="4" value="<%= order.amount%>">
         </td>
         <td class="total">
-         $<%= order.record.price %>
+       <!--   $<%= order.record.price %> -->
         </td>
          <td><%= link_to 'Delete', order_path(order), method: :delete  %>
          </td>

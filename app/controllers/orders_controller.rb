@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
 
    def create
     @order = Order.new
-    order = Order.create!(amount: @record.price, state:'pending')
+    order = Order.create!(state:'pending')
     @order.record = @record
     @order.user = current_user
 
@@ -38,7 +38,8 @@ class OrdersController < ApplicationController
 
     private
   def set_record
-    @record = Record.find(params[:record_id])
+    @release = @discogs.get_release(params[:id])
+
   end
 
   # def set_user
@@ -46,7 +47,7 @@ class OrdersController < ApplicationController
   # end
 
   def order_params
-    params.require(:order).permit(:quantity, :amount, :state, :photo)
+    params.require(:order).permit(:quantity, :amount, :state, :photo, :release_id)
   end
 
 
