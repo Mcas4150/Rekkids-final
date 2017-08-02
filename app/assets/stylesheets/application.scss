@@ -25,6 +25,10 @@
   animation: jump 1s linear alternate infinite;
 }
 
+a:hover {
+  color: #388697;
+  text-decoration: none;
+}
 
 .spin{
   border-radius: 50%;
@@ -97,7 +101,7 @@
     font-style: italic;
     color: #626262;
     font-size: 0.5em;
-    margin: 0 0 0.5em 0;
+    margin: 0 0 1.0em 0;
   }
 }
 

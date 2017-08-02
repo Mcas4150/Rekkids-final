@@ -8,13 +8,11 @@ Rails.application.routes.draw do
     collection do
       get :whoami
       get :inventory
-
+      get :index
       get :marketplace
       get :show
 
       end
-     resources :orders, only: [:new, :create, :show, :index]
-
     end
 
   mount Attachinary::Engine => "/attachinary"
@@ -36,10 +34,6 @@ end
   controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
 
-  namespace :admin do |variable|
-    resources :orders, only: [:index]
-    resources :records, only: [:index]
-  end
 
   get 'pages/aboutus'
 
