@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
 
    def create
-    order = Order.create!(state:'pending', amount_cents: @record.price_cents, image: @record.photo)
+    order = Order.create!(state:'pending', amount_cents: @record.price_cents, image: @record.photo, description: @record.description)
 
       redirect_to new_order_payment_path(order)
   end
@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
   # end
 
   def order_params
-    params.require(:order).permit(:quantity, :amount_cents, :state, :image, :release_id, :record_id)
+    params.require(:order).permit(:quantity, :amount_cents, :state, :image, :release_id, :record_id, :description)
   end
 
 

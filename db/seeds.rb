@@ -12,6 +12,7 @@ listings.each do |listing|
   if listing['status'] == 'For Sale'
     temp = {}
     temp[:release_id] = listing.release['id']
+    temp[:description] = listing.release['description']
     temp[:price_cents] = listing.original_price['value']
     my_listings << temp
   end
@@ -31,7 +32,7 @@ my_listings.each do |listing|
       release_id: listing[:release_id],
       price_cents: listing[:price_cents],
       year: record["year"],
-
+      description: listing[:description],
       country: record['country'],
       genre: record['styles'].pop
 
