@@ -6,6 +6,13 @@ class Record < ApplicationRecord
 
 
 
+  # include AlgoliaSearch
+
+  # algoliasearch do
+
+  # end
+
+
   # def listings
   #
 #   # end

@@ -87,6 +87,12 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    algoliasearch (1.14.0)
+      httpclient (~> 2.8.3)
+      json (>= 1.5.1)
+    algoliasearch-rails (1.20.0)
+      algoliasearch (~> 1.14.0)
+      json (>= 1.5.1)
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (7.1.4)
@@ -162,6 +168,7 @@ GEM
       domain_name (~> 0.5)
     httparty (0.15.5)
       multi_xml (>= 0.5.2)
+    httpclient (2.8.3)
     i18n (0.8.6)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -337,6 +344,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   activerecord-session_store!
+  algoliasearch-rails
   attachinary!
   autoprefixer-rails
   better_errors

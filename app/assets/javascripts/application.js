@@ -7,6 +7,7 @@
 //= require bootstrap-datepicker
 //= require underscore
 //= require gmaps/google
+
 //= require_tree .
 
 $(document).ready(function() {
@@ -36,3 +37,8 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 }
+
+
+
+
+
