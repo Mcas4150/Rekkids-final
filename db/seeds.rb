@@ -28,7 +28,7 @@ my_listings.each do |listing|
  mynewrecord = Record.new(
       name: record['title'],
 
-
+      release_id: listing[:release_id],
       price_cents: listing[:price_cents],
       year: record["year"],
 

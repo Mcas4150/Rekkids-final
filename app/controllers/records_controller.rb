@@ -1,12 +1,7 @@
 class RecordsController < ApplicationController
-  before_filter do
-    @discogs = Discogs::Wrapper.new("La Rama", user_token: "emwVPSaiMzcjhTyDAjMrRGcfTFNZLvAPSxwozkDh")
-  end
 before_action :set_record, only: [:show, :edit, :update]
 
-  def whoami
-    @user = @discogs.get_identity
-  end
+
 
   def inventory
     @user = @discogs.get_identity
@@ -18,11 +13,7 @@ before_action :set_record, only: [:show, :edit, :update]
 
 
   def marketplace
-    @user = @discogs.get_identity
-    @response = @discogs.get_user_inventory(@user.username, per_page: 100)
-    @listings = @response.listings
-
-
+   @records = Record.all
   end
 
   def index
@@ -43,13 +34,13 @@ before_action :set_record, only: [:show, :edit, :update]
 
   def record_params
 
-    params.require(:record).permit(:name, :artist, :price, :release_id, :catno)
+    params.require(:record).permit(:name, :artist, :price_cents, :release_id, :catno, :year, :genre, :country, :youtubeid, :photo, :label)
 
 
   end
 
   def set_record
-
+    @record = Record.find(params[:id])
 
 
   end
