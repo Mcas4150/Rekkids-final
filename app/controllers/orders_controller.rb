@@ -8,16 +8,9 @@ class OrdersController < ApplicationController
 
 
    def create
-    @record = Record.find(params[:record_id])
     order = Order.create!(state:'pending')
-    @order.record = @record
-    @order.user = current_user
 
-    if @order.save
       redirect_to new_order_payment_path(order)
-    else
-      render "records/show"
-    end
   end
 
 
@@ -38,7 +31,7 @@ class OrdersController < ApplicationController
 
     private
   def set_record
-    @release = @discogs.get_release(params[:id])
+    @record =Record.find(params[:record_id])
 
   end
 
@@ -47,7 +40,7 @@ class OrdersController < ApplicationController
   # end
 
   def order_params
-    params.require(:order).permit(:quantity, :amount, :state, :photo, :release_id)
+    params.require(:order).permit(:quantity, :amount, :state, :photo, :release_id, :record_id)
   end
 
 
