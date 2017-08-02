@@ -1,8 +1,5 @@
 
 
-
-
-
 <div class="records-display">
 
 <% @records.each do |record| %>
@@ -15,17 +12,19 @@
 
   <img src = '<%= record.photo %>' class=imag style= "height: 250px; width: 250px;">
     <div class="overlay">
-       <img src="http://i.imgur.com/7execdy.png" class='text' style="height: 75px; width: 75px;">
+       <img src="http://i.imgur.com/4bCsEu8.png" class='text' style="height: 75px; width: 75px;">
     </div>
    </div>
   <div class="card-body munch" style="font-size:30px;">
-  <p style="width: 250px;
+  <span style="float: right;"><%= humanized_money_with_symbol(record.price_cents) %></span>
+  <p style="width: 180px;
   overflow: hidden;
   text-overflow: ellipsis;"><%= record.artist %></p>
-  <h2 style="width: 250px;
+  <h2 style="width: 180px;
   overflow: hidden;
-  text-overflow: ellipsis;"><%= record.name %></h2>
-  <h2><%= humanized_money_with_symbol(record.price_cents) %></h2>
+  text-overflow: ellipsis;
+  "><%= record.name %></h2>
+
 
 
   </div>
@@ -35,3 +34,4 @@
 
 
 </div>
+
