@@ -13,7 +13,7 @@
   <!-- Modal Caption (Image Text) -->
   <div id="caption"></div>
 </div>
-     <div style="font-size: 30px;"><%= link_to 'Back', inventory_records_path %></div>
+     <div style="font-size: 30px;"><%= link_to 'Back', records_path %></div>
     </div>
 
       <div class="card-contents" style = "top:50px; width:50vw">
@@ -24,6 +24,7 @@
         <p>Country: <%= @record.country %></p>
         <p>Year: <%= @record.year %></p>
         <p>Genre: <%= @record.genre  %></p>
+        <h2><%= humanized_money_with_symbol(@record.price_cents) %></h2>
 
         <div style="font-size:30px; padding:15px;">
           <%= form_tag orders_path do %>
