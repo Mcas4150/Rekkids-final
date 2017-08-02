@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
 
-  ActiveAdmin.routes(self)
   # get 'rec/:id' => 'tests#show', :constraints  => {:id => /.+\.\w{3,4}/}
 
   resources :records do

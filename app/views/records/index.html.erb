@@ -21,8 +21,7 @@
 
   <div>
 
- <a href='/records/record.id'>
-<%= link_to record_path(record) %>
+  <a href='/records/<%=record.id%>'>
    <div class='seletak'>
 
   <img src = '<%= record.photo %>' class=imag style= "height: 250px; width: 250px;">
@@ -43,7 +42,7 @@
 
 
   </div>
-  </a>
+   </a>
   </div>
   <% end %>
 
