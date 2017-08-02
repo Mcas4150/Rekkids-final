@@ -15,28 +15,39 @@
 
 
 
+
 <div class="records-display">
 
-<% @releases.each do |t| %>
-  <div>
-  <% @release_id = t.basic_information['id'] %>
- <a href='/records/<%=t.basic_information["id"]%>'>
-  <div class='seletak'>
+<% @records.each do |record| %>
 
-  <img src = '<%= t.basic_information["cover_image"] %>' class=imag style= "height: 250px; width: 250px;">
+  <div>
+
+ <a href='/records/record.id'>
+<!--  <%= link_to record_path(record) %> -->
+   <div class='seletak'>
+
+  <img src = '<%= record.photo %>' class=imag style= "height: 250px; width: 250px;">
     <div class="overlay">
-      <img src="http://i.imgur.com/7execdy.png" class='text' style="height: 75px; width: 75px;">
+       <img src="http://i.imgur.com/7execdy.png" class='text' style="height: 75px; width: 75px;">
     </div>
    </div>
-  <div class="card-body" style="font-size:30px;">
-    <p><%= t.basic_information["artists"][0]["name"] %></p>
-    <h2><%= t.basic_information["title"] %></h2>
+  <div class="card-body munch" style="font-size:30px;">
+  <p style="width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;"><%= record.artist %></p>
+  <h2 style="width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;"><%= record.name %></h2>
+  <h2><%= humanized_money_with_symbol(record.price_cents) %></h2>
+
+
   </div>
   </a>
   </div>
-<% end %>
-</div>
+  <% end %>
 
+
+</div>
 
 
 

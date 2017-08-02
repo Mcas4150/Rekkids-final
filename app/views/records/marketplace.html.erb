@@ -9,7 +9,8 @@
 
   <div>
 
- <a href='/records/<%=record.release_id%>'>
+ <a href='/records/record.id'>
+<!--  <%= link_to record_path(record) %> -->
    <div class='seletak'>
 
   <img src = '<%= record.photo %>' class=imag style= "height: 250px; width: 250px;">
@@ -20,7 +21,10 @@
   <div class="card-body munch" style="font-size:30px;">
   <p style="width: 250px;
   overflow: hidden;
-  text-overflow: ellipsis;"><%= record.name %></p>
+  text-overflow: ellipsis;"><%= record.artist %></p>
+  <h2 style="width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;"><%= record.name %></h2>
   <h2><%= humanized_money_with_symbol(record.price_cents) %></h2>
 
 

@@ -17,15 +17,11 @@ before_action :set_record, only: [:show, :edit, :update]
   end
 
   def index
-     @user = @discogs.get_identity
-
-    @response = @discogs.get_user_collection(@user.username, page: rand(12), per_page: 30)
-     @releases = @response.releases
-
+  @records = Record.all
   end
 
   def show
-  @release = @discogs.get_release(params[:id])
+
 
   end
 

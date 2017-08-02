@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801211239) do
+ActiveRecord::Schema.define(version: 20170802044639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,9 +75,6 @@ ActiveRecord::Schema.define(version: 20170801211239) do
     t.string   "artist"
     t.string   "photo"
     t.string   "description"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "address"
     t.string   "label"
     t.integer  "price_cents", default: 0, null: false
     t.string   "youtubeid"
@@ -109,7 +106,7 @@ ActiveRecord::Schema.define(version: 20170801211239) do
     t.integer  "records_id"
     t.integer  "record_id"
     t.index ["record_id"], name: "index_tracks_on_record_id", using: :btree
-
+    t.index ["records_id"], name: "index_tracks_on_records_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
 
    def create
-    @order = Order.new
+    @record = Record.find(params[:record_id])
     order = Order.create!(state:'pending')
     @order.record = @record
     @order.user = current_user
