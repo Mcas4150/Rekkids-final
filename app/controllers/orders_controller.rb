@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
 
 
    def create
-    order = Order.create!(state:'pending')
+    order = Order.create!(state:'pending', amount_cents: @record.price_cents)
 
       redirect_to new_order_payment_path(order)
   end

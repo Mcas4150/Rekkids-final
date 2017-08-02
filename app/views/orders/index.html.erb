@@ -8,10 +8,10 @@
     <% @orders.each do |order| %>
       <tr>
 
-       <td class="photo" style="background-image: url(<%= @release["images"][0]['uri'] %>); ">
+    <!--    <td class="photo" style="background-image: url(<%= @record.photo %>); "> -->
         </td>
         <td class="details">
-          <%= @release['title'] %> by <%= @release['artist'] %>
+          <%= @record.name %> by <%= @record.artist %>
         </td>
         <td class="quantity">
           <!-- quantity: <%= order.quantity %> -->
