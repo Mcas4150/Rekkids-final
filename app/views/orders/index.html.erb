@@ -8,22 +8,24 @@
     <% @orders.each do |order| %>
       <tr>
 
-    <!--    <td class="photo" style="background-image: url(<%= @record.photo %>); "> -->
+      <td style="padding: 9px;"> <img src="<%=order.image %>" style=  "height: 75px; width: 75px;">
         </td>
         <td class="details">
-          <%= @record.name %> by <%= @record.artist %>
+
         </td>
         <td class="quantity">
-          <!-- quantity: <%= order.quantity %> -->
-          <input type="text" size="4" value="<%= order.amount%>">
+
+          <input type="text" size="4" value="<%= order.amount_cents%>">
         </td>
         <td class="total">
-       <!--   $<%= order.record.price %> -->
+
         </td>
-         <td><%= link_to 'Delete', order_path(order), method: :delete  %>
+         <td>
+          <%= link_to 'Buy', new_order_payment_path(order)%>
+          <%= link_to 'Delete', order_path(order), method: :delete  %>
          </td>
       </tr>
-      <%= link_to 'Buy', new_order_payment_path(order)%>
+
     <% end %>
 
       </tbody>
