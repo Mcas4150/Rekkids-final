@@ -37,8 +37,8 @@ my_listings.each do |listing|
 
   )
   mynewrecord.photo = record["images"][0]['uri'] rescue nil
-  mynewrecord.label = record["label"][0]['name'] rescue nil
-  mynewrecord.catno = record['label'][0]['catno'] rescue nil
+  mynewrecord.label = record["labels"][0]['name'] rescue nil
+  mynewrecord.catno = record['labels'][0]['catno'] rescue nil
   mynewrecord.youtubeid = record['videos'][0]['uri'] rescue nil
   mynewrecord.artist = record['artists'][0]['name'] rescue nil
 
