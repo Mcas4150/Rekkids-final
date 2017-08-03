@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
    def create
     order = Order.create!(state:'pending', amount_cents: @record.price_cents, image: @record.photo, description: @record.description)
 
-      # redirect_to new_order_payment_path(order)
+      redirect_to new_order_payment_path(order)
   end
 
 

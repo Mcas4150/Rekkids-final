@@ -49,6 +49,7 @@ gem 'coffee-rails'
 gem "geocoder"
 gem "gmaps4rails"
 gem "discogs-wrapper"
+gem 'payola-payments'
 
 gem 'money-rails', '~>1'
 gem 'stripe'

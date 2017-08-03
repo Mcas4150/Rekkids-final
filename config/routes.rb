@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  mount Payola::Engine => '/payola', as: :payola
   # get 'rec/:id' => 'tests#show', :constraints  => {:id => /.+\.\w{3,4}/}
 
   resources :records do
