@@ -9,14 +9,33 @@
 <% end %>
 
 
-<form action="/your-server-side-code" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_LUkf9UrvfMs2hd3QYWEkzq6m"
-    data-amount="<%=@order.amount_cents%>"
-    data-name="larama.ca"
-    data-description="3 records"
-    data-image="http://i.imgur.com/4XJHtBQ.jpg"
-    data-locale="auto">
-  </script>
-</form>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<button id="customButton">Purchase</button>
+
+<script>
+var handler = StripeCheckout.configure({
+  key: 'pk_test_LUkf9UrvfMs2hd3QYWEkzq6m',
+  image: 'http://i.imgur.com/4XJHtBQ.jpg',
+  locale: 'auto',
+  token: function(token) {
+    // You can access the token ID with `token.id`.
+    // Get the token ID to your server-side code for use.
+  }
+});
+
+document.getElementById('customButton').addEventListener('click', function(e) {
+  // Open Checkout with further options:
+  handler.open({
+    name: 'larama.ca',
+    description: '2 widgets',
+    amount: <%=@order.amount_cents%>
+  });
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script>
