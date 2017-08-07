@@ -1,4 +1,4 @@
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
-  @discogs = Discogs::Wrapper.new("La Rama", user_token: "emwVPSaiMzcjhTyDAjMrRGcfTFNZLvAPSxwozkDh")
+  @discogs = Discogs::Wrapper.new("La Rama", user_token: "zgpweUEfSayvzOBigpVrOJrAHLOiOGJRywCuGyIX")
 end

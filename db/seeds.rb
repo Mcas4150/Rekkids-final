@@ -3,7 +3,7 @@ Record.destroy_all
 
 my_listings = []
 
-discogs = Discogs::Wrapper.new("La Rama", user_token: "emwVPSaiMzcjhTyDAjMrRGcfTFNZLvAPSxwozkDh")
+discogs = Discogs::Wrapper.new("La Rama", user_token: "zgpweUEfSayvzOBigpVrOJrAHLOiOGJRywCuGyIX")
 
 user = discogs.get_identity
 inventory = discogs.get_user_inventory(user.username, per_page: 100)

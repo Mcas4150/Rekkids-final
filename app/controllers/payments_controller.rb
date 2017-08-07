@@ -15,6 +15,7 @@ before_action :set_order
     amount:       @order.amount_cents, # or amount_pennies
     description:  "Payment for teddy for order #{@order.id}",
     currency:     @order.amount.currency
+
   )
 
   @order.update(payment: charge.to_json, state: 'paid')
