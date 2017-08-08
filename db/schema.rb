@@ -202,10 +202,8 @@ ActiveRecord::Schema.define(version: 20170802170946) do
     t.string   "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "records_id"
     t.integer  "record_id"
     t.index ["record_id"], name: "index_tracks_on_record_id", using: :btree
-    t.index ["records_id"], name: "index_tracks_on_records_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -222,13 +220,6 @@ ActiveRecord::Schema.define(version: 20170802170946) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "name"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "facebook_picture_url"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "token"
-    t.datetime "token_expiry"
     t.boolean  "admin",                  default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
@@ -238,5 +229,4 @@ ActiveRecord::Schema.define(version: 20170802170946) do
   add_foreign_key "orders", "users"
   add_foreign_key "records", "users"
   add_foreign_key "tracks", "records"
-  add_foreign_key "tracks", "records", column: "records_id"
 end

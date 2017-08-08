@@ -6,18 +6,18 @@ before_action :set_record, only: [:show]
   def inventory
     @user = @discogs.get_identity
 
-    @response = @discogs.get_user_collection(@user.username, page: rand(4), per_page: 100)
+    @response = @discogs.get_user_collection(@user.username, page: rand(4), per_page: 20)
      @releases = @response.releases
   end
 
 
 
   def marketplace
-   @records = Record.all
+   @records = Record.order(:name).page params[:page]
   end
 
   def index
-  @records = Record.all
+  @records = Record.page(1)
   end
 
   def show

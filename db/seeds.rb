@@ -3,7 +3,7 @@ Record.destroy_all
 
 my_listings = []
 
-discogs = Discogs::Wrapper.new("La Rama", user_token: "zgpweUEfSayvzOBigpVrOJrAHLOiOGJRywCuGyIX")
+discogs = Discogs::Wrapper.new("La Rama", user_token: "zXjvXQdONAYWqNSBkLYcALovrlWgOQDqzpyvItEY")
 
 user = discogs.get_identity
 inventory = discogs.get_user_inventory(user.username, per_page: 100)
@@ -34,9 +34,10 @@ my_listings.each do |listing|
       year: record["year"],
       description: listing[:description],
       country: record['country'],
-      genre: record['styles'].pop
+      genre: record['styles']
 
   )
+   mynewrecord.photo = record['styles'] rescue nil
   mynewrecord.photo = record["images"][0]['uri'] rescue nil
   mynewrecord.label = record["labels"][0]['name'] rescue nil
   mynewrecord.catno = record['labels'][0]['catno'] rescue nil
@@ -51,15 +52,15 @@ my_listings.each do |listing|
     puts "oops something shitty happened"
   end
 
-  record['tracklist'].each do |track|
-    Track.create(
-      record: mynewrecord,
-      position: track['position'],
-      title: track['title'],
-      duration: track['duration']
-      )
+  # record['tracklist'].each do |track|
+  #   Track.create(
+  #     record: mynewrecord,
+  #     position: track['position'],
+  #     title: track['title'],
+  #     duration: track['duration']
+  #     )
 
-  end
+  # end
 end
 
 
