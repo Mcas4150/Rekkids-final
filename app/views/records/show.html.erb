@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="two_columns">
-      <div class="card" style="max-width: 250px; "><img  id="myImg" src= '<%= @record.photo %>' style= "height: 350px; width: 350px; margin-bottom: 10px;" >
+  <div class="row">
+      <div class="card col-xs-12 col-sm-4" style="max-width: 350px; "><img  id="myImg" src= '<%= @record.photo %>' style= "height: 350px; width: 350px; margin-bottom: 10px;" >
 
           <div id="myModal" class="modal">
 
@@ -13,10 +13,13 @@
   <!-- Modal Caption (Image Text) -->
   <div id="caption"></div>
 </div>
-     <div style="font-size: 30px;"><%= link_to 'Back', records_path %></div>
+
     </div>
 
-      <div class="card-contents" style = "top:50px; width:50vw">
+      <div class="card-contents col-xs-12 col-sm-8" style = "top:50px; display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;">
         <h1><%= @record.name %></h1>
         <p>Artist: <%= @record.artist %></p>
         <p>Label: <%= @record.label %></p>
@@ -86,6 +89,6 @@
 </div>
 
 
-
+<div style="font-size: 30px;"><%= link_to 'Back', records_path %></div>
 
 </div>

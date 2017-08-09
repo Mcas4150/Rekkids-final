@@ -31,7 +31,7 @@ before_action :set_record, only: [:show]
   def record_params
 
     params.require(:record).permit(:name, :artist, :price_cents, :release_id, :catno, :year, :genre, :country, :youtubeid, :photo, :label)
-
+    # params.require(:track).permit(:position, :title, :duration)
 
   end
 
