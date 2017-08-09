@@ -4,7 +4,7 @@
 
   <table class="cart-list" style= "width: 90%">
     <tbody>
-        <% total = [] %>
+        <% grand = [] %>
     <% @orders.each do |order| %>
       <tr>
           <div>
@@ -18,7 +18,8 @@
         </div>
         <td class="quantity" style="font-size: 25px;">
           <%= humanized_money_with_symbol(order.amount_cents) %>
-
+          <% @price = (order.amount_cents) %>
+          <% grand << @price %>
         </td>
         <td class="total">
 
@@ -34,7 +35,9 @@
       </tbody>
   </table>
   </div>
-   total:
+
+   total: <% sum = 0 %>
+   <%= grand.inject(0){|sum, x| sum + x } %>
   <br>
 
 

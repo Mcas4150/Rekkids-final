@@ -29,7 +29,7 @@ document.getElementById('customButton').addEventListener('click', function(e) {
   handler.open({
     name: 'larama.ca',
     description: '2 widgets',
-    amount: <%=@order.amount_cents%>
+    amount: <%= 100*(@order.amount_cents)%>
   });
   e.preventDefault();
 });
