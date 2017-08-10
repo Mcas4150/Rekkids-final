@@ -27,6 +27,18 @@
         <p>Country: <%= @record.country %></p>
         <p>Year: <%= @record.year %></p>
         <p>Genre: <%= @record.genre  %></p>
+
+
+
+
+
+         <table>
+
+          <tr>
+            <td> <%= @record.tracklist  %></td>
+          </tr>
+
+        </table>
         <h2><%= humanized_money_with_symbol(@record.price_cents) %></h2>
 
         <div style="font-size:30px; padding:15px;">

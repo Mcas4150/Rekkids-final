@@ -24,11 +24,11 @@ my_listings.each do |listing|
   record = discogs.get_release(listing[:release_id])
 
 
-  record['tracklist']
+
 
  mynewrecord = Record.new(
       name: record['title'],
-
+      tracklist:  record['tracklist'],
       release_id: listing[:release_id],
       price_cents: listing[:price_cents],
       year: record["year"],
@@ -52,15 +52,15 @@ my_listings.each do |listing|
     puts "oops something shitty happened"
   end
 
-  # record['tracklist'].each do |track|
-  #   Track.create(
-  #     record: mynewrecord,
-  #     position: track['position'],
-  #     title: track['title'],
-  #     duration: track['duration']
-  #     )
+  record['tracklist'].each do |track|
+    Track.create(
+      record: mynewrecord,
+      position: track['position'],
+      title: track['title'],
+      duration: track['duration']
+      )
 
-  # end
+  end
 end
 
 
