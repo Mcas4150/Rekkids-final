@@ -1,6 +1,8 @@
 Track.destroy_all
 Record.destroy_all
 
+require "stripe"
+Stripe.api_key = "sk_live_94QJv8LvoiP45cA7zi1AV46k"
 my_listings = []
 
 discogs = Discogs::Wrapper.new("La Rama", user_token: "zXjvXQdONAYWqNSBkLYcALovrlWgOQDqzpyvItEY")
@@ -44,6 +46,12 @@ my_listings.each do |listing|
   mynewrecord.youtubeid = record['videos'][0]['uri'] rescue nil
   mynewrecord.artist = record['artists'][0]['name'] rescue nil
 
+ # Stripe::Product.create(
+ #  name: record['title'],
+ #  description: listing[:description],
+ #  attributes: listing[:price_cents],
+ #  )
+
   total += 1
   puts "#{total} out of #{my_listings.length} complete..."
   sleep(1)
@@ -61,7 +69,9 @@ my_listings.each do |listing|
       )
 
   end
+
 end
+
 
 
 
