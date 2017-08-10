@@ -2,6 +2,7 @@ class PaymentsController < ApplicationController
 before_action :set_order
 
   def new
+
   end
 
   def create
@@ -19,7 +20,7 @@ before_action :set_order
   )
 
   @order.update(payment: charge.to_json, state: 'paid')
-  redirect_to order_path(@order)
+  redirect_to orders_path(@orders)
 
 rescue Stripe::CardError => e
   flash[:alert] = e.message
@@ -29,6 +30,7 @@ rescue Stripe::CardError => e
 private
 
   def set_order
+
     @order = Order.where(state: 'pending').find(params[:order_id])
   end
 end

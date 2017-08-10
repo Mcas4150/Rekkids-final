@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
 
 
   def index
-    @orders = Order.all
+    @orders = Order.where(state: 'pending')
   end
 
   def show
