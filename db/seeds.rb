@@ -36,7 +36,8 @@ my_listings.each do |listing|
       year: record["year"],
       description: listing[:description],
       country: record['country'],
-      genre: record['styles']
+      genre: record['styles'],
+      cart: false
 
   )
    mynewrecord.photo = record['styles'] rescue nil

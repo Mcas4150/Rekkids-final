@@ -1,0 +1,50 @@
+<div class="container">
+<h1>Your Cart: <%= pluralize @records.size, "item" %></h1>
+  <div class="row">
+
+  <table class="cart-list" style= "width: 90%">
+    <tbody>
+        <% grand = [] %>
+
+    <% @records.each do |record| %>
+      <tr>
+          <div>
+          <a href='/records/<%=record.id%>'>
+      <td style="padding: 9px;"> <img src="<%=record.photo %>" style=  "height: 75px; width: 75px;">
+        </td>
+        <td class="details" style= "font-size: 25px;">
+            <%= record.name %>
+            <% orderids << order.id %>
+
+        </td>
+        </a>
+        </div>
+        <td class="quantity" style="font-size: 25px;">
+          <%= humanized_money_with_symbol(record.price_cents) %>
+          <% @price = (record.price_cents) %>
+          <% grand << @price %>
+        </td>
+        <td class="total">
+
+        </td>
+         <td>
+
+         </td>
+      </tr>
+
+    <% end %>
+
+      </tbody>
+  </table>
+  </div>
+  <div style= "display:flex; justify-content: flex-end; font-size: 30px;">
+   total: <% sum = 0 %>
+   $<%=  grand.inject(0){|sum, x| sum + x } %>
+   </div>
+  <br>
+
+
+ <br>
+  <%= link_to 'Back to Records', records_path %>
+
+</div>

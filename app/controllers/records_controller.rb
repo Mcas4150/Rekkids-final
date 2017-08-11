@@ -1,5 +1,5 @@
 class RecordsController < ApplicationController
-before_action :set_record, only: [:show]
+
 
 
 
@@ -21,24 +21,28 @@ before_action :set_record, only: [:show]
   end
 
   def show
-
+   @record = Record.find(params[:id]) rescue nil
 
   end
 
+  def self.cart
+    @record.update(cart: true)
+    redirect_to crate_records_path
+  end
+
+  def crate
+    @records = Record.where(cart: true)
+  end
 
   private
 
   def record_params
 
-    params.require(:record).permit(:name, :artist, :price_cents, :release_id, :catno, :year, :genre, :country, :youtubeid, :photo, :label, :tracklist, :track)
+    params.require(:record).permit(:name, :artist, :price_cents, :release_id, :catno, :year, :genre, :country, :youtubeid, :photo, :cart, :label, :tracklist, :track)
     # params.require(:track).permit(:position, :title, :duration)
 
   end
 
-  def set_record
-    @record = Record.find(params[:id])
 
-
-  end
 
 end

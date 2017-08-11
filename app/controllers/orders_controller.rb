@@ -8,7 +8,19 @@ class OrdersController < ApplicationController
 
 
    def create
-    order = Order.create!(state:'pending', amount_cents: @record.price_cents, image: @record.photo, description: @record.description)
+      #  grand = []
+      # Where Record cart: true; .each do
+      #   @price = (@record.price_cents)
+      #    grand << @price
+      #  end
+      # sum = 0
+      #  @total = grand.inject(0){|sum, x| sum + x }
+
+      # each record description do end
+      #   each record photo do end
+
+
+    order = Order.create!(state:'pending', amount_cents: @total, image: @record.photo, description: @record.description)
       redirect_to orders_path
 
   end
@@ -32,7 +44,6 @@ class OrdersController < ApplicationController
     private
   def set_record
     @record =Record.find(params[:record_id])
-
   end
 
   # def set_user
