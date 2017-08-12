@@ -70,7 +70,7 @@ a:hover {
 }
 
 .records-display {
-  padding: 3em;
+  padding: 1.5em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -89,6 +89,8 @@ a:hover {
   a, a p, a h2 {
     &:hover {
       text-decoration: none;
+      width:110%;
+      height:110;
     }
   }
   p {
@@ -197,7 +199,7 @@ tr {
 }
 
 .seletak:hover .overlay {
-  opacity: .5;
+  opacity: .4;
 }
 
 .text {

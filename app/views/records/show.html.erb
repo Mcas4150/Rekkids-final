@@ -24,6 +24,7 @@
                         <%= submit_tag 'Add to Cart', class: 'btn btn-cool' %>
                       <% end %>
             </div>
+
             <div class="col-4">
                 <span style="font-size:30px;"> <%= humanized_money_with_symbol(@record.price_cents) %></span>
             </div>
@@ -45,8 +46,6 @@
 
 
 
-
-
      </div>
 
 <div class="card-contents col-xs-12 col-sm-3 col-lg-4" style = "display: flex;
@@ -57,7 +56,7 @@
          <table>
 
           <tr>
-            <td> <%= @record.tracklist  %></td>
+            <td> <%= @record['tracklist'] %></td>
           </tr>
 
         </table>
