@@ -2,7 +2,7 @@ class Record < ApplicationRecord
   has_many :orders
   has_many :tracks
   monetize :price_cents
-  @discogs = Discogs::Wrapper.new("La Rama", user_token: "zXjvXQdONAYWqNSBkLYcALovrlWgOQDqzpyvItEY")
+  @discogs = Discogs::Wrapper.new("La Rama", user_token: "MlRiZVjAsDYhohkYZFzKEzmsoEipAlLCITJrRzfq")
   paginates_per 50
 
 

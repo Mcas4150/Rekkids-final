@@ -5,10 +5,10 @@ require "stripe"
 Stripe.api_key = "sk_live_94QJv8LvoiP45cA7zi1AV46k"
 my_listings = []
 
-discogs = Discogs::Wrapper.new("La Rama", user_token: "zXjvXQdONAYWqNSBkLYcALovrlWgOQDqzpyvItEY")
+discogs = Discogs::Wrapper.new("La Rama", user_token: "tJTZwyDlsmmQCxOjBBhNygEucUsbKELlYfTzsZYp")
 
 user = discogs.get_identity
-inventory = discogs.get_user_inventory(user.username, per_page: 100)
+inventory = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", per_page: 10000)
 listings = inventory.listings
 listings.each do |listing|
   if listing['status'] == 'For Sale'
