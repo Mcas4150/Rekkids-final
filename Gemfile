@@ -54,7 +54,7 @@ gem 'kaminari'
 
 gem 'money-rails', '~>1'
 gem 'stripe'
-gem "algoliasearch-rails"
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
