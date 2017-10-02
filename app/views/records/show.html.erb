@@ -59,21 +59,23 @@
               <% end %>
         </table>
 
-        <div class="row">
+        <div class="row" >
+
+
+
 
             <div class="col-3">
-            <span style="font-size: 30px;"><%= link_to 'Back', records_path %></span>
+                <span style="font-size:40px;"> <%= humanized_money_with_symbol(@record.price_cents) %></span>
             </div>
-            <div class="col-3">
+             <div class="col-3">
               <%= form_tag crate_records_path do %>
                         <%= hidden_field_tag 'record_id', @record.id %>
                         <%= submit_tag 'Add to Cart', class: 'btn btn-cool' %>
                       <% end %>
             </div>
-
-            <div class="col-3">
-                <span style="font-size:30px;"> <%= humanized_money_with_symbol(@record.price_cents) %></span>
-            </div>
+            <!--  <div class="col-3">
+            <span style="font-size: 30px;"><%= link_to 'Back', records_path %></span>
+            </div> -->
             </div>
 
         </div>
