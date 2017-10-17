@@ -5,6 +5,13 @@
   display: flex
 }
 
+
+.footpad{
+ background-color: #292c2f;
+  width:100%;
+}
+
+
 footer .fa {
   color: #666666;
   font-size: 30px;
@@ -23,7 +30,8 @@ footer .fa {
   bottom: 0px;
 
   padding: 20px;
-
+    padding-left: 7vw;
+    padding-right: 7vw;
 
   color:  #8d9093;
   font-size: 1.2em;
