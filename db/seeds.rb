@@ -8,7 +8,7 @@ my_listings = []
 discogs = Discogs::Wrapper.new("La Rama", user_token: "tJTZwyDlsmmQCxOjBBhNygEucUsbKELlYfTzsZYp")
 
 user = discogs.get_identity
-inventory = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", per_page: 10000)
+inventory = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", per_page: 10)
 listings = inventory.listings
 listings.each do |listing|
   if listing['status'] == 'For Sale'
@@ -40,7 +40,7 @@ my_listings.each do |listing|
       cart: false
 
   )
-   mynewrecord.photo = record['styles'] rescue nil
+   mynewrecord.genre = record['styles'][0] rescue nil
   mynewrecord.photo = record["images"][0]['uri'] rescue nil
   mynewrecord.label = record["labels"][0]['name'] rescue nil
   mynewrecord.catno = record['labels'][0]['catno'] rescue nil

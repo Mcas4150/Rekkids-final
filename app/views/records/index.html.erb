@@ -22,7 +22,7 @@
   <a href='/records/<%=record.id%>'>
    <div class='seletak'>
 
-  <img src = '<%= record.photo %>' class=imag style= "height: 100%; width: 100%;">
+  <img src = '<%= record.photo rescue nil%>' class=imag style= "height: 100%; width: 100%;">
     <div class="overlay">
        <img src="http://i.imgur.com/4bCsEu8.png" class='text' style="height: 75px; width: 75px;">
     </div>

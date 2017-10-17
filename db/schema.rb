@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170816175544) do
+ActiveRecord::Schema.define(version: 20171017074753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -185,6 +185,7 @@ ActiveRecord::Schema.define(version: 20170816175544) do
     t.string   "tracktitle"
     t.integer  "year"
     t.boolean  "cart"
+    t.string   "style"
     t.index ["user_id"], name: "index_records_on_user_id", using: :btree
   end
 
