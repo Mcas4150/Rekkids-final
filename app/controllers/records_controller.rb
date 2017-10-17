@@ -22,6 +22,7 @@ class RecordsController < ApplicationController
 
   def show
    @record = Record.find(params[:id]) rescue nil
+   @records = Record.page(1)
 
   end
 

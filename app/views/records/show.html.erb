@@ -86,6 +86,10 @@
         player = new YT.Player('player', {
           height: '390',
           width: '',
+          playerVars: {
+            color: 'white',
+            // playlist: 'taJ60kskkns,FG0fTKAqZ5g'
+          },
           videoId:  '<%= @record.youtubeid.partition('=').last rescue nil%>',
           events: {
             'onReady': onPlayerReady,
@@ -117,9 +121,41 @@
 
   </div>
 
+  <div class="recommend"><h4>We Also Recommend</h4></div>
+  <div class="records-display">
 
+
+<% Record.all.order('created_at DESC').take(12).each do |record| %>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="padding-left:5px; padding-right:5px;">
+  <a href='/records/<%=record.id%>'>
+   <div class='seletak'>
+
+  <img src = '<%= record.photo rescue nil%>' class=imag style= "height: 100%; width: 100%;">
+    <div class="overlay">
+       <img src="http://i.imgur.com/4bCsEu8.png" class='text' style="height: 75px; width: 75px;">
+    </div>
+   </div>
+   <div class="row">
+  <div class="card-body munch col-9" style="font-size:30px;">
+
+  <p style="width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;"><%= record.artist %></p>
+  <h2 style="width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  "><%= record.name %></h2>
+  </div>
+  <!-- <div class="col-3">
+  <span style="display:flex; justify-content:flex-end;"><%= humanized_money_with_symbol(record.price_cents) %></span>
+  </div> -->
+  </div>
+   </a>
+  </div>
+  <% end %>
+
+
+</div>
 </div>
 
 
-
-</div>
