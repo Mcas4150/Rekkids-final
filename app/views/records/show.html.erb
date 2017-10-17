@@ -123,11 +123,14 @@
 
   </div>
 
-  <div class="recommend"><h4>We Also Recommend</h4></div>
+  <div class="recommend"><h4 style="font-size:1.6em ; font-family:'Damion', 'cursive'">We Also Recommend</h4></div>
   <div class="records-display recom">
 
 
-<% Record.all.order('created_at DESC').take(12).each do |record| %>
+<% found = Record.where(genre: @record.genre).take(12) %>
+
+
+<% found.each do |record| %>
   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="padding-left:5px; padding-right:5px;">
   <a href='/records/<%=record.id%>'>
    <div class='seletak'>
