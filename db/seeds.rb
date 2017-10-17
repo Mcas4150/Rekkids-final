@@ -8,7 +8,7 @@ my_listings = []
 discogs = Discogs::Wrapper.new("La Rama", user_token: "tJTZwyDlsmmQCxOjBBhNygEucUsbKELlYfTzsZYp")
 
 user = discogs.get_identity
-inventory = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", per_page: 10)
+inventory = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", per_page: 150)
 listings = inventory.listings
 listings.each do |listing|
   if listing['status'] == 'For Sale'
