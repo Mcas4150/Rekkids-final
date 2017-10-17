@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container2">
 
   <div class="row">
-      <div class="card col-xs-12 col-sm-4" style="margin-left:0px; margin-right:0px; margin-top:15px; margin-bottom:0px; "><img  id="myImg" src= '<%= @record.photo %>' style= "height: 100%; width: 100%;  margin-bottom: 10px;" >
+      <div class="card col-xs-12 col-sm-4" style="margin-left:0px; margin-right:0px; margin-top:15px; margin-bottom:0px; "><img  class="myImg" src= '<%= @record.photo %>' style= "height: 100%; width: 100%;  margin-bottom: 10px;" >
 
           <div id="myModal" class="modal">
 
@@ -17,7 +17,7 @@
 
     </div>
 
-      <div class="card-contents col-xs-12 col-sm-3" style = "display: flex;
+      <div class="card-contents col-xs-12 col-sm-4" style = "display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;">
@@ -26,9 +26,8 @@
         <p>Label: <%= @record.label %></p>
         <p>Catno: <%= @record.catno %></p>
         <p>Country: <%= @record.country %></p>
-        <p>Year: <%= @record.year %></p>
         <p>Genre: <%= @record.genre  %></p>
-
+        <p>Year: <%= @record.year %></p>
                 <span style="font-size:40px;"> <%= humanized_money_with_symbol(@record.price_cents) %>
 
 
@@ -45,7 +44,10 @@
     align-items: center;
     flex-direction: column;
     margin-bottom:10px; ">
-         <table style="margin-top:21px;">
+         <table style="margin-top:21px; width: 100%; word-wrap:break-word;
+              table-layout: fixed;     display: block;
+    overflow-y: scroll;
+    height: 40vh;">
               <% reality = @discogs.get_release(@record.release_id)%>
 
 
@@ -122,7 +124,7 @@
   </div>
 
   <div class="recommend"><h4>We Also Recommend</h4></div>
-  <div class="records-display">
+  <div class="records-display recom">
 
 
 <% Record.all.order('created_at DESC').take(12).each do |record| %>
@@ -130,7 +132,7 @@
   <a href='/records/<%=record.id%>'>
    <div class='seletak'>
 
-  <img src = '<%= record.photo rescue nil%>' class=imag style= "height: 100%; width: 100%;">
+  <img src = '<%= record.photo rescue nil%>' class="imag myImg" style= "height: 100%; width: 100%;">
     <div class="overlay">
        <img src="http://i.imgur.com/4bCsEu8.png" class='text' style="height: 75px; width: 75px;">
     </div>

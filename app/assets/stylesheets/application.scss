@@ -69,6 +69,12 @@ a:hover {
   width: 200px;
 }
 
+.recommend {
+  padding-left:15px;
+  padding-right:15px;
+  padding-bottom: 10px;
+  padding-top:15px;
+}
 
 h1 {
   font-size: 34px;
@@ -159,6 +165,9 @@ tr {
 
 }
 
+.recom {
+  padding: 10px;
+}
 
 .banner {
   border-radius: 10px;
@@ -226,12 +235,12 @@ tr {
 
 
 table {
-  text-size: 12px;
-  width: 80%;
+  text-size: 1.5em;
+  width: 100%;
   border-collapse: collapse;
   th, td {
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
+  border-bottom: 1px solid #4E6E58;
+  border-top: 1px solid #4E6E58;
   padding: 20px;
   }
   tr:nth-child(even) {
@@ -257,16 +266,22 @@ padding-right: 10px;
 
 }
 
+.container2 {
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+      padding-left: 10vw;
+    padding-right: 10vw;
+}
 
 /* Style the Image Used to Trigger the Modal */
-#myImg {
+.myImg {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 2px 2px 5px #999999
 }
 
-#myImg:hover {opacity: 0.7;}
+.myImg:hover {opacity: 0.7;}
 
 /* The Modal (background) */
 .modal {
@@ -352,7 +367,7 @@ padding-right: 10px;
   margin-right: 0px;
 }
 #player {
-
+ padding-top:15px;
 
 }
 

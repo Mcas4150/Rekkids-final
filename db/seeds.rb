@@ -40,7 +40,7 @@ my_listings.each do |listing|
       cart: false
 
   )
-   mynewrecord.genre = record['styles'][0] rescue nil
+   mynewrecord.genre = record['styles'][0,1] rescue nil
   mynewrecord.photo = record["images"][0]['uri'] rescue nil
   mynewrecord.label = record["labels"][0]['name'] rescue nil
   mynewrecord.catno = record['labels'][0]['catno'] rescue nil
