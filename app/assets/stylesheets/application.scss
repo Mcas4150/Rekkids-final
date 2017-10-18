@@ -25,6 +25,10 @@
   animation: jump 1s linear alternate infinite;
 }
 
+a{
+  color:#333333;
+}
+
 a:hover {
   color: #388697;
   text-decoration: none;
@@ -271,8 +275,8 @@ table {
   width: 100%;
   // border-collapse: collapse;
   th, td {
-  border-bottom: 1px solid #4E6E58;
-  border-top: 1px solid #4E6E58;
+  border-bottom: 1px solid #333333;
+  border-top: 1px solid #333333;
   padding: 20px;
   }
   tr:nth-child(even) {

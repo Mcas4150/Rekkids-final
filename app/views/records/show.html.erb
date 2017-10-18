@@ -28,15 +28,16 @@
         <p>Country: <%= @record.country %></p>
         <p>Genre: <%= @record.genre  %></p>
         <p>Year: <%= @record.year %></p>
-                <span style="font-size:40px;"> <%= humanized_money_with_symbol(@record.price_cents) %>
-
-
+              <div class="row">
+                <div class="col-xs-6" style="font-size:40px; padding-left:0px"> <%= humanized_money_with_symbol(@record.price_cents) %>
+                  </div>
+                <div class="col-xs-6">
               <%= form_tag crate_records_path do %>
                         <%= hidden_field_tag 'record_id', @record.id %>
                         <%= submit_tag 'Add to Cart', class: 'btn btn-cool' %>
-                      <% end %></span>
-
-
+                      <% end %>
+                </div>
+                </div>
      </div>
 
 <div class="card-contents col-xs-12 col-sm-3 col-lg-4" style = "display: flex;
