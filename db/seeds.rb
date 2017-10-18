@@ -41,7 +41,7 @@ my_listings.each do |listing|
 
   )
    mynewrecord.genre = record['styles'][0] rescue nil
-  mynewrecord.photo = record["images"][0]['uri'] rescue "https://i.imgur.com/jfjf6FG.jpg"
+  mynewrecord.photo = record["images"][0]['uri'] rescue "https://i.imgur.com/Ol4JwTG.jpg"
   mynewrecord.label = record["labels"][0]['name'] rescue nil
   mynewrecord.catno = record['labels'][0]['catno'] rescue nil
   mynewrecord.youtubeid = record['videos'][0]['uri'] rescue nil
