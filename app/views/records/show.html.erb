@@ -1,7 +1,7 @@
 <div class="container2">
 
   <div class="row">
-      <div class="card col-xs-12 col-sm-4" style="margin-left:0px; margin-right:0px; margin-top:15px; margin-bottom:0px; "><img  class="myImg" src= '<%= @record.photo %>' style= "height: 100%; width: 100%;  margin-bottom: 10px;" >
+      <div class="card col-xs-12 col-sm-4" style="margin-left:0px; margin-right:0px; margin-top:15px; margin-bottom:0px; "><img  class="myImg" id="myImg" src= '<%= @record.photo %>' style= "height: 100%; width: 100%;  margin-bottom: 10px;" >
 
           <div id="myModal" class="modal">
 
@@ -45,7 +45,7 @@
     flex-direction: column;
     margin-bottom:10px; ">
          <table style="margin-top:21px; width: 100%; word-wrap:break-word;
-              table-layout: fixed;     display: block;
+              table-layout: fixed; display: block;
     overflow-y: scroll; overflow:auto;
     height: 30vh;">
               <% reality = @discogs.get_release(@record.release_id)%>
@@ -53,7 +53,7 @@
 
 
             <% reality["tracklist"].each do |track|%>
-          <tr style="text-align: center; font-size:15px;">
+          <tr style="font-size:1.2em;">
 
             <td>
               <%= track["position"] rescue nil %>
