@@ -1,0 +1,41 @@
+
+<div class="main" style="margin-top:5em;">
+<div class="records-display">
+
+<% @found = Record.where(genre: "Disco") %>
+
+
+<% @found.each do |record| %>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="padding-left:5px; padding-right:5px;">
+  <a href='/records/<%=record.id%>'>
+   <div class='seletak'>
+
+  <img src = '<%= record.photo rescue nil%>' class="imag myImg" style= "height: 100%; width: 100%;">
+    <div class="overlay">
+       <img src="http://i.imgur.com/4bCsEu8.png" class='text' style="height: 75px; width: 75px;">
+    </div>
+   </div>
+   <div class="row">
+  <div class="card-body munch col-9" style="font-size:30px;">
+
+  <p style="width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;"><%= record.artist rescue nil%></p>
+  <h2 style="width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  "><%= record.name rescue nil%></h2>
+  </div>
+  <!-- <div class="col-3">
+  <span style="display:flex; justify-content:flex-end;"><%= humanized_money_with_symbol(record.price_cents) %></span>
+  </div> -->
+  </div>
+   </a>
+  </div>
+  <% end %>
+
+
+</div>
+ <div style="text-align: center; font-size: 25px;">
+
+</div>

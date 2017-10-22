@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       get :show
       get :techno
       get :house
+      get :disco
+      get :deephouse
+      get :soul
       post :cart
       post :crate
 

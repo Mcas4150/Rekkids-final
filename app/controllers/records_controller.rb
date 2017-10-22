@@ -16,6 +16,9 @@ class RecordsController < ApplicationController
   def house
   end
 
+  def deephouse
+  end
+
   def marketplace
    @records = Record.order(:name).page params[:page]
   end

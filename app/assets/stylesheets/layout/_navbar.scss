@@ -123,6 +123,11 @@ h2 {
   border: 1px solid #CCCCCC;
 }
 
+
+.dropdown-content {
+  font-size: .75em;
+  font-family: Damion, cursive;
+}
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
@@ -133,8 +138,8 @@ h2 {
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: #999999 !important;
-  font-size: 15px !important;
-  line-height: 22px !important;
+  font-size: 10px !important;
+  line-height: 15px !important;
   padding: 10px 20px;
 }
 .navbar-wagon-dropdown-menu li > a:hover {
