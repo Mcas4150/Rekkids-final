@@ -39,6 +39,8 @@ end
 
   get 'pages/aboutus'
 
+  get 'pages/gear'
+
   # get 'orders/crete'
 
   # get 'orders/index'

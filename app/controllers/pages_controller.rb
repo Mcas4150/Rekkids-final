@@ -8,4 +8,9 @@ class PagesController < ApplicationController
   def home
     @records = Record.all
   end
+
+  def gear
+
+  end
+
 end
