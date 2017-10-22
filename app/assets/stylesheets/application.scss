@@ -123,14 +123,17 @@ h1 {
 }
 
 .records-display {
-  padding: 1.5em;
+  padding-top: 1.5em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-left:-5px;
+    margin-right:-5px;
   .card {
 
     margin: 0px;
+
     padding: 0px;
     min-height: 250px;
     max-width: 250px;
