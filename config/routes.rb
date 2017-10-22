@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get :marketplace
       get :show
       get :techno
+      get :house
       post :cart
       post :crate
 

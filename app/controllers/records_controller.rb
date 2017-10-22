@@ -13,6 +13,9 @@ class RecordsController < ApplicationController
   def techno
   end
 
+  def house
+  end
+
   def marketplace
    @records = Record.order(:name).page params[:page]
   end
