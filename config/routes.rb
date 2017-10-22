@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get :index
       get :marketplace
       get :show
+      get :techno
       post :cart
       post :crate
 

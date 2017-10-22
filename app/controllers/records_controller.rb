@@ -10,7 +10,8 @@ class RecordsController < ApplicationController
      @releases = @response.releases
   end
 
-
+  def techno
+  end
 
   def marketplace
    @records = Record.order(:name).page params[:page]
