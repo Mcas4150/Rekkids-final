@@ -8,14 +8,64 @@ my_listings = []
 discogs = Discogs::Wrapper.new("La Rama", user_token: "tJTZwyDlsmmQCxOjBBhNygEucUsbKELlYfTzsZYp")
 
 user = discogs.get_identity
-inventory = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", per_page: 150)
-listings = inventory.listings
-listings.each do |listing|
+inventory1 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 1, per_page: 100)
+inventory2 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 2, per_page: 100)
+inventory3 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 3, per_page: 100)
+inventory4 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 4, per_page: 100)
+inventory5 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 5, per_page: 100) rescue nil
+
+
+listings1 = inventory1.listings
+listings1.each do |listing|
   if listing['status'] == 'For Sale'
     temp = {}
     temp[:release_id] = listing.release['id']
     temp[:description] = listing.release['description']
-    temp[:price_cents] = listing.original_price['value']
+    temp[:price_cents] = listing.original_price['value'].round
+    my_listings << temp
+  end
+end
+
+listings2 = inventory2.listings
+listings2.each do |listing|
+  if listing['status'] == 'For Sale'
+    temp = {}
+    temp[:release_id] = listing.release['id']
+    temp[:description] = listing.release['description']
+    temp[:price_cents] = listing.original_price['value'].round
+    my_listings << temp
+  end
+end
+
+listings3 = inventory3.listings
+listings3.each do |listing|
+  if listing['status'] == 'For Sale'
+    temp = {}
+    temp[:release_id] = listing.release['id']
+    temp[:description] = listing.release['description']
+    temp[:price_cents] = listing.original_price['value'].round
+    my_listings << temp
+  end
+end
+
+listings4 = inventory4.listings
+listings4.each do |listing|
+  if listing['status'] == 'For Sale'
+    temp = {}
+    temp[:release_id] = listing.release['id']
+    temp[:description] = listing.release['description']
+    temp[:price_cents] = listing.original_price['value'].round
+    my_listings << temp
+  end
+end
+
+listings5 = inventory5.listings
+listings5.each do |listing|
+  if listing['status'] == 'For Sale'
+    temp = {}
+    temp[:release_id] = listing.release['id']
+    temp[:description] = listing.release['description']
+    temp[:price_cents] = listing.original_price['value'].round
     my_listings << temp
   end
 end

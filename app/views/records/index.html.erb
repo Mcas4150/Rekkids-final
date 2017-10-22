@@ -29,7 +29,7 @@
     <span style="justify-content: flex-start;">
     <h4 style="font-size:1.6em ; margin-top: .5em; font-family:'Damion', 'cursive'">Just Arrived</h4>
   </span>
-  <span style="justify-content: flex-end; align-self: center;"><a href="/records/marketplace"style="color: black"><h4 style="font-size:1.6em ; margin-top: .5em; font-family:'Damion', 'cursive'">(All)</h4></a></span>
+  <span style="justify-content: flex-end; align-self: center; float:right"><a href="/records/marketplace"style="color: black"><h4 style="font-size:1.6em ; margin-top: .5em; font-family:'Damion', 'cursive'">(All)</h4></a></span>
 </div>
 
 <div class="records-display">
@@ -39,7 +39,7 @@
   <a href='/records/<%=record.id%>'>
    <div class='seletak'>
 
-  <img src = '<%= record.photo rescue nil%>' class=imag style= "height: 100%; width: 100%;">
+  <img src = '<%= record.photo rescue nil%>' class='imag myImg' style= "height: 100%; width: 100%;">
     <div class="overlay">
        <img src="https://i.imgur.com/4bCsEu8.png" class='text' style="height: 75px; width: 75px;">
     </div>
@@ -47,10 +47,10 @@
    <div class="row">
   <div class="card-body munch col-9" style="font-size:30px;">
 
-  <p style="width: 180px;
+  <p style="width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;"><%= record.artist %></p>
-  <h2 style="width: 180px;
+  <h2 style="width: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
   "><%= record.name %></h2>
