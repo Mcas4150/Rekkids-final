@@ -2,13 +2,34 @@
   <div class = "row">
     <div class="col-xs-12 col-sm-6">
       <img src="https://i.imgur.com/Tv9b5Cf.png" class=imag style= "height: 100%; width: 100%;">
-      <div>Tote Bag</div>
-      <div>$20</div>
+
+      <div class="row">
+                <div class="col-xs-4" style="font-size:2em; padding-left:0px"> <%= humanized_money_with_symbol(@record.price_cents) rescue nil %>
+
+                    <div>$20</div></div>
+                    <div class="col-xs-4" style="font-size:2em;">Tote Bag</div>
+                <div class="col-xs-4">
+              <%= form_tag crate_records_path do %>
+                        <%= hidden_field_tag 'record_id', @record.id rescue nil%>
+                        <%= submit_tag 'Add to Cart', class: 'btn btn-cool' %>
+                      <% end %>
+                </div>
+                </div>
     </div>
     <div class="col-xs-12 col-sm-6">
       <img src="https://i.imgur.com/dIq3muu.png" class=imag style= "height: 100%; width: 100%;">
-      <div>Tee Shirt</div>
-      <div>$20</div>
+           <div class="row">
+                <div class="col-xs-4" style="font-size:2em; padding-left:0px"> <%= humanized_money_with_symbol(@record.price_cents) rescue nil %>
+
+                    <div>$20</div></div>
+                    <div class="col-xs-4" style="font-size:2em;">T-shirt</div>
+                <div class="col-xs-4">
+              <%= form_tag crate_records_path do %>
+                        <%= hidden_field_tag 'record_id', @record.id rescue nil%>
+                        <%= submit_tag 'Add to Cart', class: 'btn btn-cool' %>
+                      <% end %>
+                </div>
+                </div>
     </div>
   </div>
 </div>
