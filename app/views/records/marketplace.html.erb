@@ -2,30 +2,29 @@
 
 
 
-<body style="background-color:white;">
-<div class="main" style="margin-top:6em;">
-<div class="row">
-    <div class="col-xs-12 col-sm-3" style="
-    padding-top: 2vh">
+
+<div class="main">
+<div class="row tip">
+    <div class="col-xs-12 col-sm-3" style="padding-left: 0px;">
     <div  class="categories">
       <div class="curls" style="font-size: 2.5em; padding-left: 10px;">All</div>
-    <a class="sidebar" style="color:black; width: 100%; " href="/records/disco">Disco</a>
+    <a class="sidebar" href="/records/disco">Disco</a>
     <br>
-    <a class="sidebar" style="color:black " href="/records/soul">Soul</a>
+    <a class="sidebar" href="/records/soul">Soul</a>
     <br>
-    <a class="sidebar" style="color:black " href="/records/techno">Techno</a>
+    <a class="sidebar" href="/records/techno">Techno</a>
     <br>
-    <a class="sidebar" style="color:black " href="/records/house">House</a>
+    <a class="sidebar" href="/records/house">House</a>
      <br>
-    <a class="sidebar" style="color:black " href="/records/funk">Funk</a>
+    <a class="sidebar" href="/records/funk">Funk</a>
     <br>
-    <a class="sidebar" style="color:black " href="/records/electro">Electro</a>
+    <a class="sidebar" href="/records/electro">Electro</a>
     <br>
-    <a class="sidebar" style="color:black " href="/records/ambient">Ambient</a>
+    <a class="sidebar" href="/records/ambient">Ambient</a>
     <br>
-    <a class="sidebar" style="color:black " href="/records/deephouse">Deep House</a>
+    <a class="sidebar" href="/records/deephouse">Deep House</a>
     <br>
-    <a class="sidebar" style="color:black " href="/records/experimental">Experimental</a>
+    <a class="sidebar" href="/records/experimental">Experimental</a>
     </div>
   </div>
   <div class="col-xs-12 col-sm-9" style= "padding-top: 2vh;">
@@ -35,29 +34,20 @@
     margin-left: 15px;"><%= paginate @records %></div>
 
 <% @records.first(90).each do |record| %>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="padding-left:5px; padding-right:5px;">
+   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">
   <a href='/records/<%=record.id%>'>
    <div class='seletak'>
 
-  <img src = '<%= record.photo rescue nil%>' class="imag myImg" style= "height: 100%; width: 100%;">
+  <img src = '<%= record.photo rescue nil%>' class="imag myImg" >
     <div class="overlay2">
-       <div class='text yells curls' style="height: 20px; width: 100px; opacity:1; font-size: 1.2em; display:flex; flex-direction: row; justify-content: center; align-items: flex-end;"><%=record.genre%></div>
+       <div class='text yells'><%=humanized_money_with_symbol(record.price_cents)%></div>
     </div>
    </div>
    <div class="row">
-  <div class="card-body munch col-9" style="font-size:30px;">
-
-  <p style="width: 150px;
-  overflow: hidden;
-  text-overflow: ellipsis;"><%= record.artist rescue nil%></p>
-  <h2 style="width: 150px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  "><%= record.name rescue nil%></h2>
+  <div class="infoo card-body munch col-9">
+  <p><%= record.artist rescue nil%></p>
+  <h2><%= record.name rescue nil%></h2>
   </div>
-  <!-- <div class="col-3">
-  <span style="display:flex; justify-content:flex-end;"><%= humanized_money_with_symbol(record.price_cents) %></span>
-  </div> -->
   </div>
    </a>
   </div>

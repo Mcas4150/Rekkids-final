@@ -91,7 +91,9 @@ h1 {
   font-size: 34px;
 }
 
-
+.tip {
+  padding-top: 1vh;
+}
 .dropdown {
     position: relative;
     display: inline-block;
@@ -100,6 +102,7 @@ h1 {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
+  width:30vw; height:30vh;
     display: none;
     position: absolute;
     background-color: white;
@@ -260,6 +263,7 @@ tr {
 }
 
 .sidebar {
+  color:black;
   font-size: 1.5em;
   padding-left:0px;
   padding:10px;
@@ -270,6 +274,13 @@ tr {
   color: yellow;
 }
 
+
+.infoo {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size:30px;
+}
 
 .overlay2 {
   position: absolute;
@@ -317,7 +328,10 @@ tr {
   -ms-transform: translate(-50%, -50%);
 }
 
-
+.disc{
+  padding-left: 5px;
+  padding-right: 5px
+}
 
 table {
   text-size: 1.5em;
@@ -369,7 +383,9 @@ padding-right: 10px;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 2px 2px 5px #999999
+    box-shadow: 2px 2px 5px #999999;
+    height: 100%;
+    width: 100%;
 }
 
 .myImg:hover {opacity: 0.7;}
@@ -412,6 +428,14 @@ padding-right: 10px;
 .yells {
   color:#ffee36;
   font-family:'Damion', 'cursive';
+  height: 20px;
+  width: 100px;
+   opacity:1;
+   font-size: 1em;
+   display:flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: flex-end;
 }
 
 /* Add Animation - Zoom in the Modal */
