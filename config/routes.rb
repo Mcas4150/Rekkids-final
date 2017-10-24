@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       get :funk
       get :electro
       get :ambient
+      get :experimental
       post :cart
       post :crate
 
