@@ -245,6 +245,17 @@ tr {
   width: 100%;
 }
 
+.sidebar {
+  font-size: 2em;
+  padding:10px;
+  text-align: center
+}
+
+.sidebar a:hover{
+  color: yellow;
+}
+
+
 .overlay {
   position: absolute;
   top: 0;
@@ -255,7 +266,7 @@ tr {
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color: mintcream;
+  background-color:yellow;
 }
 
 .seletak:hover .overlay {

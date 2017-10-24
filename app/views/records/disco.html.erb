@@ -1,5 +1,18 @@
 
 <div class="main" style="margin-top:5em;">
+<div class="row">
+  <div class="col-xs-12 col-sm-3">
+    <div style="width:100%">
+    <a class="sidebar" style="color:black; width: 100%; " href="/records/disco">Disco</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/soul">Soul</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/techno">Techno</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/house">House</a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-9">
 <div class="records-display">
 
 <% @found = Record.where(genre: "Disco") %>
@@ -12,7 +25,7 @@
 
   <img src = '<%= record.photo rescue nil%>' class="imag myImg" style= "height: 100%; width: 100%;">
     <div class="overlay">
-       <img src="http://i.imgur.com/4bCsEu8.png" class='text' style="height: 75px; width: 75px;">
+       <div class='text' style="height: 50px; width: 100px;"><%=record.genre%></div>
     </div>
    </div>
    <div class="row">
@@ -36,6 +49,10 @@
 
 
 </div>
- <div style="text-align: center; font-size: 25px;">
+</div>
+<!--  <div style="text-align: center; font-size: 25px;">
 
+</div> -->
+
+</div>
 </div>
