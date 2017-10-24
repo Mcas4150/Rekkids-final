@@ -1,5 +1,6 @@
 
-<div class="main" style="margin-top:7.5em;">
+<body style="background-color: white;">
+  <div class="main" style="margin-top:7.5em;">
 <div style="margin-top:2.5em;">
 
 <div style="border-radius:5px;" class="hidden-xs">
@@ -16,7 +17,7 @@
   <span style="justify-content: flex-end; align-self: center; float:right"><a href="/records/marketplace"style="color: black"><h4 style="font-size:1.6em ; margin-top: .5em; font-family:'Damion', 'cursive'">(All)</h4></a></span>
 </div>
 
-<div class="records-display">
+<div class="records-display" style="background-color: #e9eae7; border-radius: 5px; padding:10px">
 
 <% @records.first(36).each do |record| %>
   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="padding-left:5px; padding-right:5px;">
@@ -55,4 +56,4 @@
 
 </div>
 
-
+</body>
