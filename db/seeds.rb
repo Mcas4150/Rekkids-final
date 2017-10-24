@@ -59,16 +59,12 @@ listings4.each do |listing|
   end
 end
 
-listings5 = inventory5.listings
-listings5.each do |listing|
-  if listing['status'] == 'For Sale'
-    temp = {}
-    temp[:release_id] = listing.release['id']
-    temp[:description] = listing.release['description']
-    temp[:price_cents] = listing.original_price['value'].round
-    my_listings << temp
-  end
-end
+
+
+
+
+
+
 
 total = 0
 

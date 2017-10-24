@@ -5,6 +5,7 @@
 //= require jquery-fileupload/basic
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
+//= require algolia/v3/algoliasearch.min
 //= require bootstrap-datepicker
 //= require underscore
 //= require gmaps/google
@@ -42,3 +43,16 @@ span.onclick = function() {
 
 
 
+// var client = algoliasearch("P1B024U2Z9", 'e2a4822bc15df22e7b8ca22cca51b784');
+// var index = client.initIndex('records');
+// index.search('something', { hitsPerPage: 10, page: 0 })
+//   .then(function searchDone(content) {
+//     console.log(content)
+//   })
+//   .catch(function searchFailure(err) {
+//     console.error(err);
+//   });
+
+// index.search('gets.chomp', function(err, content) {
+//   console.log(content.hits);
+// });
