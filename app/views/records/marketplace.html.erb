@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-xs-12 col-sm-3" style="
     padding-top: 2vh">
-    <div  style="width:100% ; background-color: #e9eae7; border-radius: 5px;">
+    <div  class="categories">
       <div class="curls" style="font-size: 2.5em; padding-left: 10px;">All</div>
     <a class="sidebar" style="color:black; width: 100%; " href="/records/disco">Disco</a>
     <br>
@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-9" style= "padding-top: 2vh;">
-<div class="records-display" style= "background-color: #e9eae7; border-radius: 5px; padding-left: 1em; padding-right: 1em">
+<div class="records-display" >
 
 <div class="paginate" style="display:block; width:100%; color:black; margin-top: -25px;
     margin-left: 15px;"><%= paginate @records %></div>
@@ -63,7 +63,7 @@
   </div>
   <% end %>
 
-
+  <div class="paginate" style="float:right; color:black; margin-right:10vw;"><%= paginate @records %></div>
 </div>
 </div>
 <!--  <div style="text-align: center; font-size: 25px;">
@@ -81,8 +81,8 @@
 
 
 
-
+<!--
  <div class="paginate" style="float:right; font-size: 25px; color:black; margin-right: 10vw; padding-right: 10px;">
-<%= paginate @records %></div>
+<%= paginate @records %></div> -->
 </div>
 </body>

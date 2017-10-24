@@ -1,9 +1,9 @@
 
-<div class="main" style="margin-top:6em;">
+<div class="main">
 <div class="row">
   <div class="col-xs-12 col-sm-3" style="padding-left: 0px;
     padding-top: 2vh">
-    <div style="width:100%; background-color: white; border-radius: 5px; padding-bottom: 5px">
+    <div class="categories">
             <div  class="curls" style="font-size: 2.5em; padding-left: 10px; ;">Electro</div>
     <a class="sidebar" style="color:black; width: 100%; " href="/records/disco">Disco</a>
     <br>
@@ -23,7 +23,7 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-9" style="padding-top: 2vh"">
-<div class="records-display" style="background-color: white; border-radius: 5px; padding-left: 10px; padding-right:10px;">
+<div class="records-display">
 <% @found = Record.where(genre: "Electro") %>
 <!-- <div style="display:block; width:100%;"><%= @found.count %> results</div> -->
 
