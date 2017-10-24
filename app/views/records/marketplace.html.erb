@@ -1,6 +1,33 @@
 
-<div class="main" style="margin-top:5em;">
+
+
+
+<div class="main" style="margin-top:6em;">
+<div class="row">
+  <div class="col-xs-12 col-sm-3">
+    <div style="width:100%">
+      <div style="font-size: 2.5em">All</div>
+    <a class="sidebar" style="color:black; width: 100%; " href="/records/disco">Disco</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/soul">Soul</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/techno">Techno</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/house">House</a>
+     <br>
+    <a class="sidebar" style="color:black " href="/records/funk">Funk</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/electro">Electro</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/ambient">Ambient</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/deephouse">Deep House</a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-9">
 <div class="records-display">
+
+<div class="paginate" style="display:block; width:100%; color:black"><%= paginate @records %></div>
 
 <% @records.first(90).each do |record| %>
   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="padding-left:5px; padding-right:5px;">
@@ -33,6 +60,23 @@
 
 
 </div>
+</div>
+<!--  <div style="text-align: center; font-size: 25px;">
+</div> -->
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
  <div style="text-align: center; font-size: 25px;">
 <%= paginate @records %></div>
 </div>

@@ -1,18 +1,19 @@
 
 <div class="main" style="margin-top:6em;">
 <div class="row">
-  <div class="col-xs-12 col-sm-3">
+  <div class="col-xs-12 col-sm-3" style="padding-left: 0px;
+    padding-top: 2vh">
     <div style="width:100%">
-            <div style="font-size: 2.5em">Disco</div>
-    <a class="sidebar" style="color:black; width: 100%; " href="/records/deephouse">Deep House</a>
+            <div style="font-size: 2.5em">Funk</div>
+    <a class="sidebar" style="color:black; width: 100%; " href="/records/disco">Disco</a>
     <br>
     <a class="sidebar" style="color:black " href="/records/soul">Soul</a>
     <br>
-    <a class="sidebar" style="color:black " href="/records/techno">Techno</a>
+    <a class="sidebar" style="color:black " href="/records/deephouse">Deep House</a>
     <br>
     <a class="sidebar" style="color:black " href="/records/house">House</a>
     <br>
-    <a class="sidebar" style="color:black " href="/records/funk">Funk</a>
+    <a class="sidebar" style="color:black " href="/records/techno">Techno</a>
     <br>
     <a class="sidebar" style="color:black " href="/records/electro">Electro</a>
     <br>
@@ -21,8 +22,7 @@
   </div>
   <div class="col-xs-12 col-sm-9">
 <div class="records-display">
-
-<% @found = Record.where(genre: "Disco") %>
+<% @found = Record.where(genre: "Funk") %>
 <div style="display:block; width:100%;"><%= @found.count %> results</div>
 
 
@@ -34,7 +34,7 @@
 
   <img src = '<%= record.photo rescue nil%>' class="imag myImg" style= "height: 100%; width: 100%;">
     <div class="overlay">
-       <div class='text' style="height: 50px; width: 100px;"><%=record.genre%></div>
+       <img src="http://i.imgur.com/4bCsEu8.png" class='text' style="height: 75px; width: 75px;">
     </div>
    </div>
    <div class="row">
@@ -55,6 +55,7 @@
    </a>
   </div>
   <% end %>
+
 
 
 </div>

@@ -16,6 +16,9 @@ Rails.application.routes.draw do
       get :disco
       get :deephouse
       get :soul
+      get :funk
+      get :electro
+      get :ambient
       post :cart
       post :crate
 

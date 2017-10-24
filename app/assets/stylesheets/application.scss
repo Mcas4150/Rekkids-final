@@ -246,7 +246,8 @@ tr {
 }
 
 .sidebar {
-  font-size: 2em;
+  font-size: 1.5em;
+  padding-left:0px;
   padding:10px;
   text-align: center
 }
@@ -315,6 +316,11 @@ td {
 padding-left: 10px;
 padding-right: 10px;
 
+}
+
+
+.paginate a{
+  color:black;
 }
 
 .container2 {

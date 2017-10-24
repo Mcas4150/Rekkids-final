@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-3">
     <div style="width:100%">
-            <div style="font-size: 2.5em">Disco</div>
+            <div style="font-size: 2.5em">Ambient</div>
     <a class="sidebar" style="color:black; width: 100%; " href="/records/deephouse">Deep House</a>
     <br>
     <a class="sidebar" style="color:black " href="/records/soul">Soul</a>
@@ -16,13 +16,13 @@
     <br>
     <a class="sidebar" style="color:black " href="/records/electro">Electro</a>
     <br>
-    <a class="sidebar" style="color:black " href="/records/ambient">Ambient</a>
+    <a class="sidebar" style="color:black " href="/records/disco">Disco</a>
     </div>
   </div>
   <div class="col-xs-12 col-sm-9">
 <div class="records-display">
 
-<% @found = Record.where(genre: "Disco") %>
+<% @found = Record.where(genre: "Ambient") %>
 <div style="display:block; width:100%;"><%= @found.count %> results</div>
 
 

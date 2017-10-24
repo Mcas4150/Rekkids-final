@@ -1,8 +1,30 @@
 
-<div class="main" style="margin-top:5em;">
+<div class="main" style="margin-top:6em;">
+<div class="row">
+  <div class="col-xs-12 col-sm-3" style="padding-left: 0px;
+    padding-top: 2vh">
+    <div style="width:100%">
+            <div style="font-size: 2.5em">Techno</div>
+    <a class="sidebar" style="color:black; width: 100%; " href="/records/disco">Disco</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/soul">Soul</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/deephouse">Deep House</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/house">House</a>
+     <br>
+    <a class="sidebar" style="color:black " href="/records/funk">Funk</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/electro">Electro</a>
+    <br>
+    <a class="sidebar" style="color:black " href="/records/ambient">Ambient</a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-9">
 <div class="records-display">
-
 <% @found = Record.where(genre: "Techno") %>
+<div style="display:block; width:100%;"><%= @found.count %> results</div>
+
 
 
 <% @found.each do |record| %>
@@ -35,7 +57,12 @@
   <% end %>
 
 
-</div>
- <div style="text-align: center; font-size: 25px;">
 
+</div>
+</div>
+<!--  <div style="text-align: center; font-size: 25px;">
+
+</div> -->
+
+</div>
 </div>
