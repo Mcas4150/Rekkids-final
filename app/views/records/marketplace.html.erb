@@ -39,8 +39,8 @@
    <div class='seletak'>
 
   <img src = '<%= record.photo rescue nil%>' class="imag myImg" >
-    <div class="overlay2">
-       <div class='text yells'><%=humanized_money_with_symbol(record.price_cents)%></div>
+    <div class="overlay2 type">
+       <div class='text yells'><%=record.genre%></div>
     </div>
    </div>
    <div class="row">

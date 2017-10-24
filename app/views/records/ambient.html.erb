@@ -22,13 +22,9 @@
   </div>
   <div class="col-xs-12 col-sm-9">
 <div class="records-display">
-
 <% @found = Record.where(genre: "Ambient") %>
 <% @found2 = Record.where(genre: "Downtempo") %>
 <div style="display:block; width:100%;"><%= @found.count + @found2.count %> results</div>
-
-
-
 <% @found.each do |record| %>
   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">
   <a href='/records/<%=record.id%>'>
