@@ -1,5 +1,4 @@
 
-<body style="background-color: white;">
   <div class="main" style="margin-top:7.5em;">
 <div style="margin-top:2.5em;">
 
@@ -10,50 +9,32 @@
 
 </div>
 
-<div style="display: flex; flex-direction: row;">
+<div class="just">
     <span style="justify-content: flex-start;">
-    <h4 style="font-size:1.6em ; margin-top: .5em; font-family:'Damion', 'cursive'">Just Arrived</h4>
+    <h4 class="tagline">Just Arrived</h4>
   </span>
-  <span style="justify-content: flex-end; align-self: center; float:right"><a href="/records/marketplace"style="color: black"><h4 style="font-size:1.6em ; margin-top: .5em; font-family:'Damion', 'cursive'">(All)</h4></a></span>
+  <span style="float:right"><a href="/records/marketplace"style="color: black"><h4 class="tagline">(All)</h4></a></span>
 </div>
 
-<div class="records-display" style="background-color: #e9eae7; border-radius: 5px; padding:10px">
+<div class="records-display">
 
 <% @records.first(36).each do |record| %>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="padding-left:5px; padding-right:5px;">
+<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">
   <a href='/records/<%=record.id%>'>
    <div class='seletak'>
-
-  <img src = '<%= record.photo rescue nil%>' class='imag myImg' style= "height: 100%; width: 100%;">
+  <img src = '<%= record.photo rescue nil%>' class="imag myImg" >
     <div class="overlay2">
-      <div class='text yells curls' style="height: 20px; width: 100px; opacity:1; font-size: 1em; display:flex; flex-direction: row; justify-content: center; align-items: flex-end;"><%=record.genre%></div>
+       <div class='text yells'><%=record.genre%></div>
     </div>
    </div>
    <div class="row">
-  <div class="card-body munch col-9" style="font-size:30px;">
-
-  <p style="width: 150px;
-  overflow: hidden;
-  text-overflow: ellipsis;"><%= record.artist %></p>
-  <h2 style="width: 150px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  "><%= record.name %></h2>
+  <div class="infoo card-body munch col-9">
+  <p><%= record.artist rescue nil%></p>
+  <h2><%= record.name rescue nil%></h2>
   </div>
-  <!-- <div class="col-3">
-  <span style="display:flex; justify-content:flex-end;"><%= humanized_money_with_symbol(record.price_cents) %></span>
-  </div> -->
   </div>
    </a>
   </div>
   <% end %>
-
-
 </div>
-
-
-
-
 </div>
-
-</body>
