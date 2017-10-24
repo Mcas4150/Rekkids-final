@@ -27,7 +27,6 @@
   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">
   <a href='/records/<%=record.id%>'>
    <div class='seletak'>
-
   <img src = '<%= record.photo rescue nil%>' class="imag myImg" >
     <div class="overlay2">
        <div class='text yells'><%=humanized_money_with_symbol(record.price_cents)%></div>

@@ -6,52 +6,7 @@
 
 
           <div id="player" style="height:35vh;">
-    <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '',
-          width: '125',
-          playerVars: {
-            color: 'white',
-            // playlist: 'taJ60kskkns,FG0fTKAqZ5g'
-          },
-          videoId:  '<%= @record.youtubeid.partition('=').last rescue nil%>',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
-
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      // function stopVideo() {
-      //   player.stopVideo();
-      // }
-    </script>
 </div>
 
        <!--  <img  class="myImg" id="myImg" src= '<%= @record.photo rescue nil%>' style= "height: 100%; width: 100%;  margin-bottom: 10px;" > -->
@@ -123,14 +78,6 @@
               <% end %>
 
         </table>
-
-
-
-
-
-     <!-- <div class="col-xs-12 col-sm-8" id="player"></div>
- -->
-
   </div>
 
   <div class="recommend"><h4 style="font-size:1.6em ; font-family:'Damion', 'cursive'">We Also Recommend</h4></div>
@@ -141,29 +88,19 @@
 
 
 <% found.each do |record| %>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="padding-left:5px; padding-right:5px;">
+<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">
   <a href='/records/<%=record.id%>'>
    <div class='seletak'>
-
-  <img src = '<%= record.photo rescue nil%>' class="imag myImg" style= "height: 100%; width: 100%;">
+  <img src = '<%= record.photo rescue nil%>' class="imag myImg" >
     <div class="overlay2">
-        <div class='text yells' style="height: 20px; width: 100px; opacity:1; font-size: 1em; display:flex; flex-direction: row; justify-content: center; align-items: flex-end;"><%=humanized_money_with_symbol(record.price_cents)%></div>
+       <div class='text yells'><%=humanized_money_with_symbol(record.price_cents)%></div>
     </div>
    </div>
    <div class="row">
-  <div class="card-body munch col-9" style="font-size:30px;">
-
-  <p style="width: 180px;
-  overflow: hidden;
-  text-overflow: ellipsis;"><%= record.artist rescue nil%></p>
-  <h2 style="width: 180px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  "><%= record.name rescue nil%></h2>
+  <div class="infoo card-body munch col-9">
+  <p><%= record.artist rescue nil%></p>
+  <h2><%= record.name rescue nil%></h2>
   </div>
-  <!-- <div class="col-3">
-  <span style="display:flex; justify-content:flex-end;"><%= humanized_money_with_symbol(record.price_cents) %></span>
-  </div> -->
   </div>
    </a>
   </div>
