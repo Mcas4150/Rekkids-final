@@ -2,7 +2,7 @@
 <div class="row tip">
   <div class="col-xs-12 col-sm-3" style="padding-left: 0px;">
     <div class="categories">
-            <div  class="curls" style="font-size: 2.5em">Ambient </div>
+            <div  class="curls" style="font-size: 2.5em; padding-left: 10px;">Ambient </div>
     <a class="sidebar" href="/records/deephouse">Deep House</a>
     <br>
     <a class="sidebar" href="/records/soul">Soul</a>
@@ -24,7 +24,6 @@
 <div class="records-display">
 <% @found = Record.where(genre: "Ambient") %>
 <% @found2 = Record.where(genre: "Downtempo") %>
-<div style="display:block; width:100%;"><%= @found.count + @found2.count %> results</div>
 <% @found.each do |record| %>
   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">
   <a href='/records/<%=record.id%>'>
