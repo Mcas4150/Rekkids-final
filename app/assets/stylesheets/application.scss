@@ -257,6 +257,24 @@ tr {
 }
 
 
+.overlay2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #252729;
+  border-radius:5px;
+}
+
+.seletak:hover .overlay2 {
+  opacity: .9;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -267,11 +285,12 @@ tr {
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color:yellow;
+  background-color: #252729;
+    border-radius:5px;
 }
 
 .seletak:hover .overlay {
-  opacity: .4;
+  opacity: .7;
 }
 
 .text {
@@ -376,6 +395,11 @@ padding-right: 10px;
     height: 150px;
 }
 
+.yells {
+  color:#ffee36;
+  font-family:'Damion', 'cursive';
+}
+
 /* Add Animation - Zoom in the Modal */
 .modal-content, #caption {
     -webkit-animation-name: zoom;
@@ -412,6 +436,10 @@ padding-right: 10px;
     cursor: pointer;
 }
 
+
+.curls {
+  font-family:'Damion', 'cursive'
+}
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
     .modal-content {

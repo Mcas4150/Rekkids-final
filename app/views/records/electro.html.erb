@@ -3,8 +3,8 @@
 <div class="row">
   <div class="col-xs-12 col-sm-3" style="padding-left: 0px;
     padding-top: 2vh">
-    <div style="width:100%">
-            <div style="font-size: 2.5em">Electro</div>
+    <div style="width:100%; background-color: white; border-radius: 5px; padding-bottom: 5px">
+            <div  class="curls" style="font-size: 2.5em; padding-left: 10px; ;">Electro</div>
     <a class="sidebar" style="color:black; width: 100%; " href="/records/disco">Disco</a>
     <br>
     <a class="sidebar" style="color:black " href="/records/soul">Soul</a>
@@ -22,10 +22,10 @@
     <a class="sidebar" style="color:black " href="/records/experimental">Experimental</a>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-9">
-<div class="records-display">
+  <div class="col-xs-12 col-sm-9" style="padding-top: 2vh"">
+<div class="records-display" style="background-color: white; border-radius: 5px; padding-left: 10px; padding-right:10px;">
 <% @found = Record.where(genre: "Electro") %>
-<div style="display:block; width:100%;"><%= @found.count %> results</div>
+<!-- <div style="display:block; width:100%;"><%= @found.count %> results</div> -->
 
 
 
@@ -35,8 +35,8 @@
    <div class='seletak'>
 
   <img src = '<%= record.photo rescue nil%>' class="imag myImg" style= "height: 100%; width: 100%;">
-    <div class="overlay">
-       <img src="http://i.imgur.com/4bCsEu8.png" class='text' style="height: 75px; width: 75px;">
+    <div class="overlay2">
+        <div class='text yells' style="height: 20px; width: 100px; opacity:1; font-size: 1em; display:flex; flex-direction: row; justify-content: center; align-items: flex-end;"><%=humanized_money_with_symbol(record.price_cents)%></div>
     </div>
    </div>
    <div class="row">

@@ -4,7 +4,7 @@
   <div class="col-xs-12 col-sm-3" style="padding-left: 0px;
     padding-top: 2vh">
     <div style="width:100%">
-            <div style="font-size: 2.5em">Techno</div>
+            <div  class="curls" style="font-size: 2.5em">Techno </div>
     <a class="sidebar" style="color:black; width: 100%; " href="/records/disco">Disco</a>
     <br>
     <a class="sidebar" style="color:black " href="/records/soul">Soul</a>
@@ -36,8 +36,8 @@
    <div class='seletak'>
 
   <img src = '<%= record.photo rescue nil%>' class="imag myImg" style= "height: 100%; width: 100%;">
-    <div class="overlay">
-       <img src="http://i.imgur.com/4bCsEu8.png" class='text' style="height: 75px; width: 75px;">
+    <div class="overlay2">
+         <div class='text yells curls' style="height: 20px; width: 100px; opacity:1; font-size: 1em; display:flex; flex-direction: row; justify-content: center; align-items: flex-end;"><%=humanized_money_with_symbol(record.price_cents)%></div>
     </div>
    </div>
    <div class="row">
