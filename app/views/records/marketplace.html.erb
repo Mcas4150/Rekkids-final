@@ -2,12 +2,13 @@
 
 
 
+<body style="background-color:white;">
 <div class="main" style="margin-top:6em;">
 <div class="row">
-    <div class="col-xs-12 col-sm-3" style="padding-left: 0px;
+    <div class="col-xs-12 col-sm-3" style="
     padding-top: 2vh">
-    <div  style="width:100%">
-      <div class="curls" style="font-size: 2.5em">All</div>
+    <div  style="width:100% ; background-color: #e9eae7; border-radius: 5px;">
+      <div class="curls" style="font-size: 2.5em; padding-left: 10px;">All</div>
     <a class="sidebar" style="color:black; width: 100%; " href="/records/disco">Disco</a>
     <br>
     <a class="sidebar" style="color:black " href="/records/soul">Soul</a>
@@ -27,10 +28,11 @@
     <a class="sidebar" style="color:black " href="/records/experimental">Experimental</a>
     </div>
   </div>
-  <div class="col-xs-12 col-sm-9">
-<div class="records-display">
+  <div class="col-xs-12 col-sm-9" style= "padding-top: 2vh;">
+<div class="records-display" style= "background-color: #e9eae7; border-radius: 5px; padding-left: 1em; padding-right: 1em">
 
-<div class="paginate" style="display:block; width:100%; color:black"><%= paginate @records %></div>
+<div class="paginate" style="display:block; width:100%; color:black; margin-top: -25px;
+    margin-left: 15px;"><%= paginate @records %></div>
 
 <% @records.first(90).each do |record| %>
   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="padding-left:5px; padding-right:5px;">
@@ -83,3 +85,4 @@
  <div class="paginate" style="text-align: center; font-size: 25px; color:black">
 <%= paginate @records %></div>
 </div>
+</body>

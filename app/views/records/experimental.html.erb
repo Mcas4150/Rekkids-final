@@ -1,9 +1,10 @@
 
+<body style="background-color:white;">
 <div class="main" style="margin-top:6em;">
 <div class="row">
   <div class="col-xs-12 col-sm-3" style="padding-left: 0px;
     padding-top: 2vh">
-    <div style="width:100%">
+    <div style="width:100%;  background-color: #e9eae7; border-radius: 5px;">
             <div  class="curls" style="font-size: 2.5em">Experimental</div>
     <a class="sidebar" style="color:black; width: 100%; " href="/records/disco">Disco</a>
     <br>
@@ -23,7 +24,7 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-9">
-<div class="records-display">
+<div class="records-display"  style="background-color: #e9eae7; border-radius: 5px;">
 <% @found = Record.where(genre: "Experimental") %>
 <% @found2 = Record.where(genre: "Abstract") %>
 <div style="display:block; width:100%;"><%= @found.count + @found2.count %> results</div>
@@ -97,3 +98,4 @@
 
 </div>
 </div>
+</body>
