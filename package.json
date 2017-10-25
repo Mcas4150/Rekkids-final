@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "instantsearch.js": "^2.2.1"
+  }
+}

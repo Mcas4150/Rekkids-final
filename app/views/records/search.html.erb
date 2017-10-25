@@ -1,0 +1,133 @@
+<div class="main">
+
+
+
+<!-- <label>search:
+
+<input id="searchBox" type="text" />
+
+</label>
+<button onclick="myTechno()">Techno</button>
+ -->
+
+<div class="main">
+  <div class="ais-search-box">
+  <input autocapitalize="off" autocomplete="on" autocorrect="off" placeholder="Search for products" role="textbox" spellcheck="false" type="text" value="" class="ais-search-box--input">
+  <!-- <span>
+    <div class="ais-search-box--powered-by">
+      Search by
+      <a class="ais-search-box--powered-by-link" href="https://www.algolia.com/?utm_source=instantsearch.js&amp;utm_medium=website&amp;utm_content=community.algolia.com&amp;utm_campaign=poweredby" target="_blank">
+        Algolia
+      </a>
+    </div>
+  </span> -->
+</div>
+<div class="row tip">
+    <div class="col-xs-12 col-sm-3" style="padding-left: 0px;">
+    <div class="categories">
+            <div  class="curls" style="font-size: 2.5em">Experimental</div>
+     <div id="sidebarre"></div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-9">
+<div class="records-display">
+<div id="hits">
+<%Record.algolia_search('Soul', { "facets": "[\'genre'\]"}).each do |record |%>
+     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">
+  <a href='/records/<%=record.id%>'>
+   <div class='seletak'>
+  <img src = '<%= record.photo rescue nil%>' class="imag myImg" >
+    <div class="overlay2">
+       <div class='text yells'><%=record.genre%></div>
+    </div>
+   </div>
+   <div class="row">
+  <div class="infoo card-body munch col-9">
+  <p><%= record.artist rescue nil%></p>
+  <h2><%= record.name rescue nil%></h2>
+  </div>
+  </div>
+   </a>
+  </div>
+  <% end %>
+
+
+</div>
+</div>
+<div id="pagination"></div>
+
+
+
+</div>
+<script>
+
+function myTechno() {
+index.search("Techno", {
+ "hitsPerPage": "10",
+ "page": "0",
+ "attributesToRetrieve": "*",
+ "facets": "[\"genre\"]"
+});
+}
+</script>
+
+
+
+<!--  <!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Media search by Algolia</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.5/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@1/dist/instantsearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="stylee.scss" />
+  <!--[if lte IE 9]>
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+  <![endif]-->
+<!-- </head>
+<body>
+  <header class="row">
+    <div class="">
+      <a href="https://community.algolia.com/instantsearch.js/" class="is-logo"><img src="logo-is.png" width=40 ></a>
+      <a href="./" class="logo">You<i class="fa fa-youtube-play"></i></a>
+    </div>
+    <div class="searchbox-container">
+      <div class="input-group">
+        <input type="text" class="form-control" id="q" />
+        <span class="input-group-btn">
+          <button class="btn btn-default"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </div>
+  </header>
+  <section class="">
+    <aside>
+      <ul class="nav nav-list">
+        <li><a href=""><i class="fa fa-home"></i> Home</a></li>
+        <li class="separator"></li>
+      </ul>
+      <h5><i class="fa fa-chevron-right"></i> Genres</h5>
+      <div id="genres"></div>
+      <h5><i class="fa fa-chevron-right"></i> Ratings</h5>
+      <div id="ratings"></div>
+      <div class="thank-you">Data courtesy of <a href="https://www.imdb.com/">imdb.com</a></div>
+    </aside>
+    <article>
+      <div id="stats" class="text-right text-muted"></div>
+      <hr />
+      <div id="hits"></div>
+      <div id="pagination" class="text-center"></div>
+    </article>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@1/dist/instantsearch.min.js"></script>
+
+  <script src="search.js"></script>
+</body>
+</html>
+ -->
+

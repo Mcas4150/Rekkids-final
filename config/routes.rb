@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       get :deephouse
       get :soul
       get :funk
+      get :search
       get :electro
       get :ambient
       get :experimental

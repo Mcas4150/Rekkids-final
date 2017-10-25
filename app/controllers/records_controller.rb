@@ -13,6 +13,9 @@ class RecordsController < ApplicationController
   def techno
   end
 
+  def search
+  end
+
   def house
   end
 
