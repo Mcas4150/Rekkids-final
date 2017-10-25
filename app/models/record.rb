@@ -6,9 +6,10 @@ class Record < ApplicationRecord
   @discogs = Discogs::Wrapper.new("La Rama", user_token: "tJTZwyDlsmmQCxOjBBhNygEucUsbKELlYfTzsZYp")
   paginates_per 50
 
-  include AlgoliaSearch
-
-  algoliasearch do
+include AlgoliaSearch
+  algoliasearch per_environment: true do
+    attributesToIndex ['artist', 'name', 'genre']
+    attributesForFaceting ['genre']
   end
 
 

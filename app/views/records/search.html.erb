@@ -1,133 +1,82 @@
-<div class="main">
+<% content_for :title do %>Instant-search<% end %>
 
+<h1>Instant-search example</h1>
 
+<!-- <div class="well">
+  A <code>Google-like</code> instant-search results page based on <a href="https://community.algolia.com/instantsearch.js"><code>instantsearch.js</code></a>.
+</div> -->
 
-<!-- <label>search:
-
-<input id="searchBox" type="text" />
-
-</label>
-<button onclick="myTechno()">Techno</button>
- -->
-
-<div class="main">
-  <div class="ais-search-box">
-  <input autocapitalize="off" autocomplete="on" autocorrect="off" placeholder="Search for products" role="textbox" spellcheck="false" type="text" value="" class="ais-search-box--input">
-  <!-- <span>
-    <div class="ais-search-box--powered-by">
-      Search by
-      <a class="ais-search-box--powered-by-link" href="https://www.algolia.com/?utm_source=instantsearch.js&amp;utm_medium=website&amp;utm_content=community.algolia.com&amp;utm_campaign=poweredby" target="_blank">
-        Algolia
-      </a>
-    </div>
-  </span> -->
-</div>
-<div class="row tip">
-    <div class="col-xs-12 col-sm-3" style="padding-left: 0px;">
-    <div class="categories">
-            <div  class="curls" style="font-size: 2.5em">Experimental</div>
-     <div id="sidebarre"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <input type="text" id="q" class="form-control" />
     </div>
   </div>
-  <div class="col-xs-12 col-sm-9">
-<div class="records-display">
-<div id="hits">
-<%Record.algolia_search('Soul', { "facets": "[\'genre'\]"}).each do |record |%>
-     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">
-  <a href='/records/<%=record.id%>'>
-   <div class='seletak'>
-  <img src = '<%= record.photo rescue nil%>' class="imag myImg" >
-    <div class="overlay2">
-       <div class='text yells'><%=record.genre%></div>
+
+  <div class="row">
+    <div class="col-sm-3" id="facets">
+      <div id="genre"></div>
     </div>
-   </div>
-   <div class="row">
-  <div class="infoo card-body munch col-9">
-  <p><%= record.artist rescue nil%></p>
-  <h2><%= record.name rescue nil%></h2>
+    <div class="col-sm-9" id="hits"></div>
   </div>
-  </div>
-   </a>
-  </div>
-  <% end %>
-
-
 </div>
-</div>
-<div id="pagination"></div>
+
+<script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var hitTemplate = '<div class="hit-instant-search">' +
+      '<div class="artist">{{{_highlightResult.artist.value}}}</div>' +
+      '<div class="name">{{{_highlightResult.name.value}}}</div>' +
+
+      '<div class="label" style="color:black;">{{{_highlightResult.label.value}}}</div>' +
+      '<div class="media-object" style="background-image: url(\'{{photo}}\');"></div>' +
+      '<div class="year">{{year}}</div>' +
+      '<div class="country" style="color:black;">{{{_highlightResult.country.value}}}</div>'
 
 
+    var search = instantsearch({
+      appId: '<%= ENV['ALGOLIASEARCH_APPLICATION_ID'] %>',
+      apiKey: '<%= ENV['ALGOLIASEARCH_API_KEY_SEARCH'] %>',
+      indexName: 'Record',
+      urlSync: true
+    });
 
-</div>
-<script>
+    search.addWidget(
+      instantsearch.widgets.searchBox({
+        container: '#q',
+        placeholder: 'Search for contacts',
+        autofocus: false,
+        poweredBy: true
+      })
+    );
 
-function myTechno() {
-index.search("Techno", {
- "hitsPerPage": "10",
- "page": "0",
- "attributesToRetrieve": "*",
- "facets": "[\"genre\"]"
-});
-}
+    search.addWidget(
+      instantsearch.widgets.hits({
+        container: '#hits',
+        templates: {
+          empty: 'No results',
+          item: hitTemplate
+        },
+        hitsPerPage: 10
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.refinementList({
+        container: '#genre',
+        attributeName: 'genre',
+        limit: 10,
+        templates: {
+          header: 'Genre'
+        },
+        cssClasses: {
+          root: 'list-group',
+          item: 'list-group-item',
+          count: 'badge pull-right'
+        }
+      })
+    );
+
+    search.start();
+  });
 </script>
-
-
-
-<!--  <!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Media search by Algolia</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.5/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@1/dist/instantsearch.min.css" />
-
-  <link rel="stylesheet" type="text/css" href="stylee.scss" />
-  <!--[if lte IE 9]>
-  <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-  <![endif]-->
-<!-- </head>
-<body>
-  <header class="row">
-    <div class="">
-      <a href="https://community.algolia.com/instantsearch.js/" class="is-logo"><img src="logo-is.png" width=40 ></a>
-      <a href="./" class="logo">You<i class="fa fa-youtube-play"></i></a>
-    </div>
-    <div class="searchbox-container">
-      <div class="input-group">
-        <input type="text" class="form-control" id="q" />
-        <span class="input-group-btn">
-          <button class="btn btn-default"><i class="fa fa-search"></i></button>
-        </span>
-      </div>
-    </div>
-  </header>
-  <section class="">
-    <aside>
-      <ul class="nav nav-list">
-        <li><a href=""><i class="fa fa-home"></i> Home</a></li>
-        <li class="separator"></li>
-      </ul>
-      <h5><i class="fa fa-chevron-right"></i> Genres</h5>
-      <div id="genres"></div>
-      <h5><i class="fa fa-chevron-right"></i> Ratings</h5>
-      <div id="ratings"></div>
-      <div class="thank-you">Data courtesy of <a href="https://www.imdb.com/">imdb.com</a></div>
-    </aside>
-    <article>
-      <div id="stats" class="text-right text-muted"></div>
-      <hr />
-      <div id="hits"></div>
-      <div id="pagination" class="text-center"></div>
-    </article>
-  </section>
-
-  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@1/dist/instantsearch.min.js"></script>
-
-  <script src="search.js"></script>
-</body>
-</html>
- -->
-
