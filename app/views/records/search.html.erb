@@ -15,12 +15,15 @@
     </div>
   </div>
 
+
   <div class="row">
     <div class="col-sm-3" id="facets">
       <div id="genre"></div>
     </div>
+    <div class="records-display">
     <div class="col-sm-9" id="hits"></div>
   </div>
+</div>
 </div>
 </div>
 <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
@@ -29,10 +32,10 @@
     var hitTemplate = '<div class="hit-instant-search">' +
       '<div class="artist">{{{_highlightResult.artist.value}}}</div>' +
       '<div class="name">{{{_highlightResult.name.value}}}</div>' +
-
+      '<div class="year">{{year}}</div>' +
       '<div class="label" style="color:black;">{{{_highlightResult.label.value}}}</div>' +
       '<div class="media-object" style="background-image: url(\'{{photo}}\');"></div>' +
-      '<div class="year">{{year}}</div>' +
+
       '<div class="country" style="color:black;">{{{_highlightResult.country.value}}}</div>'
 
 
