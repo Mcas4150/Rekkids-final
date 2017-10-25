@@ -1,14 +1,13 @@
+<div class="main">
+
 <% content_for :title do %>Instant-search<% end %>
 
-<h1>Instant-search example</h1>
 
-<!-- <div class="well">
-  A <code>Google-like</code> instant-search results page based on <a href="https://community.algolia.com/instantsearch.js"><code>instantsearch.js</code></a>.
-</div> -->
+
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
+    <div class="col-sm-6">
       <input type="text" id="q" class="form-control" />
     </div>
   </div>
@@ -20,7 +19,7 @@
     <div class="col-sm-9" id="hits"></div>
   </div>
 </div>
-
+</div>
 <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
@@ -44,9 +43,9 @@
     search.addWidget(
       instantsearch.widgets.searchBox({
         container: '#q',
-        placeholder: 'Search for contacts',
+        placeholder: 'Type Anything',
         autofocus: false,
-        poweredBy: true
+        poweredBy: false
       })
     );
 
