@@ -164,6 +164,24 @@ h1 {
 
 .picha{
   height:125px;
+  width:125px;
+}
+
+
+.ais-range-slider .rheostat-progress {
+    background-color: #ffee36!important;
+}
+
+
+.ais-range-slider--handle {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    border: 1px solid #626262;
+    border-radius: 50%;
+    cursor: pointer;
 }
 // .ais-refinement-list--checkbox{
 //   color:#ffee36

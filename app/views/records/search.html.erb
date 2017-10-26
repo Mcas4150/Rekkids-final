@@ -13,12 +13,16 @@
     <div class="col-sm-6">
       <div id="pagination"></div>
     </div>
+    <!-- <div class="col-sm-3">
+      <div id="sort-by-container"></div>
+    </div> -->
   </div>
 
 
   <div class="row">
     <div class="col-sm-3 sideshow" id="facets">
       <div id="genre"></div>
+      <div id="prices"></div>
     </div>
     <div class="col-sm-9"><div class="records-display" id="hits"></div></div>
  </div>
@@ -41,7 +45,8 @@
    '<div class="row descr">' +
   '<div class="infoo card-body munch col-9">' +
   '<p>{{{_highlightResult.artist.value}}}</p>' +
-  '<h2>{{{_highlightResult.name.value}}}</h2>' +
+  '<p>{{index}}</p>' +
+   '<h2>{{{_highlightResult.name.value}}}</h2>' +
   '</div>' +
   '</div>' +
    '</a>' +
@@ -83,14 +88,42 @@
           })
         );
 
+  //   search.addWidget(
+  // instantsearch.widgets.sortBySelector({
+  //   container: '#sort-by-container',
+  //   index: 'price_cents'
+  //   })
+  //   );
 
+
+//       search.addWidget(
+//         instantsearch.widgets.priceRanges({
+//           container: '#prices',
+//           attributeName: 'price_cents',
+//         })
+//       );
+
+// //
+
+search.addWidget(
+  instantsearch.widgets.rangeSlider({
+    container: '#prices',
+    attributeName: 'price_cents',
+    pips: false,
+    tooltips: {
+      format: function(rawValue) {
+        return '$' + Math.round(rawValue).toLocaleString();
+      }
+    }
+  })
+);
 
 
     search.addWidget(
       instantsearch.widgets.refinementList({
         container: '#genre',
         attributeName: 'genre',
-        limit: 10,
+        limit: 12,
         cssClasses: {
           root: 'list-group',
           item: 'list-group-item',

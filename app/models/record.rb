@@ -8,8 +8,8 @@ class Record < ApplicationRecord
 
 include AlgoliaSearch
   algoliasearch per_environment: true do
-    attributesToIndex ['artist', 'name', 'genre']
-    attributesForFaceting ['genre']
+    attributesToIndex ['artist', 'name', 'genre', 'year', 'id']
+    attributesForFaceting ['genre', 'price_cents']
   end
 
 
