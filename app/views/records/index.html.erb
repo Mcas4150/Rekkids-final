@@ -16,12 +16,13 @@
     <div class="col-sm-3">
       <input type="text" id="q" class="form-control" />
     </div>
-    <div class="col-sm-6">
+    <div class="hidden-xs col-sm-6">
       <div id="pagination"></div>
     </div>
-    <!-- <div class="col-sm-3">
-      <div id="sort-by-container"></div>
-    </div> -->
+<div class="hidden-xs col-sm-3" style="float:right;">
+          <div id="hits-per-page-selector"></div>
+
+    </div>
   </div>
 
 
@@ -31,7 +32,12 @@
       <div id="prices"></div>
     </div>
     <div class="col-sm-9"><div class="records-display" id="hits"></div></div>
+
  </div>
+<!--  <div class="col-xs-12 hidden-md">
+      <div id="pagination"></div>
+    </div> -->
+
 </div>
 </div>
 <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
@@ -87,6 +93,17 @@
     );
 
     search.addWidget(
+  instantsearch.widgets.hitsPerPageSelector({
+    container: '#hits-per-page-selector',
+    items: [
+      {value: 18, label: '18', default: true},
+      {value: 36, label: '36'},
+      {value: 72, label: '72'},
+    ]
+  })
+);
+
+    search.addWidget(
       instantsearch.widgets.pagination({
           container: '#pagination',
           maxPages: 10
@@ -98,8 +115,18 @@
   //   container: '#sort-by-container',
   //   index: 'price_cents'
   //   })
-  //   );
+//   //   );
+// search.addWidget(
+//   instantsearch.widgets.sortBySelector({
+//     container: '#sort-by-selector',
+//     indices: [
 
+//       {name: 'price_cents_asc', label: 'Price asc.'},
+//       {name: 'price_cents_desc', label: 'Price desc.'}
+//     ],
+//     label:'sort by'
+//   })
+// );
 
 //       search.addWidget(
 //         instantsearch.widgets.priceRanges({
