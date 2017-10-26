@@ -144,43 +144,48 @@ h1 {
 }
 
 .ais-current-refined-values--link, .ais-hierarchical-menu--link, .ais-menu--link, .ais-price-ranges--link, .ais-refinement-list--label, .ais-star-rating--link, .ais-toggle--label {
-    color: #626262;
+    color: #ccc;
     text-decoration: none;
 }
 
 .ais-refinement-list--label:hover{
-  color: #ffee36;
+  color: #626262;
 
 }
 
-.ais-refinement-list--checkbox{
-  color:#ffee36
+.ais-pagination--item__active {
+    background: #626262;
+    color: #ffee36
 }
 
-.list-group-item {
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
-    background-color: #ecedea;
-    border: 1px solid #ccc;
-}
+// .ais-refinement-list--checkbox{
+//   color:#ffee36
+// }
 
-.list-group-item:hover{
-  color: #ecedea;
-background-color: #626262;
-}
+// .list-group-item {
+//     position: relative;
+//     display: block;
+//     padding: 10px 15px;
+//     margin-bottom: -1px;
+//     background-color: #ecedea;
+//     border: 1px solid #ccc;
+// }
 
-.list-group-item:hover {.ais-refinement-list--label{
-  color: #ecedea;
+// .list-group-item:hover{
+//   color: #ecedea;
+// background-color: #626262;
+// }
 
-}
-.ais-refinement-list--label:hover{
-  color: #ffee36;
+// .list-group-item:hover {.ais-refinement-list--label{
+//   color: #ecedea;
 
-}
+// }
+// .ais-refinement-list--label:hover{
+//   color: #ffee36;
 
-}
+// }
+
+// }
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #f1f1f1; border-radius:5px;}
 .dropdown-content a:active {background-color: #f1f1f1; border-radius:5px; color:#ffee36}
