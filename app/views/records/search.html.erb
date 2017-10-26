@@ -17,26 +17,36 @@
 
 
   <div class="row">
-    <div class="col-sm-3" id="facets">
+    <div class="col-sm-3 sideshow" id="facets">
       <div id="genre"></div>
     </div>
     <div class="records-display">
-    <div class="col-sm-9" id="hits"></div>
-  </div>
+   <div id="hits"></div>
+ </div>
 </div>
 </div>
 </div>
 <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
-    var hitTemplate = '<div class="hit-instant-search">' +
-      '<div class="artist">{{{_highlightResult.artist.value}}}</div>' +
-      '<div class="name">{{{_highlightResult.name.value}}}</div>' +
-      '<div class="year">{{year}}</div>' +
-      '<div class="label" style="color:black;">{{{_highlightResult.label.value}}}</div>' +
-      '<div class="media-object" style="background-image: url(\'{{photo}}\');"></div>' +
+    var hitTemplate = ' <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">' +
+  "<a href='/records/{{id}}'>"+
+  " <div class='seletak'>" +
 
-      '<div class="country" style="color:black;">{{{_highlightResult.country.value}}}</div>'
+  "<img src = '{{photo}}' class='imag myImg' > " +
+    '<div class="overlay2 type">' +
+      " <div class='text yells'>{{genre}}</div> " +
+    '</div>' +
+   '</div>' +
+   '<div class="row">' +
+  '<div class="infoo card-body munch col-9">' +
+  '<p>{{{_highlightResult.artist.value}}}</p>' +
+  '<h2>{{{_highlightResult.name.value}}}</h2>' +
+  '</div>' +
+  '</div>' +
+   '</a>' +
+  '</div>'
+
 
 
     var search = instantsearch({
@@ -72,6 +82,9 @@
           maxPages: 10
           })
         );
+
+
+
 
     search.addWidget(
       instantsearch.widgets.refinementList({
