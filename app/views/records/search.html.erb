@@ -20,8 +20,7 @@
     <div class="col-sm-3 sideshow" id="facets">
       <div id="genre"></div>
     </div>
-    <div class="records-display">
-   <div id="hits"></div>
+    <div class="records-display" id="hits"></div>
  </div>
 </div>
 </div>
@@ -29,7 +28,8 @@
 <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
-    var hitTemplate = ' <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">' +
+    var hitTemplate =
+    ' <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">' +
   "<a href='/records/{{id}}'>"+
   " <div class='seletak'>" +
 
