@@ -18,6 +18,8 @@ $(document).ready(function() {
 
 
 
+
+
 // Get the modal
 var modal = document.getElementById('myModal');
 
@@ -40,6 +42,10 @@ span.onclick = function() {
 }
 
 
+// var toggler = document.getElementById('toggler');
+// toggler.onclick = function () {
+//     @record.cart = !@record.cart;
+// };
 
 
 
@@ -293,7 +299,6 @@ span.onclick = function() {
 //   limit: [10],
 // })
 // );
-
 
 
 
