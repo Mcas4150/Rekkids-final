@@ -119,6 +119,6 @@ my_listings.each do |listing|
 
 end
 
-
+Record.reindex!
 
 
