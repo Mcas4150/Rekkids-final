@@ -10,18 +10,6 @@ class RecordsController < ApplicationController
      @releases = @response.releases
   end
 
-  def techno
-  end
-
-  def search
-  end
-
-  def house
-  end
-
-  def deephouse
-  end
-
   def marketplace
    @records = Record.order(:name).page params[:page]
   end
@@ -35,6 +23,13 @@ class RecordsController < ApplicationController
    @records = Record.page(1)
 
   end
+
+  def search
+     @record = Record.find(params[:release_id]) rescue nil
+     @records = Record.page(1)
+  end
+
+
 
   def self.cart
     @record.update(cart: true)

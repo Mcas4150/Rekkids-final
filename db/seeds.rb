@@ -1,6 +1,7 @@
 Track.destroy_all
 Record.destroy_all
 
+
 require "stripe"
 Stripe.api_key = "sk_live_94QJv8LvoiP45cA7zi1AV46k"
 my_listings = []
@@ -9,9 +10,9 @@ discogs = Discogs::Wrapper.new("La Rama", user_token: "tJTZwyDlsmmQCxOjBBhNygEuc
 
 user = discogs.get_identity
 inventory1 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 1, per_page: 100)
-inventory2 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 2, per_page: 100)
-inventory3 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 3, per_page: 100)
-inventory4 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 4, per_page: 100)
+inventory2 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 2, per_page: 100) rescue nil
+inventory3 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 3, per_page: 100) rescue nil
+inventory4 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 4, per_page: 100) rescue nil
 inventory5 = discogs.get_user_inventory(user.username, status: "For Sale", sort_order: "desc", page: 5, per_page: 100) rescue nil
 
 
@@ -119,6 +120,5 @@ my_listings.each do |listing|
 
 end
 
-Record.reindex!
 
 

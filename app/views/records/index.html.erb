@@ -48,6 +48,9 @@
 <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
+
+
+
     var hitTemplate =
     ' <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">' +
   "<a href='/records/{{id}}'>"+
@@ -73,7 +76,7 @@
     var search = instantsearch({
       appId: 'P1B024U2Z9',
       apiKey: 'e2a4822bc15df22e7b8ca22cca51b784',
-      indexName: 'Record',
+      indexName: 'Record_development',
       urlSync: true
     });
 

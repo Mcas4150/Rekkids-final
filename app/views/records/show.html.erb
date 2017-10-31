@@ -56,8 +56,6 @@
     height: 30vh;">
               <% reality = @discogs.get_release(@record.release_id) rescue nil%>
 
-
-
             <% reality["tracklist"].each do |track|%>
           <tr style="font-size:1.2em;">
 
@@ -156,7 +154,7 @@
     var search = instantsearch({
       appId: 'P1B024U2Z9',
       apiKey: 'e2a4822bc15df22e7b8ca22cca51b784',
-      indexName: 'Record',
+      indexName: 'Record_development',
       urlSync: true
     });
 
