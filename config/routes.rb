@@ -11,16 +11,7 @@ Rails.application.routes.draw do
       get :index
       get :marketplace
       get :show
-      get :techno
-      get :house
-      get :disco
-      get :deephouse
-      get :soul
-      get :funk
       get :search
-      get :electro
-      get :ambient
-      get :experimental
       post :cart
       post :crate
 

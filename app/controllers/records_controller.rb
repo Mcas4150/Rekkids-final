@@ -31,6 +31,9 @@ class RecordsController < ApplicationController
 
 
 
+
+
+
   def self.cart
     @record.update(cart: true)
     redirect_to crate_records_path

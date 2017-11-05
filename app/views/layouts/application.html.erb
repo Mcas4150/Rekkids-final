@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= favicon_link_tag 'favicon.ico' %>
+    <%= favicon_link_tag 'laRaama.jpg' %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -13,6 +13,118 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.2.1/dist/instantsearch-theme-algolia.min.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+
+
+    var hitTemplate =
+    ' <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 disc">' +
+  "<a href='/records/{{id}}'>"+
+  " <div class='seletak picha'>" +
+
+  "<img src = '{{photo}}' class='imag myImg' > " +
+    '<div class="overlay2 type">' +
+      " <div class='text yells'>{{genre}}</div> " +
+    '</div>' +
+   '</div>' +
+   '<div class="row descr">' +
+  '<div class="infoo card-body munch col-9">' +
+  '<p>{{{_highlightResult.artist.value}}}</p>' +
+  '<p>{{index}}</p>' +
+   '<h2>{{{_highlightResult.name.value}}}</h2>' +
+  '</div>' +
+  '</div>' +
+   '</a>' +
+  '</div>'
+
+
+
+    var search = instantsearch({
+      appId: 'P1B024U2Z9',
+      apiKey: 'e2a4822bc15df22e7b8ca22cca51b784',
+      indexName: 'Record_development',
+      urlSync: true
+    });
+
+    search.addWidget(
+      instantsearch.widgets.searchBox({
+        container: '#q',
+        placeholder: 'Type Anything',
+        autofocus: false,
+        poweredBy: false
+      })
+    );
+
+    search.addWidget(
+      instantsearch.widgets.hits({
+        container: '#hits',
+        templates: {
+          empty: 'No results',
+          item: hitTemplate
+        },
+        hitsPerPage: 10
+      })
+    );
+
+    search.addWidget(
+  instantsearch.widgets.hitsPerPageSelector({
+    container: '#hits-per-page-selector',
+    items: [
+      {value: 18, label: '18', default: true},
+      {value: 36, label: '36'},
+      {value: 72, label: '72'},
+    ]
+  })
+);
+
+    search.addWidget(
+      instantsearch.widgets.pagination({
+          container: '#pagination',
+          maxPages: 10
+          })
+        );
+
+search.addWidget(
+  instantsearch.widgets.rangeSlider({
+    container: '#prices',
+    attributeName: 'price_cents',
+    pips: false,
+    tooltips: {
+      format: function(rawValue) {
+        return '$' + Math.round(rawValue).toLocaleString();
+      }
+    }
+  })
+);
+
+
+    search.addWidget(
+      instantsearch.widgets.refinementList({
+        container: '#genre',
+        attributeName: 'genre',
+        limit: 12,
+        cssClasses: {
+          root: 'list-group',
+          item: 'list-group-item',
+          count: 'badge pull-right'
+        }
+      })
+    );
+
+    search.start();
+  });
+
+
+</script>
+
+
+
+
+
     <script>
     $( function() {
       $( "#tabs" ).tabs({
