@@ -3,7 +3,7 @@
 
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "laRaama.jpg" %>
+    <%= image_tag "Ramafull.jpg" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -51,7 +51,12 @@
 </div>
  -->
 
-  <div class="navbar-wagon-right hidden-xs">
+
+  <div class="navbar-wagon-right">
+
+    <input type="text" id="q" class="form-control" />
+
+    <div class="hidden-xs">
   <%= link_to crate_records_path, class: "navbar-wagon-item navbar-wagon-link" do %>
         <div class="badge-container">
           <i class="fa fa-shopping-cart"></i>
@@ -76,6 +81,7 @@
 
     <!-- Button (call-to-action) -->
    <!--  -->
+ </div>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

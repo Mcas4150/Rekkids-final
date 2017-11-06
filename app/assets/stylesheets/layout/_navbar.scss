@@ -45,7 +45,7 @@ h2 {
 
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 5vh;
+  height:7vh;
 }
 
 /* Navbar right section (with form, links, button) */
@@ -131,8 +131,10 @@ h2 {
 }
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
-  margin-top: 15px;
-  margin-right: 10vw;
+  margin-top: 0;
+  margin-right: 0;
+  width: 100vw;
+  height: 35vh;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
 }
@@ -140,7 +142,7 @@ h2 {
   transition: color 0.3s ease;
   font-weight: lighter !important;
   color: #999999 !important;
-  font-size: 10px !important;
+  font-size: 1.5em !important;
   line-height: 15px !important;
   padding: 10px 20px;
 }
@@ -159,4 +161,14 @@ h2 {
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+
+@media screen and (max-width: 778px) {
+    .navbar-wagon{
+         padding-left: 5vw;
+    padding-right: 5vw;
+    }
+
+
 }

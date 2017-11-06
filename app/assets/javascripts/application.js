@@ -14,6 +14,18 @@
 $(document).ready(function() {
   $('.attachinary-input').attachinary();
   $('.datepicker').datepicker();
+
+
+
+
+
+  $('.filter > a').on('click', () => {
+    $('.filter-drop').show();
+  });
+
+
+
+
 });
 
 
