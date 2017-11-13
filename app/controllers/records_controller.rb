@@ -40,7 +40,7 @@ class RecordsController < ApplicationController
   end
 
   def crate
-    @records = Record.where(cart: true)
+    @carted = Record.where(cart: true)
   end
 
   private

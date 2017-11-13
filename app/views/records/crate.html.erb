@@ -1,12 +1,12 @@
 <div class="container" style="margin-top:5em">
-<h1>Your Cart: <%= pluralize @records.size, "item" %></h1>
+<h1>Your Cart: <%= pluralize @carted.size, "item" %></h1>
   <div class="row">
 
   <table class="cart-list" style= "width: 90%">
     <tbody>
         <% grand = [] %>
 
-    <% @records.each do |record| %>
+    <% @carted.each do |record| %>
       <tr>
           <div>
           <a href='/records/<%=record.id%>'>
@@ -40,10 +40,12 @@
    total: <% sum = 0 %>
    $<%=  grand.inject(0){|sum, x| sum + x } %>
    </div>
-  <br>
 
 
- <br>
+
+
+
+
   <%= link_to 'Back to Records', records_path %>
 
 </div>

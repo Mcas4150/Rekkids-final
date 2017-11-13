@@ -1,10 +1,13 @@
 <div class="main">
   <div class="container cut">
     <div class="row">
-      <div class="card col-xs-12 col-sm-4" style="margin-left:0px; margin-right:0px; margin-top:5px; margin-bottom:0px;">
-
-        <div id="player"></div>
-       <!--  <img  class="myImg" id="myImg" src= '<%= @record.photo rescue nil%>' style= "height: 100%; width: 100%;  margin-bottom: 10px;" > -->
+      <div class="card col-xs-12 col-sm-4 zoomrecord">
+        <div class="video">
+          <div class="video__youtube" data-youtube>
+            <img src="<%= @record.photo rescue nil%>" class="video__placeholder" />
+            <button class="video__button" data-youtube-button="https://www.youtube.com/embed/<%= @record.youtubeid.partition('=').last rescue nil%>"></button>
+          </div>
+        </div>
       </div>
 
       <div class="card-contents col-xs-12 col-sm-4 description">
@@ -27,13 +30,13 @@
             </tr>
           <% end %>
         </table>
-        <div class="row" style="width:100%">
+        <div class="row centers">
           <div class="col-xs-6 money"> <%= humanized_money_with_symbol(@record.price_cents) rescue nil %>
           </div>
           <div class="col-xs-6">
             <%= form_tag crate_records_path do %>
               <%= hidden_field_tag 'record_id', @record.id rescue nil%>
-              <% @record.cart %>
+              <%= hidden_field_tag 'cart', true %>
               <%= submit_tag 'Add to Cart', class: 'btn btn-cool' %>
             <% end %>
           </div>
@@ -47,3 +50,62 @@
   </div>
 
 </div>
+
+<script>
+
+
+    (function (window) {
+
+    'use strict';
+
+    window.code = window.code || {};
+
+    window.code.lightweightYoutubePlayer = function () {
+
+        var dataYoutubeVideos = '[data-youtube]';
+
+        var youtubeVideos = [...document.querySelectorAll(dataYoutubeVideos)];
+
+        function init() {
+            youtubeVideos.forEach(function(element) {
+                bindYoutubeVideoEvent(element);
+            });
+        }
+
+        function bindYoutubeVideoEvent(element) {
+            var button = element.querySelector('[data-youtube-button]');
+
+            button.addEventListener('click', createIframe);
+        }
+
+        function createIframe(event) {
+            var url = event.target.dataset.youtubeButton;
+            var youtubePlaceholder = event.target.parentNode;
+
+            var htmlString = '<div class="video__youtube"> <iframe class="video__iframe" src="' + url + '?autoplay=1" frameborder="0" allowfullscreen></iframe></div>';
+
+            youtubePlaceholder.style.display = 'none';
+            youtubePlaceholder.insertAdjacentHTML('beforebegin', htmlString);
+            youtubePlaceholder.parentNode.removeChild(youtubePlaceholder);
+        }
+
+        return {
+           init: init
+        }
+    };
+
+})(window)
+
+ready();
+
+function ready() {
+    var lightweightYoutubePlayer = new code.lightweightYoutubePlayer()
+
+    if (document.readyState != 'loading') {
+        page.init()
+    } else {
+        document.addEventListener('DOMContentLoaded', lightweightYoutubePlayer.init);
+    }
+}
+
+</script>
