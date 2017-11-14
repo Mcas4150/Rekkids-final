@@ -15,24 +15,4 @@ $(document).ready(function() {
   $('.attachinary-input').attachinary();
   $('.datepicker').datepicker();
 
-
-
-
-
-  $('.filter > a').on('click', () => {
-    $('.filter-drop').show();
-  });
-
-
-
-
 });
-
-
-
-
-
-// var toggler = document.getElementById('toggler');
-// toggler.onclick = function () {
-//     @record.cart = !@record.cart;
-// };
