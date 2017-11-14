@@ -20,6 +20,7 @@ Bundler.require(*Rails.groups)
 module REKKIDS
   class Application < Rails::Application
     config.action_view.embed_authenticity_token_in_remote_forms = true
+    config.assets.initialize_on_precompile = false
     config.generators do |generate|
       generate.assets false
       generate.helper false
